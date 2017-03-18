@@ -1,0 +1,553 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B8D5B9131E7D8D6500D303E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D5B9121E7D8D6500D303E4 /* AppDelegate.swift */; };
+		B8D5B9151E7D8D6500D303E4 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B8D5B9141E7D8D6500D303E4 /* GameScene.sks */; };
+		B8D5B9171E7D8D6500D303E4 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = B8D5B9161E7D8D6500D303E4 /* Actions.sks */; };
+		B8D5B9191E7D8D6500D303E4 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D5B9181E7D8D6500D303E4 /* GameScene.swift */; };
+		B8D5B91B1E7D8D6500D303E4 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D5B91A1E7D8D6500D303E4 /* GameViewController.swift */; };
+		B8D5B91E1E7D8D6500D303E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8D5B91C1E7D8D6500D303E4 /* Main.storyboard */; };
+		B8D5B9201E7D8D6500D303E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8D5B91F1E7D8D6500D303E4 /* Assets.xcassets */; };
+		B8D5B9231E7D8D6500D303E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8D5B9211E7D8D6500D303E4 /* LaunchScreen.storyboard */; };
+		B8D5B92E1E7D8D6500D303E4 /* Hockey_GameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D5B92D1E7D8D6500D303E4 /* Hockey_GameTests.swift */; };
+		B8D5B9391E7D8D6500D303E4 /* Hockey_GameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D5B9381E7D8D6500D303E4 /* Hockey_GameUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B8D5B92A1E7D8D6500D303E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B8D5B9071E7D8D6500D303E4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B8D5B90E1E7D8D6500D303E4;
+			remoteInfo = "Hockey Game";
+		};
+		B8D5B9351E7D8D6500D303E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B8D5B9071E7D8D6500D303E4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B8D5B90E1E7D8D6500D303E4;
+			remoteInfo = "Hockey Game";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B8D5B90F1E7D8D6500D303E4 /* Hockey Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hockey Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8D5B9121E7D8D6500D303E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B8D5B9141E7D8D6500D303E4 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		B8D5B9161E7D8D6500D303E4 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
+		B8D5B9181E7D8D6500D303E4 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		B8D5B91A1E7D8D6500D303E4 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		B8D5B91D1E7D8D6500D303E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B8D5B91F1E7D8D6500D303E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B8D5B9221E7D8D6500D303E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B8D5B9241E7D8D6500D303E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B8D5B9291E7D8D6500D303E4 /* Hockey GameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hockey GameTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8D5B92D1E7D8D6500D303E4 /* Hockey_GameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hockey_GameTests.swift; sourceTree = "<group>"; };
+		B8D5B92F1E7D8D6500D303E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B8D5B9341E7D8D6500D303E4 /* Hockey GameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hockey GameUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8D5B9381E7D8D6500D303E4 /* Hockey_GameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hockey_GameUITests.swift; sourceTree = "<group>"; };
+		B8D5B93A1E7D8D6500D303E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B8D5B90C1E7D8D6500D303E4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B8D5B9261E7D8D6500D303E4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B8D5B9311E7D8D6500D303E4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B8D5B9061E7D8D6500D303E4 = {
+			isa = PBXGroup;
+			children = (
+				B8D5B9111E7D8D6500D303E4 /* Hockey Game */,
+				B8D5B92C1E7D8D6500D303E4 /* Hockey GameTests */,
+				B8D5B9371E7D8D6500D303E4 /* Hockey GameUITests */,
+				B8D5B9101E7D8D6500D303E4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B8D5B9101E7D8D6500D303E4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B8D5B90F1E7D8D6500D303E4 /* Hockey Game.app */,
+				B8D5B9291E7D8D6500D303E4 /* Hockey GameTests.xctest */,
+				B8D5B9341E7D8D6500D303E4 /* Hockey GameUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B8D5B9111E7D8D6500D303E4 /* Hockey Game */ = {
+			isa = PBXGroup;
+			children = (
+				B8D5B9121E7D8D6500D303E4 /* AppDelegate.swift */,
+				B8D5B9141E7D8D6500D303E4 /* GameScene.sks */,
+				B8D5B9161E7D8D6500D303E4 /* Actions.sks */,
+				B8D5B9181E7D8D6500D303E4 /* GameScene.swift */,
+				B8D5B91A1E7D8D6500D303E4 /* GameViewController.swift */,
+				B8D5B91C1E7D8D6500D303E4 /* Main.storyboard */,
+				B8D5B91F1E7D8D6500D303E4 /* Assets.xcassets */,
+				B8D5B9211E7D8D6500D303E4 /* LaunchScreen.storyboard */,
+				B8D5B9241E7D8D6500D303E4 /* Info.plist */,
+			);
+			path = "Hockey Game";
+			sourceTree = "<group>";
+		};
+		B8D5B92C1E7D8D6500D303E4 /* Hockey GameTests */ = {
+			isa = PBXGroup;
+			children = (
+				B8D5B92D1E7D8D6500D303E4 /* Hockey_GameTests.swift */,
+				B8D5B92F1E7D8D6500D303E4 /* Info.plist */,
+			);
+			path = "Hockey GameTests";
+			sourceTree = "<group>";
+		};
+		B8D5B9371E7D8D6500D303E4 /* Hockey GameUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B8D5B9381E7D8D6500D303E4 /* Hockey_GameUITests.swift */,
+				B8D5B93A1E7D8D6500D303E4 /* Info.plist */,
+			);
+			path = "Hockey GameUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B8D5B90E1E7D8D6500D303E4 /* Hockey Game */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B8D5B93D1E7D8D6500D303E4 /* Build configuration list for PBXNativeTarget "Hockey Game" */;
+			buildPhases = (
+				B8D5B90B1E7D8D6500D303E4 /* Sources */,
+				B8D5B90C1E7D8D6500D303E4 /* Frameworks */,
+				B8D5B90D1E7D8D6500D303E4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Hockey Game";
+			productName = "Hockey Game";
+			productReference = B8D5B90F1E7D8D6500D303E4 /* Hockey Game.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B8D5B9281E7D8D6500D303E4 /* Hockey GameTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B8D5B9401E7D8D6500D303E4 /* Build configuration list for PBXNativeTarget "Hockey GameTests" */;
+			buildPhases = (
+				B8D5B9251E7D8D6500D303E4 /* Sources */,
+				B8D5B9261E7D8D6500D303E4 /* Frameworks */,
+				B8D5B9271E7D8D6500D303E4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B8D5B92B1E7D8D6500D303E4 /* PBXTargetDependency */,
+			);
+			name = "Hockey GameTests";
+			productName = "Hockey GameTests";
+			productReference = B8D5B9291E7D8D6500D303E4 /* Hockey GameTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B8D5B9331E7D8D6500D303E4 /* Hockey GameUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B8D5B9431E7D8D6500D303E4 /* Build configuration list for PBXNativeTarget "Hockey GameUITests" */;
+			buildPhases = (
+				B8D5B9301E7D8D6500D303E4 /* Sources */,
+				B8D5B9311E7D8D6500D303E4 /* Frameworks */,
+				B8D5B9321E7D8D6500D303E4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B8D5B9361E7D8D6500D303E4 /* PBXTargetDependency */,
+			);
+			name = "Hockey GameUITests";
+			productName = "Hockey GameUITests";
+			productReference = B8D5B9341E7D8D6500D303E4 /* Hockey GameUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B8D5B9071E7D8D6500D303E4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Collin DeWaters";
+				TargetAttributes = {
+					B8D5B90E1E7D8D6500D303E4 = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = AP48SCT3J2;
+						ProvisioningStyle = Automatic;
+					};
+					B8D5B9281E7D8D6500D303E4 = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = AP48SCT3J2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = B8D5B90E1E7D8D6500D303E4;
+					};
+					B8D5B9331E7D8D6500D303E4 = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = AP48SCT3J2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = B8D5B90E1E7D8D6500D303E4;
+					};
+				};
+			};
+			buildConfigurationList = B8D5B90A1E7D8D6500D303E4 /* Build configuration list for PBXProject "Hockey Game" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B8D5B9061E7D8D6500D303E4;
+			productRefGroup = B8D5B9101E7D8D6500D303E4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B8D5B90E1E7D8D6500D303E4 /* Hockey Game */,
+				B8D5B9281E7D8D6500D303E4 /* Hockey GameTests */,
+				B8D5B9331E7D8D6500D303E4 /* Hockey GameUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B8D5B90D1E7D8D6500D303E4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B8D5B91E1E7D8D6500D303E4 /* Main.storyboard in Resources */,
+				B8D5B9151E7D8D6500D303E4 /* GameScene.sks in Resources */,
+				B8D5B9201E7D8D6500D303E4 /* Assets.xcassets in Resources */,
+				B8D5B9231E7D8D6500D303E4 /* LaunchScreen.storyboard in Resources */,
+				B8D5B9171E7D8D6500D303E4 /* Actions.sks in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B8D5B9271E7D8D6500D303E4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B8D5B9321E7D8D6500D303E4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B8D5B90B1E7D8D6500D303E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B8D5B9191E7D8D6500D303E4 /* GameScene.swift in Sources */,
+				B8D5B91B1E7D8D6500D303E4 /* GameViewController.swift in Sources */,
+				B8D5B9131E7D8D6500D303E4 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B8D5B9251E7D8D6500D303E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B8D5B92E1E7D8D6500D303E4 /* Hockey_GameTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B8D5B9301E7D8D6500D303E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B8D5B9391E7D8D6500D303E4 /* Hockey_GameUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B8D5B92B1E7D8D6500D303E4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B8D5B90E1E7D8D6500D303E4 /* Hockey Game */;
+			targetProxy = B8D5B92A1E7D8D6500D303E4 /* PBXContainerItemProxy */;
+		};
+		B8D5B9361E7D8D6500D303E4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B8D5B90E1E7D8D6500D303E4 /* Hockey Game */;
+			targetProxy = B8D5B9351E7D8D6500D303E4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B8D5B91C1E7D8D6500D303E4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B8D5B91D1E7D8D6500D303E4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B8D5B9211E7D8D6500D303E4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B8D5B9221E7D8D6500D303E4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B8D5B93B1E7D8D6500D303E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B8D5B93C1E7D8D6500D303E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B8D5B93E1E7D8D6500D303E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = AP48SCT3J2;
+				INFOPLIST_FILE = "Hockey Game/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.CollinDeWaters.Hockey-Game";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		B8D5B93F1E7D8D6500D303E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = AP48SCT3J2;
+				INFOPLIST_FILE = "Hockey Game/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.CollinDeWaters.Hockey-Game";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		B8D5B9411E7D8D6500D303E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = AP48SCT3J2;
+				INFOPLIST_FILE = "Hockey GameTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.CollinDeWaters.Hockey-GameTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hockey Game.app/Hockey Game";
+			};
+			name = Debug;
+		};
+		B8D5B9421E7D8D6500D303E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = AP48SCT3J2;
+				INFOPLIST_FILE = "Hockey GameTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.CollinDeWaters.Hockey-GameTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hockey Game.app/Hockey Game";
+			};
+			name = Release;
+		};
+		B8D5B9441E7D8D6500D303E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = AP48SCT3J2;
+				INFOPLIST_FILE = "Hockey GameUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.CollinDeWaters.Hockey-GameUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Hockey Game";
+			};
+			name = Debug;
+		};
+		B8D5B9451E7D8D6500D303E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = AP48SCT3J2;
+				INFOPLIST_FILE = "Hockey GameUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.CollinDeWaters.Hockey-GameUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Hockey Game";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B8D5B90A1E7D8D6500D303E4 /* Build configuration list for PBXProject "Hockey Game" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B8D5B93B1E7D8D6500D303E4 /* Debug */,
+				B8D5B93C1E7D8D6500D303E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B8D5B93D1E7D8D6500D303E4 /* Build configuration list for PBXNativeTarget "Hockey Game" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B8D5B93E1E7D8D6500D303E4 /* Debug */,
+				B8D5B93F1E7D8D6500D303E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B8D5B9401E7D8D6500D303E4 /* Build configuration list for PBXNativeTarget "Hockey GameTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B8D5B9411E7D8D6500D303E4 /* Debug */,
+				B8D5B9421E7D8D6500D303E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B8D5B9431E7D8D6500D303E4 /* Build configuration list for PBXNativeTarget "Hockey GameUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B8D5B9441E7D8D6500D303E4 /* Debug */,
+				B8D5B9451E7D8D6500D303E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B8D5B9071E7D8D6500D303E4 /* Project object */;
+}
