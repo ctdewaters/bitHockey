@@ -15,31 +15,30 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Load 'GameScene.sks' as a GKScene. This provides gameplay related content
-        // including entities and graphs.
-        if let scene = GKScene(fileNamed: "GameScene") {
+        let rink = Rink(size: CGSize(width: 728, height: 1024))
+        rink.scaleMode = .resizeFill
             
-            // Get the SKScene from the loaded GKScene
-            if let sceneNode = scene.rootNode as! GameScene? {
-                
-                // Copy gameplay related content over to the scene
-                sceneNode.entities = scene.entities
-                sceneNode.graphs = scene.graphs
-                
-                // Set the scale mode to scale to fit the window
-                sceneNode.scaleMode = .aspectFill
-                
-                // Present the scene
-                if let view = self.view as! SKView? {
-                    view.presentScene(sceneNode)
-                    
-                    view.ignoresSiblingOrder = true
-                    
-                    view.showsFPS = true
-                    view.showsNodeCount = true
-                }
-            }
+        if let skView = self.view as! SKView? {
+            skView.presentScene(rink)
+            rink.setPhysicsWorld()
+            rink.generateAndAddNodes(withTeamSize: TeamSize.three, andHomeTeamColor: SKColor.red)
+            rink.puck?.position = FaceoffLocation.centerIce.coordinate
+            rink.positionPlayers(atFaceoffLocation: .centerIce)
+
+            rink.selectPlayerClosestToPuck()
+            
+            let joystick = Joystick(frame: CGRect(x: 20, y: skView.frame.maxY - joystickSize - 20, width: joystickSize, height: joystickSize))
+            joystick.delegate = rink
+            skView.addSubview(joystick)
+            
+            let button = SwitchPlayerButton(frame: CGRect(x: skView.frame.maxX - buttonSize - 20 , y: skView.frame.maxY - buttonSize - 20, width: buttonSize, height: buttonSize))
+            button.center.y = joystick.center.y
+            button.delegate = rink
+            skView.addSubview(button)
+            
+            skView.showsPhysics = true
         }
+
     }
 
     override var shouldAutorotate: Bool {
