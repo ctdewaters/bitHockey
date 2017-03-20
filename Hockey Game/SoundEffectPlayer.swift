@@ -5,11 +5,27 @@ public class SoundEffectPlayer: NSObject {
     public static let puck = SoundEffectPlayer()
     public static let player = SoundEffectPlayer()
     
-    fileprivate var player = AVPlayer()
+    fileprivate var player = AVAudioPlayer()
     
-    public func play(soundEffect: SoundEffect) {
-        self.player = AVPlayer(url: soundEffect.assetURL)
-        self.player.play()
+    public func play(soundEffect: SoundEffect, indefinitely: Bool? = nil) {
+        
+        do {
+            self.player = try AVAudioPlayer(contentsOf: soundEffect.assetURL)
+            if let indefinitely = indefinitely {
+                if indefinitely {
+                    self.player.numberOfLoops = -1
+                }
+            }
+            self.player.play()
+
+        }
+        catch {
+            print(error)
+        }
+    }
+    
+    public func stop() {
+        self.player.stop()
     }
 }
 

@@ -15,6 +15,7 @@ class GoalPresentation: NSObject {
     fileprivate var presentationView: UIVisualEffectView!
     fileprivate var goalLabel: UILabel!
     fileprivate var scoreLabel: UILabel!
+    fileprivate var promptLabel: UILabel!
     
     fileprivate var dismissTimer: Timer!
     fileprivate var dismissTapGesture: UITapGestureRecognizer!
@@ -37,6 +38,14 @@ class GoalPresentation: NSObject {
             goalLabel.textAlignment = .center
             self.presentationView.addSubview(goalLabel)
             
+            promptLabel = UILabel(frame: CGRect(x: 0, y: presentationView.frame.maxY - 30, width: presentationView.frame.width, height: 30))
+            promptLabel.font = UIFont.systemFont(ofSize: 15, weight: UIFontWeightBold)
+            promptLabel.textAlignment = .center
+            promptLabel.textColor = UIColor.black.withAlphaComponent(0.7)
+            promptLabel.alpha = 0
+            promptLabel.text = "Tap the screen to skip."
+            self.presentationView.addSubview(promptLabel)
+            
             //Adding the dismiss tap gesture
             dismissTapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissPresentationView))
             self.presentationView.addGestureRecognizer(dismissTapGesture)
@@ -45,9 +54,12 @@ class GoalPresentation: NSObject {
             
             self.animateGoalLabel()
             
+            SoundEffectPlayer.player.play(soundEffect: .puckHitBoards, indefinitely: true)
+            
             UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseInOut, animations: {
                 self.presentationView.effect = UIBlurEffect(style: .light)
                 self.goalLabel.alpha = 1
+                self.promptLabel.alpha = 1
             }, completion: {
                 completed in
                 if completed {
@@ -73,7 +85,7 @@ class GoalPresentation: NSObject {
         self.goalLabel.layer.add(pulseAnim, forKey: "pulsingAnimation")
         
         let rotateAnim = CABasicAnimation(keyPath: "transform.rotation.z")
-        rotateAnim.duration = 0.7
+        rotateAnim.duration = 0.8
         rotateAnim.fromValue = NSNumber(value: (7 * Float.pi / 6) + (Float.pi / 2))
         rotateAnim.toValue = NSNumber(value: (11 * Float.pi / 6) + (Float.pi / 2))
         rotateAnim.autoreverses = true
@@ -92,6 +104,7 @@ class GoalPresentation: NSObject {
         }, completion: {
             completed in
             if completed {
+                SoundEffectPlayer.player.stop()
                 self.goalLabel.layer.removeAllAnimations()
                 self.dismissTimer = nil
                 self.presentationView.removeGestureRecognizer(self.dismissTapGesture)
@@ -100,6 +113,7 @@ class GoalPresentation: NSObject {
                 self.presentationView = nil
                 self.goalLabel = nil
                 self.scoreLabel = nil
+                self.promptLabel = nil
             }
         })
     }

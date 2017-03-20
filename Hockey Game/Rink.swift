@@ -19,9 +19,9 @@ public struct PhysicsCategory {
 }
 
 
-open class Rink: SKScene, JoystickDelegate, SwitchPlayerButtonDelegate, SKPhysicsContactDelegate {
+open class Rink: SKScene, JoystickDelegate, SwitchPlayerButtonDelegate, SKPhysicsContactDelegate, UIGestureRecognizerDelegate {
     
-    open var userTeam: UserTeam?
+    open var userTeam: Team?
     open var opposingTeam: Team?
     open var puck: PuckNode?
     
@@ -33,11 +33,11 @@ open class Rink: SKScene, JoystickDelegate, SwitchPlayerButtonDelegate, SKPhysic
     fileprivate var latestJoystickData: JoystickData?
     
     //Returns the selected player on the user controlled team
-    open var selectedPlayer: UnsafeMutablePointer<UserPlayerNode>? {
+    open var selectedPlayer: UnsafeMutablePointer<PlayerNode>? {
         if let userTeam = userTeam {
             for player in userTeam {
                 if player.isSelected {
-                    let pointer = UnsafeMutablePointer<UserPlayerNode>.allocate(capacity: 1)
+                    let pointer = UnsafeMutablePointer<PlayerNode>.allocate(capacity: 1)
                     pointer.pointee = player
                     return pointer
                 }
@@ -47,22 +47,9 @@ open class Rink: SKScene, JoystickDelegate, SwitchPlayerButtonDelegate, SKPhysic
     }
     
     //Returns the player on either team that is currently carrying the puck
-    fileprivate var userPuckCarrier: UnsafeMutablePointer<UserPlayerNode>? {
+    fileprivate var puckCarrier: UnsafeMutablePointer<PlayerNode>? {
         if let userTeam = userTeam {
             for player in userTeam {
-                if player.playerNode.hasPuck {
-                    let pointer = UnsafeMutablePointer<UserPlayerNode>.allocate(capacity: 1)
-                    pointer.pointee = player
-                    return pointer
-                }
-            }
-        }
-        return nil
-    }
-    
-    fileprivate var opposingPuckCarrier: UnsafeMutablePointer<PlayerNode>? {
-        if let opposingTeam = opposingTeam {
-            for player in opposingTeam {
                 if player.hasPuck {
                     let pointer = UnsafeMutablePointer<PlayerNode>.allocate(capacity: 1)
                     pointer.pointee = player
@@ -114,6 +101,7 @@ open class Rink: SKScene, JoystickDelegate, SwitchPlayerButtonDelegate, SKPhysic
         
         //Setting pan gesture recognizer
         self.panGesture = UIPanGestureRecognizer(target: self, action: #selector(self.pan(_:)))
+        self.panGesture.delegate = self
         view.addGestureRecognizer(self.panGesture)
     }
     
@@ -149,13 +137,12 @@ open class Rink: SKScene, JoystickDelegate, SwitchPlayerButtonDelegate, SKPhysic
     }
     
     fileprivate func generateTeams(withPlayers playerCount: Int, andHomeTeamColor homeColor: SKColor) {
-        userTeam = UserTeam()
+        userTeam = Team()
         opposingTeam = Team()
         
         //Generate team 1 (user team)
         for i in 0..<playerCount {
-            let player = UserPlayerNode(withColor: homeColor, rinkReference: self, andPosition: PlayerPosition(rawValue: i)!)
-            player.playerNode.isOnOpposingTeam = false
+            let player = PlayerNode(withColor: homeColor, rinkReference: self, andPosition: PlayerPosition(rawValue: i)!)
             userTeam?.append(player)
         }
         
@@ -167,19 +154,10 @@ open class Rink: SKScene, JoystickDelegate, SwitchPlayerButtonDelegate, SKPhysic
         }
     }
     
-    ///Adds opposing teams players to the ice
+    ///Adds a teams players to the ice
     fileprivate func add(_ team: Team) {
         for player in team {
             player.position = self.position(forPlayer: player, atFaceoffLocation: .centerIce)
-            player.rotate(toFacePoint: FaceoffLocation.centerIce.coordinate, withDuration: 0.25)
-            self.addChild(player)
-        }
-    }
-    
-    ///Adds user teams players to the ice
-    fileprivate func add(_ userTeam: UserTeam) {
-        for player in userTeam {
-            player.position = self.position(forPlayer: player.playerNode, atFaceoffLocation: .centerIce)
             player.rotate(toFacePoint: FaceoffLocation.centerIce.coordinate, withDuration: 0.25)
             self.addChild(player)
         }
@@ -204,10 +182,12 @@ open class Rink: SKScene, JoystickDelegate, SwitchPlayerButtonDelegate, SKPhysic
     public func positionPlayers(atFaceoffLocation location: FaceoffLocation) {
         for player in userTeam! {
             player.removeAllActions()
+            player.setPhysicsBody(withTexture: PlayerTexture.faceoff)
             player.rotate(toFacePoint: location.coordinate, withDuration: 0.1)
-            player.position = position(forPlayer: player.playerNode, atFaceoffLocation: location)
+            player.position = position(forPlayer: player, atFaceoffLocation: location)
         }
         for player in opposingTeam! {
+            player.setPhysicsBody(withTexture: PlayerTexture.faceoff)
             player.removeAllActions()
             player.rotate(toFacePoint: location.coordinate, withDuration: 0.1)
             player.position = position(forPlayer: player, atFaceoffLocation: location)
@@ -236,7 +216,7 @@ open class Rink: SKScene, JoystickDelegate, SwitchPlayerButtonDelegate, SKPhysic
                 return player1.distance(fromNode: self.puck!) < player2.distance(fromNode: self.puck!)
             })
             
-            var previousSelection: UserPlayerNode?
+            var previousSelection: PlayerNode?
             //Deselect currently selected player
             if let selectedPlayer = selectedPlayer {
                 previousSelection = selectedPlayer.pointee
@@ -293,11 +273,8 @@ open class Rink: SKScene, JoystickDelegate, SwitchPlayerButtonDelegate, SKPhysic
         if let position = position {
             point = position
         }
-        else if let userPuckCarrier = userPuckCarrier {
-            point = userPuckCarrier.pointee.position
-        }
-        else if let opposingPuckCarrier = opposingPuckCarrier {
-            point = opposingPuckCarrier.pointee.position
+        else if let puckCarrier = puckCarrier {
+            point = puckCarrier.pointee.position
         }
         else if let puck = puck {
             //calculate point to move camera to
@@ -342,9 +319,11 @@ open class Rink: SKScene, JoystickDelegate, SwitchPlayerButtonDelegate, SKPhysic
         
         if bodyA.categoryBitMask == PhysicsCategory.player && bodyB.categoryBitMask == PhysicsCategory.puck {
             //Puck hit player
-            
-            if let playerNode = bodyA.node as? UserPlayerNode {
-                playerNode.playerNode.pickUp(puck: &self.puck!)
+            print("PUCK HIT PLAYER")            
+            if let playerNode = bodyA.node as? PlayerNode {
+                if !playerNode.isOnOpposingTeam {
+                    playerNode.pickUp(puck: &self.puck!)
+                }
             }
         }
         if bodyA.categoryBitMask == PhysicsCategory.player && bodyB.categoryBitMask == PhysicsCategory.player {
@@ -357,29 +336,24 @@ open class Rink: SKScene, JoystickDelegate, SwitchPlayerButtonDelegate, SKPhysic
         return body.node as? PlayerNode
     }
     
-    fileprivate func physicsBodyToUserPlayerNode(_ body: SKPhysicsBody) -> UserPlayerNode? {
-        return body.node as? UserPlayerNode
-    }
-    
     fileprivate func playerNodeBodiesCollided(bodyA: SKPhysicsBody, bodyB: SKPhysicsBody, withContact contact: SKPhysicsContact) {
-        if let player1 = physicsBodyToPlayerNode(bodyA) {
-            if let uPlayerNode = physicsBodyToUserPlayerNode(bodyB) {
-                let player2 = uPlayerNode.playerNode
-                
-            }
-        }
-        if let uPlayerNode = physicsBodyToUserPlayerNode(bodyA) {
-            if let player2 = physicsBodyToPlayerNode(bodyB) {
-                let player1 = uPlayerNode.playerNode
-            }
-        }
+//        if let player1 = physicsBodyToPlayerNode(bodyA) {
+//            if let uPlayerNode = physicsBodyToPlayerNode(bodyB) {
+//                let player2 = uPlayerNode
+//                
+//            }
+//        }
+//        if let uPlayerNode = physicsBodyToPlayerNode(bodyA) {
+//            if let player2 = physicsBodyToPlayerNode(bodyB) {
+//                let player1 = uPlayerNode
+//            }
+//        }
     }
     
     //MARK: - JoystickDelegate
-    
     public func joystickDidExitIdle(_ joystick: Joystick) {
         if let selectedPlayer = selectedPlayer {
-            selectedPlayer.pointee.playerNode.animateSkatingTextures()
+            selectedPlayer.pointee.animateSkatingTextures()
         }
     }
     
@@ -391,8 +365,8 @@ open class Rink: SKScene, JoystickDelegate, SwitchPlayerButtonDelegate, SKPhysic
         self.latestJoystickData = nil
         
         if let selectedPlayer = selectedPlayer {
-            selectedPlayer.pointee.playerNode.stopSkatingAction()
-            selectedPlayer.pointee.playerNode.texture = PlayerTexture.faceoff
+            selectedPlayer.pointee.stopSkatingAction()
+            selectedPlayer.pointee.texture = PlayerTexture.faceoff
             selectedPlayer.pointee.applySkatingImpulse()
         }
     }
@@ -408,18 +382,31 @@ open class Rink: SKScene, JoystickDelegate, SwitchPlayerButtonDelegate, SKPhysic
         if let selectedPlayer = selectedPlayer {
             if selectedPlayer.pointee.hasPuck {
                 if sender.state == .changed {
-                    selectedPlayer.pointee.playerNode.texture = PlayerTexture.texture(forTranslation: sender.translation(in: self.view!))
+                    selectedPlayer.pointee.texture = PlayerTexture.texture(forTranslation: sender.translation(in: self.view!))
                     
                     if sender.translation(in: self.view!).y < -75 {
                         selectedPlayerShootPuck()
                     }
                 }
                 if sender.state == .ended {
-                    selectedPlayer.pointee.playerNode.texture = PlayerTexture.faceoff
+                    selectedPlayer.pointee.texture = PlayerTexture.faceoff
                 }
             }
         }
     }
+    
+//    //MARK: - UIGestureRecognizerDelegate
+//    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+//        return true
+//    }
+//    
+//    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+//        if touch.view is Joystick {
+//            return false
+//        }
+//        return true
+//    }
+
 }
 
 //Pair of SKPhysicsBodies

@@ -36,7 +36,7 @@ class GameViewController: UIViewController {
             button.delegate = rink
             skView.addSubview(button)
             
-            skView.showsPhysics = true
+           // skView.showsPhysics = true
         }
 
     }
