@@ -20,15 +20,9 @@ class GameViewController: UIViewController {
             
         if let skView = self.view as! SKView? {
             skView.presentScene(rink)
-            rink.setPhysicsWorld()
-            rink.generateAndAddNodes(withTeamSize: TeamSize.three, andHomeTeamColor: SKColor.red)
-            rink.puck?.position = FaceoffLocation.centerIce.coordinate
-            rink.positionPlayers(atFaceoffLocation: .centerIce)
-
-            rink.selectPlayerClosestToPuck()
             
-            let joystick = Joystick(frame: CGRect(x: 20, y: skView.frame.maxY - joystickSize - 20, width: joystickSize, height: joystickSize))
-            joystick.delegate = rink
+            let joystick = Joystick.shared
+            joystick.frame = CGRect(x: 20, y: skView.frame.maxY - joystickSize - 20, width: joystickSize, height: joystickSize)
             skView.addSubview(joystick)
             
             let button = SwitchPlayerButton(frame: CGRect(x: skView.frame.maxX - buttonSize - 20 , y: skView.frame.maxY - buttonSize - 20, width: buttonSize, height: buttonSize))
@@ -36,7 +30,7 @@ class GameViewController: UIViewController {
             button.delegate = rink
             skView.addSubview(button)
             
-           // skView.showsPhysics = true
+           skView.showsPhysics = true
         }
 
     }

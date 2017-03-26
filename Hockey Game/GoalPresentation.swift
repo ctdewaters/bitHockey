@@ -12,7 +12,7 @@ class GoalPresentation: NSObject {
     
     static let shared = GoalPresentation()
     
-    fileprivate var presentationView: UIVisualEffectView!
+    fileprivate var presentationView: UIView!
     fileprivate var goalLabel: UILabel!
     fileprivate var scoreLabel: UILabel!
     fileprivate var promptLabel: UILabel!
@@ -26,8 +26,9 @@ class GoalPresentation: NSObject {
     
     open func present(toView view: UIView, withCompletion completion: (()->Void)? = nil) {
         if self.presentationView == nil {
-            self.presentationView = UIVisualEffectView(effect: nil)
-            self.presentationView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
+            self.presentationView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
+            self.presentationView.backgroundColor = UIColor.black.withAlphaComponent(0.7)
+            self.presentationView.alpha = 0
             
             goalLabel = UILabel(frame: CGRect(x: 0, y: 0, width: presentationView.frame.width, height: 100))
             goalLabel.center = CGPoint(x: presentationView.frame.width / 2, y: presentationView.frame.height / 2)
@@ -57,7 +58,7 @@ class GoalPresentation: NSObject {
             SoundEffectPlayer.player.play(soundEffect: .puckHitBoards, indefinitely: true)
             
             UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseInOut, animations: {
-                self.presentationView.effect = UIBlurEffect(style: .light)
+                self.presentationView.alpha = 1
                 self.goalLabel.alpha = 1
                 self.promptLabel.alpha = 1
             }, completion: {
@@ -99,7 +100,7 @@ class GoalPresentation: NSObject {
            self.dismissTimer.invalidate()
         }
         UIView.animate(withDuration: 0.3, animations: {
-            self.presentationView.effect = nil
+            self.presentationView.alpha = 0
             self.goalLabel.alpha = 0
         }, completion: {
             completed in

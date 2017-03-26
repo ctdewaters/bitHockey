@@ -18,8 +18,10 @@ public struct PhysicsCategory {
     static let net: UInt32 = 6
 }
 
+public typealias Team = [Player]
 
-open class Rink: SKScene, JoystickDelegate, SwitchPlayerButtonDelegate, SKPhysicsContactDelegate, UIGestureRecognizerDelegate {
+
+open class Rink: SKScene, SwitchPlayerButtonDelegate, SKPhysicsContactDelegate, UIGestureRecognizerDelegate {
     
     open var userTeam: Team?
     open var opposingTeam: Team?
@@ -32,12 +34,21 @@ open class Rink: SKScene, JoystickDelegate, SwitchPlayerButtonDelegate, SKPhysic
     
     fileprivate var latestJoystickData: JoystickData?
     
+    open var entities = Set<GKEntity>()
+    open var entitiesToRemove = Set<GKEntity>()
+    
+    lazy var componentSystems: [GKComponentSystem] = {
+        let playerSystem = GKComponentSystem(componentClass: PlayerComponent.self)
+        return [playerSystem]
+    }()
+    
+    
     //Returns the selected player on the user controlled team
-    open var selectedPlayer: UnsafeMutablePointer<PlayerNode>? {
+    open var selectedPlayer: UnsafeMutablePointer<Player>? {
         if let userTeam = userTeam {
             for player in userTeam {
                 if player.isSelected {
-                    let pointer = UnsafeMutablePointer<PlayerNode>.allocate(capacity: 1)
+                    let pointer = UnsafeMutablePointer<Player>.allocate(capacity: 1)
                     pointer.pointee = player
                     return pointer
                 }
@@ -47,11 +58,11 @@ open class Rink: SKScene, JoystickDelegate, SwitchPlayerButtonDelegate, SKPhysic
     }
     
     //Returns the player on either team that is currently carrying the puck
-    fileprivate var puckCarrier: UnsafeMutablePointer<PlayerNode>? {
+    fileprivate var puckCarrier: UnsafeMutablePointer<Player>? {
         if let userTeam = userTeam {
             for player in userTeam {
                 if player.hasPuck {
-                    let pointer = UnsafeMutablePointer<PlayerNode>.allocate(capacity: 1)
+                    let pointer = UnsafeMutablePointer<Player>.allocate(capacity: 1)
                     pointer.pointee = player
                     return pointer
                 }
@@ -99,6 +110,12 @@ open class Rink: SKScene, JoystickDelegate, SwitchPlayerButtonDelegate, SKPhysic
     open override func didMove(to view: SKView) {
         super.didMove(to: view)
         
+        self.setPhysicsWorld()
+        self.generateAndAddNodes(withTeamSize: TeamSize.five, andHomeTeamColor: SKColor.red)
+        self.puck?.position = FaceoffLocation.centerIce.coordinate
+        self.positionPlayers(atFaceoffLocation: .centerIce)
+        self.selectPlayerClosestToPuck()
+        
         //Setting pan gesture recognizer
         self.panGesture = UIPanGestureRecognizer(target: self, action: #selector(self.pan(_:)))
         self.panGesture.delegate = self
@@ -122,6 +139,29 @@ open class Rink: SKScene, JoystickDelegate, SwitchPlayerButtonDelegate, SKPhysic
         self.physicsBody?.usesPreciseCollisionDetection = true
     }
     
+    //MARK: - GameplayKit
+    //Handling adding and removing GKEntities
+    func add(entity: GKEntity) {
+        entities.insert(entity)
+        
+        if let playerEntity = entity as? Player {
+            self.addChild(playerEntity.node!)
+        }
+        
+        for componentSystem in componentSystems {
+            componentSystem.addComponent(foundIn: entity)
+        }
+    }
+    
+    func remove(entity: GKEntity) {
+        if let playerEntity = entity as? Player {
+            playerEntity.node!.removeFromParent()
+        }
+        entities.remove(entity)
+        
+        self.entitiesToRemove.insert(entity)
+    }
+    
     open func bringNetsToFront() {
         self.topNet?.zPosition = 1
         self.bottomNet?.zPosition = 1
@@ -142,13 +182,14 @@ open class Rink: SKScene, JoystickDelegate, SwitchPlayerButtonDelegate, SKPhysic
         
         //Generate team 1 (user team)
         for i in 0..<playerCount {
-            let player = PlayerNode(withColor: homeColor, rinkReference: self, andPosition: PlayerPosition(rawValue: i)!)
+            let player = Player(withColor: homeColor, andRinkReference: self, andPosition: PlayerPosition(rawValue: i)!)
+            player.isOnOpposingTeam = false
             userTeam?.append(player)
         }
         
         //Generate team 2 (opposing team)
         for i in 0..<playerCount {
-            let player = PlayerNode(withColor: .white, rinkReference: self, andPosition: PlayerPosition(rawValue: i)!)
+            let player = Player(withColor: .white, andRinkReference: self, andPosition: PlayerPosition(rawValue: i)!)
             player.isOnOpposingTeam = true
             opposingTeam?.append(player)
         }
@@ -157,9 +198,8 @@ open class Rink: SKScene, JoystickDelegate, SwitchPlayerButtonDelegate, SKPhysic
     ///Adds a teams players to the ice
     fileprivate func add(_ team: Team) {
         for player in team {
-            player.position = self.position(forPlayer: player, atFaceoffLocation: .centerIce)
-            player.rotate(toFacePoint: FaceoffLocation.centerIce.coordinate, withDuration: 0.25)
-            self.addChild(player)
+            player.node?.position = self.position(forPlayer: player, atFaceoffLocation: .centerIce)
+            self.add(entity: player)
         }
     }
     
@@ -181,29 +221,23 @@ open class Rink: SKScene, JoystickDelegate, SwitchPlayerButtonDelegate, SKPhysic
     
     public func positionPlayers(atFaceoffLocation location: FaceoffLocation) {
         for player in userTeam! {
-            player.removeAllActions()
-            player.setPhysicsBody(withTexture: PlayerTexture.faceoff)
-            player.rotate(toFacePoint: location.coordinate, withDuration: 0.1)
-            player.position = position(forPlayer: player, atFaceoffLocation: location)
+            player.position(atFaceoffLocation: location)
         }
         for player in opposingTeam! {
-            player.setPhysicsBody(withTexture: PlayerTexture.faceoff)
-            player.removeAllActions()
-            player.rotate(toFacePoint: location.coordinate, withDuration: 0.1)
-            player.position = position(forPlayer: player, atFaceoffLocation: location)
+            player.position(atFaceoffLocation: location)
         }
     }
     
     //Computes position to set player for a faceoff location
-    fileprivate func position(forPlayer player: PlayerNode, atFaceoffLocation location: FaceoffLocation) -> CGPoint {
-        return location.playerPosition(forPlayerNode: player)
+    fileprivate func position(forPlayer player: Player, atFaceoffLocation location: FaceoffLocation) -> CGPoint {
+        return location.playerPosition(forPlayer: player)
     }
     
     //Causes user controlled player to shoot the puck
     @objc fileprivate func selectedPlayerShootPuck() {
         if let selectedPlayer = selectedPlayer {
             if selectedPlayer.pointee.hasPuck {
-                selectedPlayer.pointee.shootPuck(atPoint: topNet!.position)
+                selectedPlayer.pointee.playerComponent?.pointee.shootPuck(atPoint: topNet!.position)
             }
         }
     }
@@ -216,7 +250,7 @@ open class Rink: SKScene, JoystickDelegate, SwitchPlayerButtonDelegate, SKPhysic
                 return player1.distance(fromNode: self.puck!) < player2.distance(fromNode: self.puck!)
             })
             
-            var previousSelection: PlayerNode?
+            var previousSelection: Player?
             //Deselect currently selected player
             if let selectedPlayer = selectedPlayer {
                 previousSelection = selectedPlayer.pointee
@@ -239,8 +273,28 @@ open class Rink: SKScene, JoystickDelegate, SwitchPlayerButtonDelegate, SKPhysic
         }
     }
     
+    var lastUpdate: TimeInterval = 0
+    
     open override func update(_ currentTime: TimeInterval) {
         super.update(currentTime)
+        
+        //Finding delta time
+        let deltaTime = currentTime - lastUpdate
+        lastUpdate = currentTime
+
+        //GameplayKit
+        for componentSystem in componentSystems {
+            componentSystem.update(deltaTime: deltaTime)
+        }
+        
+        //Removing entities in entitiesToRemove
+        for remove in entitiesToRemove {
+            for componentSystem in componentSystems {
+                componentSystem.removeComponent(foundIn: remove)
+            }
+        }
+        entitiesToRemove.removeAll()
+
         
         if let puckInNet = puckInNet {
             //Goal scored
@@ -259,14 +313,13 @@ open class Rink: SKScene, JoystickDelegate, SwitchPlayerButtonDelegate, SKPhysic
         }
 
         //Check if we have joystick data
-        if let joystickData = latestJoystickData, let selectedPlayer = selectedPlayer {
-            selectedPlayer.pointee.move(withJoystickData: joystickData)
-        }
+//        if let joystickData = latestJoystickData, let selectedPlayer = selectedPlayer {
+//            selectedPlayer.pointee.move(withJoystickData: joystickData)
+//        }
         
         //Follow puck location
         updateCameraPosition()
     }
-    
     
     fileprivate func updateCameraPosition(toPosition position: CGPoint? = nil) {
         var point: CGPoint!
@@ -309,9 +362,6 @@ open class Rink: SKScene, JoystickDelegate, SwitchPlayerButtonDelegate, SKPhysic
         let bodyA = contact.bodyA
         let bodyB = contact.bodyB
         
-        print(bodyA.categoryBitMask)
-        print(bodyB.categoryBitMask)
-        
         if bodyA.categoryBitMask == PhysicsCategory.rink && bodyB.categoryBitMask == PhysicsCategory.puck {
             //Puck hit the boards
             //SoundEffectPlayer.boards.play(soundEffect: .puckHitBoards)
@@ -319,10 +369,9 @@ open class Rink: SKScene, JoystickDelegate, SwitchPlayerButtonDelegate, SKPhysic
         
         if bodyA.categoryBitMask == PhysicsCategory.player && bodyB.categoryBitMask == PhysicsCategory.puck {
             //Puck hit player
-            print("PUCK HIT PLAYER")            
             if let playerNode = bodyA.node as? PlayerNode {
-                if !playerNode.isOnOpposingTeam {
-                    playerNode.pickUp(puck: &self.puck!)
+                if !playerNode.component!.isOnOpposingTeam {
+                    playerNode.component!.pickUp(puck: &self.puck!)
                 }
             }
         }
@@ -351,25 +400,25 @@ open class Rink: SKScene, JoystickDelegate, SwitchPlayerButtonDelegate, SKPhysic
     }
     
     //MARK: - JoystickDelegate
-    public func joystickDidExitIdle(_ joystick: Joystick) {
-        if let selectedPlayer = selectedPlayer {
-            selectedPlayer.pointee.animateSkatingTextures()
-        }
-    }
-    
-    public func joystick(_ joystick: Joystick, didGenerateData joystickData: JoystickData) {
-        self.latestJoystickData = joystickData
-    }
-    
-    public func joystickDidReturnToIdle(_ joystick: Joystick) {
-        self.latestJoystickData = nil
-        
-        if let selectedPlayer = selectedPlayer {
-            selectedPlayer.pointee.stopSkatingAction()
-            selectedPlayer.pointee.texture = PlayerTexture.faceoff
-            selectedPlayer.pointee.applySkatingImpulse()
-        }
-    }
+//    public func joystickDidExitIdle(_ joystick: Joystick) {
+//        if let selectedPlayer = selectedPlayer {
+//            selectedPlayer.pointee.animateSkatingTextures()
+//        }
+//    }
+//    
+//    public func joystick(_ joystick: Joystick, didGenerateData joystickData: JoystickData) {
+//        self.latestJoystickData = joystickData
+//    }
+//    
+//    public func joystickDidReturnToIdle(_ joystick: Joystick) {
+//        self.latestJoystickData = nil
+//        
+//        if let selectedPlayer = selectedPlayer {
+//            selectedPlayer.pointee.stopSkatingAction()
+//            selectedPlayer.pointee.texture = PlayerTexture.faceoff
+//            selectedPlayer.pointee.applySkatingImpulse()
+//        }
+//    }
     
     //MARK: - SwitchPlayerButtonDelegate
     
@@ -447,24 +496,24 @@ public enum FaceoffLocation {
         }
     }
     
-    public func playerPosition(forPlayerNode player: PlayerNode) -> CGPoint {
+    public func playerPosition(forPlayer player: Player) -> CGPoint {
         var point = self.coordinate
         
         //Check if player is on opposing team
         if player.isOnOpposingTeam == true {
-            if player.playerPosition.isForward {
-                point.y += player.frame.height / 1.9
+            if player.pPosition.isForward {
+                point.y += playerNodeSize.height / 1.9
                 
-                if player.playerPosition == .leftWing {
+                if player.pPosition == .leftWing {
                     point.x += rinkCenterCircleWidth / 2
                 }
-                else if player.playerPosition == .rightWing {
+                else if player.pPosition == .rightWing {
                     point.x -= rinkCenterCircleWidth / 2
                 }
             }
-            else if player.playerPosition.isDefenseman {
+            else if player.pPosition.isDefenseman {
                 point.y += rinkCenterCircleWidth / 2
-                if player.playerPosition == .leftDefense {
+                if player.pPosition == .leftDefense {
                     point.x -= rinkCenterCircleWidth / 3
                 }
                 else {
@@ -477,19 +526,19 @@ public enum FaceoffLocation {
         
         //Player is on the user controlled team
         
-        if player.playerPosition.isForward {
-            point.y -= player.frame.height / 1.9
+        if player.pPosition.isForward {
+            point.y -= playerNodeSize.height / 1.9
             
-            if player.playerPosition == .leftWing {
+            if player.pPosition == .leftWing {
                 point.x -= rinkCenterCircleWidth / 2
             }
-            else if player.playerPosition == .rightWing {
+            else if player.pPosition == .rightWing {
                 point.x += rinkCenterCircleWidth / 2
             }
         }
-        else if player.playerPosition.isDefenseman {
+        else if player.pPosition.isDefenseman {
             point.y -= rinkCenterCircleWidth / 2
-            if player.playerPosition == .leftDefense {
+            if player.pPosition == .leftDefense {
                 point.x -= rinkCenterCircleWidth / 3
             }
             else {

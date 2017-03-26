@@ -10,6 +10,8 @@ public class Joystick: UIView {
     
     public var delegate: JoystickDelegate?
     
+    static let shared = Joystick(frame: CGRect(x: 0, y: 0, width: joystickSize, height: joystickSize))
+    
     override public init(frame: CGRect) {
         super.init(frame: frame)
         
