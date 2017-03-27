@@ -31,6 +31,9 @@ class GameViewController: UIViewController {
             skView.addSubview(button)
             
            skView.showsPhysics = true
+           skView.showsFPS = true
+            skView.showsNodeCount = true
+            skView.showsDrawCount = true
         }
 
     }

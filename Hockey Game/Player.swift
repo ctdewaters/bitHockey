@@ -29,6 +29,17 @@ public class Player: GKEntity {
         fatalError("init(coder:) has not been implemented")
     }
     
+    public func addMovement() {
+        let moveBehavior = MoveBehavior(forPlayerOnTeam: (self.playerComponent?.pointee.team)!, withPlayerPosition: self.pPosition, withTargetSpeed: 200)
+        let moveComponent = MoveComponent(maxSpeed: 200, maxAcceleration: 200, radius: Float(playerNodeSize.width / 2), mass: 0.3, rink: (playerComponent?.pointee.rinkReference.pointee)!, withBehavior: moveBehavior)
+        self.addComponent(moveComponent)
+            
+    }
+    
+    public func removeMovement() {
+        self.removeComponent(ofType: MoveComponent.self)
+    }
+    
     public func distance(fromNode node: SKNode) -> CGFloat {
         let xDiff = self.node!.position.x - node.position.x
         let yDiff = self.node!.position.y - node.position.y
@@ -40,11 +51,11 @@ public class Player: GKEntity {
         playerNode?.removeAllActions()
         node?.removeAllActions()
         node?.position = faceoffLocation.playerPosition(forPlayer: self)
-        //spriteNode!.setPhysicsBody(withTexture: PlayerTexture.faceoff)
         self.rotate(toFacePoint: faceoffLocation.coordinate, withDuration: 0.1)
     }
     
     public func select() {
+        self.removeMovement()
         let userComponent = UserComponent()
         Joystick.shared.delegate = userComponent
         self.addComponent(userComponent)
@@ -61,7 +72,7 @@ public class Player: GKEntity {
     
     //Rotates node to face a point (with an entered duration)
     open func rotate(toFacePoint point: CGPoint, withDuration duration: TimeInterval) {
-        node?.run(SKAction.rotateAction(toFacePoint: point, currentPoint: playerNode!.position, withDuration: duration))
+        node?.run(SKAction.rotateAction(toFacePoint: point, currentPoint: node!.position, withDuration: duration))
     }
     
     //MARK: - Calculated variables
@@ -129,6 +140,10 @@ public class Player: GKEntity {
     
     public var userComponent: UserComponent? {
         return self.component(ofType: UserComponent.self)
+    }
+    
+    public var moveComponent: MoveComponent? {
+        return self.component(ofType: MoveComponent.self)
     }
     
     //Is the player selected?

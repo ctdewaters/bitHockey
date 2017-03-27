@@ -9,40 +9,51 @@
 import SpriteKit
 import GameplayKit
 
-class MoveComponent: GKAgent2D, GKAgentDelegate {
+public class MoveComponent: GKAgent2D, GKAgentDelegate {
     
     var rinkReference: UnsafeMutablePointer<Rink>! = nil
     
-    init(maxSpeed: Float, maxAcceleration: Float, radius: Float, mass: Float, rink: Rink) {
+    var mBehavior: MoveBehavior!
+    
+    init(maxSpeed: Float, maxAcceleration: Float, radius: Float, mass: Float, rink: Rink, withBehavior behavior: MoveBehavior) {
+        super.init()
         self.rinkReference = UnsafeMutablePointer<Rink>.allocate(capacity: 1)
         self.rinkReference.pointee = rink
-        super.init()
         
-        delegate = self
+        self.delegate = self
+        
         self.maxSpeed = maxSpeed
         self.maxAcceleration = maxAcceleration
         self.radius = radius
-        self.mass = 0.01
+        self.mass = mass
+        
+        self.behavior = behavior
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func agentWillUpdate(_ agent: GKAgent) {
+    public func agentWillUpdate(_ agent: GKAgent) {
         guard let playerComponent = playerComponent else {
             return
         }
         
-        position = vector_float2(withCGPoint: playerComponent.pointee.node.position)
+        position = float2(withCGPoint: playerComponent.pointee.node.position)
+        rotation = Float(playerComponent.pointee.node.zRotation)
     }
     
-    func agentDidUpdate(_ agent: GKAgent) {
+    public func agentDidUpdate(_ agent: GKAgent) {
         guard let playerComponent = playerComponent else {
             return
         }
         
         playerComponent.pointee.node.position = self.cgPosition
+        playerComponent.pointee.node.zRotation = CGFloat(self.rotation)
+    }
+    
+    public override func update(deltaTime seconds: TimeInterval) {
+        super.update(deltaTime: seconds)
     }
     
     //MARK: - Movement functions
@@ -63,20 +74,20 @@ class MoveComponent: GKAgent2D, GKAgentDelegate {
 
 }
 
-extension CGPoint {
+public extension CGPoint {
     init(x: Float, y: Float) {
         self.x = CGFloat(x)
         self.y = CGFloat(y)
     }
 }
 
-extension vector_float2 {
+public extension float2 {
     init(withCGPoint point: CGPoint) {
         self.init(x: Float(point.x), y: Float(point.y))
     }
 }
 
-extension GKAgent2D {
+public extension GKAgent2D {
     var cgPosition: CGPoint {
         return CGPoint(x: self.position.x, y: self.position.y)
     }

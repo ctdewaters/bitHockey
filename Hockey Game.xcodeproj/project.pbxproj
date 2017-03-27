@@ -13,6 +13,9 @@
 		B83D0A771E869A710036E5BD /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83D0A761E869A710036E5BD /* Player.swift */; };
 		B83D0A7D1E86A9D40036E5BD /* MoveComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83D0A7C1E86A9D40036E5BD /* MoveComponent.swift */; };
 		B83D0A7F1E86D1AC0036E5BD /* UserComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83D0A7E1E86D1AC0036E5BD /* UserComponent.swift */; };
+		B879AB971E8852410001376D /* MoveBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = B879AB961E8852410001376D /* MoveBehavior.swift */; };
+		B879AB9A1E88A29A0001376D /* Net.swift in Sources */ = {isa = PBXBuildFile; fileRef = B879AB991E88A29A0001376D /* Net.swift */; };
+		B879AB9C1E88A2B40001376D /* NetComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B879AB9B1E88A2B40001376D /* NetComponent.swift */; };
 		B8D5B9131E7D8D6500D303E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D5B9121E7D8D6500D303E4 /* AppDelegate.swift */; };
 		B8D5B9151E7D8D6500D303E4 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B8D5B9141E7D8D6500D303E4 /* GameScene.sks */; };
 		B8D5B9171E7D8D6500D303E4 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = B8D5B9161E7D8D6500D303E4 /* Actions.sks */; };
@@ -27,7 +30,6 @@
 		B8D5B9501E7D8DF800D303E4 /* SoundEffectPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D5B9481E7D8DF800D303E4 /* SoundEffectPlayer.swift */; };
 		B8D5B9511E7D8DF800D303E4 /* SwitchPlayerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D5B9491E7D8DF800D303E4 /* SwitchPlayerButton.swift */; };
 		B8D5B9521E7D8DF800D303E4 /* Joystick.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D5B94A1E7D8DF800D303E4 /* Joystick.swift */; };
-		B8D5B9531E7D8DF800D303E4 /* NetNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D5B94B1E7D8DF800D303E4 /* NetNode.swift */; };
 		B8D5B9551E7D8DF800D303E4 /* PlayerTextures.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D5B94D1E7D8DF800D303E4 /* PlayerTextures.swift */; };
 		B8D5B9591E7D8E7400D303E4 /* puckHitBoards.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B8D5B9581E7D8E7400D303E4 /* puckHitBoards.m4a */; };
 /* End PBXBuildFile section */
@@ -56,6 +58,9 @@
 		B83D0A761E869A710036E5BD /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		B83D0A7C1E86A9D40036E5BD /* MoveComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveComponent.swift; sourceTree = "<group>"; };
 		B83D0A7E1E86D1AC0036E5BD /* UserComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserComponent.swift; sourceTree = "<group>"; };
+		B879AB961E8852410001376D /* MoveBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveBehavior.swift; sourceTree = "<group>"; };
+		B879AB991E88A29A0001376D /* Net.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Net.swift; sourceTree = "<group>"; };
+		B879AB9B1E88A2B40001376D /* NetComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetComponent.swift; sourceTree = "<group>"; };
 		B8D5B90F1E7D8D6500D303E4 /* Hockey Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hockey Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8D5B9121E7D8D6500D303E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8D5B9141E7D8D6500D303E4 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -76,7 +81,6 @@
 		B8D5B9481E7D8DF800D303E4 /* SoundEffectPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundEffectPlayer.swift; sourceTree = "<group>"; };
 		B8D5B9491E7D8DF800D303E4 /* SwitchPlayerButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchPlayerButton.swift; sourceTree = "<group>"; };
 		B8D5B94A1E7D8DF800D303E4 /* Joystick.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Joystick.swift; sourceTree = "<group>"; };
-		B8D5B94B1E7D8DF800D303E4 /* NetNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetNode.swift; sourceTree = "<group>"; };
 		B8D5B94D1E7D8DF800D303E4 /* PlayerTextures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTextures.swift; sourceTree = "<group>"; };
 		B8D5B9581E7D8E7400D303E4 /* puckHitBoards.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = puckHitBoards.m4a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -110,7 +114,8 @@
 			isa = PBXGroup;
 			children = (
 				B83D0A711E8698CD0036E5BD /* PlayerComponent.swift */,
-				B83D0A7C1E86A9D40036E5BD /* MoveComponent.swift */,
+				B879AB9B1E88A2B40001376D /* NetComponent.swift */,
+				B879AB981E8854E30001376D /* MoveComponent */,
 				B83D0A7E1E86D1AC0036E5BD /* UserComponent.swift */,
 			);
 			name = Components;
@@ -120,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				B83D0A761E869A710036E5BD /* Player.swift */,
+				B879AB991E88A29A0001376D /* Net.swift */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -131,6 +137,15 @@
 				B80473811E7F08D10013CD36 /* Score.swift */,
 			);
 			name = Scoring;
+			sourceTree = "<group>";
+		};
+		B879AB981E8854E30001376D /* MoveComponent */ = {
+			isa = PBXGroup;
+			children = (
+				B83D0A7C1E86A9D40036E5BD /* MoveComponent.swift */,
+				B879AB961E8852410001376D /* MoveBehavior.swift */,
+			);
+			name = MoveComponent;
 			sourceTree = "<group>";
 		};
 		B8D5B9061E7D8D6500D303E4 = {
@@ -199,7 +214,6 @@
 			isa = PBXGroup;
 			children = (
 				B8D5B9461E7D8DF800D303E4 /* PuckNode.swift */,
-				B8D5B94B1E7D8DF800D303E4 /* NetNode.swift */,
 			);
 			name = Nodes;
 			sourceTree = "<group>";
@@ -363,14 +377,16 @@
 			files = (
 				B83D0A7F1E86D1AC0036E5BD /* UserComponent.swift in Sources */,
 				B83D0A771E869A710036E5BD /* Player.swift in Sources */,
+				B879AB9A1E88A29A0001376D /* Net.swift in Sources */,
 				B8D5B9551E7D8DF800D303E4 /* PlayerTextures.swift in Sources */,
 				B8D5B9521E7D8DF800D303E4 /* Joystick.swift in Sources */,
+				B879AB9C1E88A2B40001376D /* NetComponent.swift in Sources */,
+				B879AB971E8852410001376D /* MoveBehavior.swift in Sources */,
 				B8D5B91B1E7D8D6500D303E4 /* GameViewController.swift in Sources */,
 				B80473801E7EFE2F0013CD36 /* GoalPresentation.swift in Sources */,
 				B8D5B94F1E7D8DF800D303E4 /* Rink.swift in Sources */,
 				B8D5B9501E7D8DF800D303E4 /* SoundEffectPlayer.swift in Sources */,
 				B8D5B94E1E7D8DF800D303E4 /* PuckNode.swift in Sources */,
-				B8D5B9531E7D8DF800D303E4 /* NetNode.swift in Sources */,
 				B8D5B9511E7D8DF800D303E4 /* SwitchPlayerButton.swift in Sources */,
 				B83D0A7D1E86A9D40036E5BD /* MoveComponent.swift in Sources */,
 				B80473821E7F08D10013CD36 /* Score.swift in Sources */,

@@ -18,7 +18,7 @@ public class PlayerComponent: GKComponent {
     open var selectionNode: SKShapeNode!
     open var pSpeed: CGFloat = 3
 
-    fileprivate var rinkReference: UnsafeMutablePointer<Rink>!
+    open var rinkReference: UnsafeMutablePointer<Rink>!
     
     var hasPuck = false
     
@@ -39,6 +39,7 @@ public class PlayerComponent: GKComponent {
         
         rinkReference = UnsafeMutablePointer<Rink>.allocate(capacity: 1)
         rinkReference.pointee = rink
+        
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -50,8 +51,13 @@ public class PlayerComponent: GKComponent {
             self.playerNode.texture = texture
         }
         self.playerNode.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        let physicsBody = SKPhysicsBody(texture: self.texture!, size: self.size)
-        self.physicsBody = physicsBody
+        if texture == PlayerTexture.faceoff {
+            self.physicsBody = PlayerTexture.faceoffPhysicsBody.copy() as? SKPhysicsBody
+        }
+        else {
+            let physicsBody = SKPhysicsBody(texture: self.texture!, size: self.size)
+            self.physicsBody = physicsBody
+        }
         self.physicsBody?.isDynamic = true
         self.physicsBody?.mass = 0.25
         self.physicsBody?.categoryBitMask = PhysicsCategory.player
@@ -232,6 +238,19 @@ public class PlayerComponent: GKComponent {
 
     
     //MARK: - Calculated variables
+    
+    //Reference to this player's team 
+    public var team: Team {
+        var team: Team!
+        
+        if isOnOpposingTeam {
+            team = opposingTeam
+        }
+        else {
+            team = userTeam
+        }
+        return team
+    }
     
     //The player entity
     public var playerEntity: Player? {

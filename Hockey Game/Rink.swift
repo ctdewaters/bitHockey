@@ -20,15 +20,12 @@ public struct PhysicsCategory {
 
 public typealias Team = [Player]
 
+public var userTeam: Team?
+public var opposingTeam: Team?
 
 open class Rink: SKScene, SwitchPlayerButtonDelegate, SKPhysicsContactDelegate, UIGestureRecognizerDelegate {
     
-    open var userTeam: Team?
-    open var opposingTeam: Team?
     open var puck: PuckNode?
-    
-    open var topNet: NetNode?
-    open var bottomNet: NetNode?
     
     fileprivate var panGesture: UIPanGestureRecognizer!
     
@@ -39,7 +36,10 @@ open class Rink: SKScene, SwitchPlayerButtonDelegate, SKPhysicsContactDelegate, 
     
     lazy var componentSystems: [GKComponentSystem] = {
         let playerSystem = GKComponentSystem(componentClass: PlayerComponent.self)
-        return [playerSystem]
+        let moveSystem = GKComponentSystem(componentClass: MoveComponent.self)
+        let userSystem = GKComponentSystem(componentClass: UserComponent.self)
+        let netSystem = GKComponentSystem(componentClass: NetComponent.self)
+        return [playerSystem, moveSystem, userSystem, netSystem]
     }()
     
     
@@ -71,12 +71,12 @@ open class Rink: SKScene, SwitchPlayerButtonDelegate, SKPhysicsContactDelegate, 
         return nil
     }
     
-    fileprivate var puckInNet: NetNode? {
-        if (self.topNet?.frame.contains(self.puck!.position))! {
-            return topNet
+    fileprivate var puckInNet: Net? {
+        if Net.topNet.frame.contains(self.puck!.position) {
+            return Net.topNet
         }
-        else if (self.bottomNet?.frame.contains(self.puck!.position))! {
-            return bottomNet
+        else if Net.bottomNet.frame.contains(self.puck!.position) {
+            return Net.bottomNet
         }
         return nil
     }
@@ -148,6 +148,10 @@ open class Rink: SKScene, SwitchPlayerButtonDelegate, SKPhysicsContactDelegate, 
             self.addChild(playerEntity.node!)
         }
         
+        if let netEntity = entity as? Net {
+            self.addChild(netEntity.node)
+        }
+        
         for componentSystem in componentSystems {
             componentSystem.addComponent(foundIn: entity)
         }
@@ -163,8 +167,8 @@ open class Rink: SKScene, SwitchPlayerButtonDelegate, SKPhysicsContactDelegate, 
     }
     
     open func bringNetsToFront() {
-        self.topNet?.zPosition = 1
-        self.bottomNet?.zPosition = 1
+        Net.topNet.zPosition = 1
+        Net.bottomNet.zPosition = 1
     }
     
     //Generates and adds nodes for both teams, the puck, and the rink
@@ -212,19 +216,20 @@ open class Rink: SKScene, SwitchPlayerButtonDelegate, SKPhysicsContactDelegate, 
     }
     
     fileprivate func generateAndAddNets() {
-        self.topNet = NetNode(atRinkEnd: .top)
-        self.addChild(topNet!)
-        
-        self.bottomNet = NetNode(atRinkEnd: .bottom)
-        self.addChild(bottomNet!)
+        self.add(entity: Net.topNet)
+        self.add(entity: Net.bottomNet)
     }
     
     public func positionPlayers(atFaceoffLocation location: FaceoffLocation) {
         for player in userTeam! {
+            player.playerComponent?.pointee.setPhysicsBody(withTexture: PlayerTexture.faceoff)
             player.position(atFaceoffLocation: location)
+            player.addMovement()
         }
         for player in opposingTeam! {
+            player.playerComponent?.pointee.setPhysicsBody(withTexture: PlayerTexture.faceoff)
             player.position(atFaceoffLocation: location)
+            player.addMovement()
         }
     }
     
@@ -237,7 +242,7 @@ open class Rink: SKScene, SwitchPlayerButtonDelegate, SKPhysicsContactDelegate, 
     @objc fileprivate func selectedPlayerShootPuck() {
         if let selectedPlayer = selectedPlayer {
             if selectedPlayer.pointee.hasPuck {
-                selectedPlayer.pointee.playerComponent?.pointee.shootPuck(atPoint: topNet!.position)
+                selectedPlayer.pointee.playerComponent?.pointee.shootPuck(atPoint: RinkEnd.top.point)
             }
         }
     }
@@ -278,6 +283,10 @@ open class Rink: SKScene, SwitchPlayerButtonDelegate, SKPhysicsContactDelegate, 
     open override func update(_ currentTime: TimeInterval) {
         super.update(currentTime)
         
+        if lastUpdate == 0 {
+            lastUpdate = currentTime
+        }
+        
         //Finding delta time
         let deltaTime = currentTime - lastUpdate
         lastUpdate = currentTime
@@ -298,7 +307,7 @@ open class Rink: SKScene, SwitchPlayerButtonDelegate, SKPhysicsContactDelegate, 
         
         if let puckInNet = puckInNet {
             //Goal scored
-            if puckInNet == topNet! {
+            if puckInNet == Net.topNet {
                 GoalPresentation.shared.present(toView: self.view!, withCompletion: {
                     self.puck?.removeAllActions()
                     self.puck?.physicsBody = nil
@@ -311,12 +320,10 @@ open class Rink: SKScene, SwitchPlayerButtonDelegate, SKPhysicsContactDelegate, 
                 print("Goal in bottom net!")
             }
         }
-
-        //Check if we have joystick data
-//        if let joystickData = latestJoystickData, let selectedPlayer = selectedPlayer {
-//            selectedPlayer.pointee.move(withJoystickData: joystickData)
-//        }
         
+        userTeam?.moveComponentSystem.update(deltaTime: deltaTime)
+        opposingTeam?.moveComponentSystem.update(deltaTime: deltaTime)
+    
         //Follow puck location
         updateCameraPosition()
     }
@@ -398,27 +405,6 @@ open class Rink: SKScene, SwitchPlayerButtonDelegate, SKPhysicsContactDelegate, 
 //            }
 //        }
     }
-    
-    //MARK: - JoystickDelegate
-//    public func joystickDidExitIdle(_ joystick: Joystick) {
-//        if let selectedPlayer = selectedPlayer {
-//            selectedPlayer.pointee.animateSkatingTextures()
-//        }
-//    }
-//    
-//    public func joystick(_ joystick: Joystick, didGenerateData joystickData: JoystickData) {
-//        self.latestJoystickData = joystickData
-//    }
-//    
-//    public func joystickDidReturnToIdle(_ joystick: Joystick) {
-//        self.latestJoystickData = nil
-//        
-//        if let selectedPlayer = selectedPlayer {
-//            selectedPlayer.pointee.stopSkatingAction()
-//            selectedPlayer.pointee.texture = PlayerTexture.faceoff
-//            selectedPlayer.pointee.applySkatingImpulse()
-//        }
-//    }
     
     //MARK: - SwitchPlayerButtonDelegate
     

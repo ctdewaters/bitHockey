@@ -1,6 +1,10 @@
 import SpriteKit
 
 class PlayerTexture {
+    
+    //MARK: - Textures
+    
+    //The Faceoff texture
     static let faceoff = SKTexture(imageNamed: "faceoffPosition")
     
     //Skating textures
@@ -13,13 +17,6 @@ class PlayerTexture {
     static let f7 = SKTexture(imageNamed: "player7")
     static let f8 = SKTexture(imageNamed: "player8")
     static let skatingTextures: [SKTexture] = [f1, f2, f3, f4, f5, f6, f7, f8, f7, f6, f5, f4, f3, f2, f1]
-    
-    static var skatingTexturePhysicsBodies: [SKPhysicsBody] {
-        let bodies = skatingTextures.map {
-            return SKPhysicsBody(texture: $0, size: playerNodeSize)
-        }
-        return bodies
-    }
     
     //Shooting textures
     static let shoot1 = SKTexture(imageNamed: "shoot1")
@@ -34,12 +31,26 @@ class PlayerTexture {
     static let deke1 = SKTexture(imageNamed: "playerPosition1")
     static let deke2 = SKTexture(imageNamed: "playerPosition2")
     
-    
     //Net physics body texture
     static let netPhysicsBody = SKTexture(imageNamed: "netPhysicsBody.png")
     
+    //MARK: - Physics bodies
+    
+    static var skatingTexturePhysicsBodies: [SKPhysicsBody] {
+        let bodies = skatingTextures.map {
+            return SKPhysicsBody(texture: $0, size: playerNodeSize)
+        }
+        return bodies
+    }
+    
+    static let faceoffPhysicsBody = SKPhysicsBody(texture: faceoff, size: playerNodeSize)
+    
     static let boundSize: CGFloat = 100
     
+    
+    //MARK: - Functions
+    
+    //Finds correct texture for deking (UIPanGestureRecognizer translation)
     class func texture(forTranslation translation: CGPoint) -> SKTexture {
         let translation = self.bound(translationPoint: translation)
         
