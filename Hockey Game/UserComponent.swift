@@ -9,32 +9,51 @@
 import GameplayKit
 import SpriteKit
 
-public class UserComponent: GKComponent, JoystickDelegate {
+public class UserComponent: GKAgent2D, GKAgentDelegate, JoystickDelegate, SwitchPlayerButtonDelegate {
+    
+    public static let shared = UserComponent()
     
     public override func didAddToEntity() {
         super.didAddToEntity()
-        self.playerComponent?.pointee.select()
+        self.delegate = self
+        self.playerComponent?.select()
     }
+
     
     deinit {
-        self.playerComponent?.pointee.deselect()
+        self.playerComponent?.deselect()
     }
     
     //MARK: - JoystickDelegate
     
     public func joystickDidExitIdle(_ joystick: Joystick) {
-        self.playerComponent?.pointee.animateSkatingTextures()
+        self.playerComponent?.animateSkatingTextures()
     }
     
     public func joystickDidReturnToIdle(_ joystick: Joystick) {
-        playerComponent?.pointee.stopSkatingAction()
+        playerComponent?.stopSkatingAction()
         player?.texture = PlayerTexture.faceoff
-        playerComponent?.pointee.applySkatingImpulse()
+        playerComponent?.applySkatingImpulse()
     }
     
     public func joystick(_ joystick: Joystick, didGenerateData joystickData: JoystickData) {
-        self.playerComponent?.pointee.move(withJoystickData: joystickData)
+        self.playerComponent?.move(withJoystickData: joystickData)
     }
+    
+    //MARK: - SwitchPlayerButtonDelegate
+    
+    public func buttonDidRecieveUserInput(switchPlayerButton button: SwitchPlayerButton) {
+        Rink.shared.selectPlayerClosestToPuck()
+    }
+    
+    //MARK: - GKAgentDelegate
+    public func agentWillUpdate(_ agent: GKAgent) {
+        self.position = float2(withCGPoint: self.player!.node!.position)
+    }
+    
+    public func agentDidUpdate(_ agent: GKAgent) {
+    }
+
     
     //MARK: - Calculated variables
     
@@ -44,7 +63,7 @@ public class UserComponent: GKComponent, JoystickDelegate {
     }
     
     //The player component
-    fileprivate var playerComponent: UnsafeMutablePointer<PlayerComponent>? {
+    fileprivate var playerComponent: PlayerComponent? {
         return self.player?.playerComponent
     }
 

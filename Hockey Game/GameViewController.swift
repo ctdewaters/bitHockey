@@ -11,30 +11,42 @@ import SpriteKit
 import GameplayKit
 
 class GameViewController: UIViewController {
+    @IBOutlet var gameView: GameView!
+    
+    var button: SwitchPlayerButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let rink = Rink(size: CGSize(width: 728, height: 1024))
-        rink.scaleMode = .resizeFill
-            
-        if let skView = self.view as! SKView? {
-            skView.presentScene(rink)
-            
-            let joystick = Joystick.shared
-            joystick.frame = CGRect(x: 20, y: skView.frame.maxY - joystickSize - 20, width: joystickSize, height: joystickSize)
-            skView.addSubview(joystick)
-            
-            let button = SwitchPlayerButton(frame: CGRect(x: skView.frame.maxX - buttonSize - 20 , y: skView.frame.maxY - buttonSize - 20, width: buttonSize, height: buttonSize))
-            button.center.y = joystick.center.y
-            button.delegate = rink
-            skView.addSubview(button)
-            
-           skView.showsPhysics = true
-           skView.showsFPS = true
-            skView.showsNodeCount = true
-            skView.showsDrawCount = true
-        }
+        
+        Joystick.shared.frame = CGRect(x: 20, y: gameView.frame.maxY - joystickSize - 20, width: joystickSize, height: joystickSize)
+        gameView.addSubview(Joystick.shared)
+        
+        self.button = SwitchPlayerButton(frame: CGRect(x: gameView.frame.maxX - buttonSize - 20 , y: gameView.frame.maxY - buttonSize - 20, width: buttonSize, height: buttonSize))
+        button.center.y = Joystick.shared.center.y
+        button.delegate = UserComponent.shared
+        gameView.addSubview(button)
+
+        //Setting the rink
+        Rink.shared.size = CGSize(width: 728, height: 1024)
+        Rink.shared.scaleMode = .aspectFill
+        gameView.presentScene(Rink.shared)
+        
+        //Generating the nets, players, and puck
+        Rink.shared.generateAndAddNodes(withTeamSize: .five, andHomeTeamColor: .blue)
+        
+        //Adding the scoreboard
+        let time = TimeInterval(withMinutes: 2, andSeconds: 0)
+        Scoreboard.shared = Scoreboard(frame: CGRect(x: 20, y: gameView.frame.maxY - 50, width: 250, height: 30), withTotalTime: time)
+        Scoreboard.shared.center = CGPoint(x: gameView.frame.width / 2, y: gameView.frame.height)
+        gameView.addSubview(Scoreboard.shared)
+
+        
+        gameView.showsPhysics = true
+        gameView.showsFPS = true
+        gameView.showsNodeCount = true
+        gameView.showsDrawCount = true
+
 
     }
 
@@ -48,6 +60,12 @@ class GameViewController: UIViewController {
         } else {
             return .all
         }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        Joystick.shared.frame = CGRect(x: 20, y: gameView.frame.maxY - joystickSize - 20, width: joystickSize, height: joystickSize)
+        self.button.frame = CGRect(x: gameView.frame.maxX - buttonSize - 20 , y: gameView.frame.maxY - buttonSize - 20, width: buttonSize, height: buttonSize)
     }
 
     override func didReceiveMemoryWarning() {

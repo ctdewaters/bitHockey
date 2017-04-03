@@ -14,7 +14,7 @@ public class Net: GKEntity {
     public static let topNet = Net(atRinkEnd: .top)
     public static let bottomNet = Net(atRinkEnd: .bottom)
 
-    init(atRinkEnd rinkEnd: RinkEnd) {
+    public init(atRinkEnd rinkEnd: RinkEnd) {
         super.init()
         
         //Adding the net component

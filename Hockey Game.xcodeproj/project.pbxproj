@@ -7,15 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B80473801E7EFE2F0013CD36 /* GoalPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B804737F1E7EFE2F0013CD36 /* GoalPresentation.swift */; };
-		B80473821E7F08D10013CD36 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80473811E7F08D10013CD36 /* Score.swift */; };
-		B83D0A721E8698CD0036E5BD /* PlayerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83D0A711E8698CD0036E5BD /* PlayerComponent.swift */; };
-		B83D0A771E869A710036E5BD /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83D0A761E869A710036E5BD /* Player.swift */; };
-		B83D0A7D1E86A9D40036E5BD /* MoveComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83D0A7C1E86A9D40036E5BD /* MoveComponent.swift */; };
 		B83D0A7F1E86D1AC0036E5BD /* UserComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83D0A7E1E86D1AC0036E5BD /* UserComponent.swift */; };
-		B879AB971E8852410001376D /* MoveBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = B879AB961E8852410001376D /* MoveBehavior.swift */; };
-		B879AB9A1E88A29A0001376D /* Net.swift in Sources */ = {isa = PBXBuildFile; fileRef = B879AB991E88A29A0001376D /* Net.swift */; };
-		B879AB9C1E88A2B40001376D /* NetComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B879AB9B1E88A2B40001376D /* NetComponent.swift */; };
+		B8AB0B8F1E92EE8800B4C356 /* BehaviorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E0328B1E92EB91004F718E /* BehaviorType.swift */; };
+		B8AB0B901E92EE8800B4C356 /* MoveComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E0328C1E92EB91004F718E /* MoveComponent.swift */; };
+		B8AB0B911E92EE8800B4C356 /* NetComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E0328D1E92EB91004F718E /* NetComponent.swift */; };
+		B8AB0B921E92EE8800B4C356 /* PlayerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E0328E1E92EB91004F718E /* PlayerComponent.swift */; };
+		B8AB0B931E92EE8800B4C356 /* PuckComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E0328F1E92EB91004F718E /* PuckComponent.swift */; };
+		B8AB0B941E92EE8800B4C356 /* UserComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E032901E92EB91004F718E /* UserComponent.swift */; };
+		B8AB0B951E92EE8800B4C356 /* Net.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E032921E92EB91004F718E /* Net.swift */; };
+		B8AB0B961E92EE8800B4C356 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E032931E92EB91004F718E /* Player.swift */; };
+		B8AB0B971E92EE8800B4C356 /* Puck.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E032941E92EB91004F718E /* Puck.swift */; };
+		B8AB0B981E92EE8800B4C356 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E032951E92EB91004F718E /* GameView.swift */; };
+		B8AB0B991E92EE8800B4C356 /* GoalPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E032961E92EB91004F718E /* GoalPresentation.swift */; };
+		B8AB0B9A1E92EE8800B4C356 /* PlayerTextures.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E032981E92EB91004F718E /* PlayerTextures.swift */; };
+		B8AB0B9B1E92EE8800B4C356 /* SoundEffectPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E032991E92EB91004F718E /* SoundEffectPlayer.swift */; };
+		B8AB0B9C1E92EE8800B4C356 /* Rink.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E0329A1E92EB91004F718E /* Rink.swift */; };
+		B8AB0B9D1E92EE8800B4C356 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E0329B1E92EB91004F718E /* Score.swift */; };
+		B8AB0B9E1E92EE8800B4C356 /* Scoreboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E0329C1E92EB91004F718E /* Scoreboard.swift */; };
+		B8AB0BA01E92F8C600B4C356 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8D5B91F1E7D8D6500D303E4 /* Assets.xcassets */; };
 		B8D5B9131E7D8D6500D303E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D5B9121E7D8D6500D303E4 /* AppDelegate.swift */; };
 		B8D5B9151E7D8D6500D303E4 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B8D5B9141E7D8D6500D303E4 /* GameScene.sks */; };
 		B8D5B9171E7D8D6500D303E4 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = B8D5B9161E7D8D6500D303E4 /* Actions.sks */; };
@@ -23,66 +32,64 @@
 		B8D5B91E1E7D8D6500D303E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8D5B91C1E7D8D6500D303E4 /* Main.storyboard */; };
 		B8D5B9201E7D8D6500D303E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8D5B91F1E7D8D6500D303E4 /* Assets.xcassets */; };
 		B8D5B9231E7D8D6500D303E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8D5B9211E7D8D6500D303E4 /* LaunchScreen.storyboard */; };
-		B8D5B92E1E7D8D6500D303E4 /* Hockey_GameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D5B92D1E7D8D6500D303E4 /* Hockey_GameTests.swift */; };
-		B8D5B9391E7D8D6500D303E4 /* Hockey_GameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D5B9381E7D8D6500D303E4 /* Hockey_GameUITests.swift */; };
-		B8D5B94E1E7D8DF800D303E4 /* PuckNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D5B9461E7D8DF800D303E4 /* PuckNode.swift */; };
-		B8D5B94F1E7D8DF800D303E4 /* Rink.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D5B9471E7D8DF800D303E4 /* Rink.swift */; };
-		B8D5B9501E7D8DF800D303E4 /* SoundEffectPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D5B9481E7D8DF800D303E4 /* SoundEffectPlayer.swift */; };
 		B8D5B9511E7D8DF800D303E4 /* SwitchPlayerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D5B9491E7D8DF800D303E4 /* SwitchPlayerButton.swift */; };
 		B8D5B9521E7D8DF800D303E4 /* Joystick.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D5B94A1E7D8DF800D303E4 /* Joystick.swift */; };
-		B8D5B9551E7D8DF800D303E4 /* PlayerTextures.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D5B94D1E7D8DF800D303E4 /* PlayerTextures.swift */; };
 		B8D5B9591E7D8E7400D303E4 /* puckHitBoards.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B8D5B9581E7D8E7400D303E4 /* puckHitBoards.m4a */; };
+		B8E032751E92EB53004F718E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E032741E92EB53004F718E /* AppDelegate.swift */; };
+		B8E0327D1E92EB53004F718E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E0327C1E92EB53004F718E /* ViewController.swift */; };
+		B8E032821E92EB54004F718E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8E032801E92EB54004F718E /* Main.storyboard */; };
+		B8E0329D1E92EB91004F718E /* BehaviorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E0328B1E92EB91004F718E /* BehaviorType.swift */; };
+		B8E0329E1E92EB91004F718E /* MoveComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E0328C1E92EB91004F718E /* MoveComponent.swift */; };
+		B8E0329F1E92EB91004F718E /* NetComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E0328D1E92EB91004F718E /* NetComponent.swift */; };
+		B8E032A01E92EB91004F718E /* PlayerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E0328E1E92EB91004F718E /* PlayerComponent.swift */; };
+		B8E032A11E92EB91004F718E /* PuckComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E0328F1E92EB91004F718E /* PuckComponent.swift */; };
+		B8E032A31E92EB91004F718E /* Net.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E032921E92EB91004F718E /* Net.swift */; };
+		B8E032A41E92EB91004F718E /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E032931E92EB91004F718E /* Player.swift */; };
+		B8E032A51E92EB91004F718E /* Puck.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E032941E92EB91004F718E /* Puck.swift */; };
+		B8E032A61E92EB91004F718E /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E032951E92EB91004F718E /* GameView.swift */; };
+		B8E032A71E92EB91004F718E /* GoalPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E032961E92EB91004F718E /* GoalPresentation.swift */; };
+		B8E032A81E92EB91004F718E /* PlayerTextures.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E032981E92EB91004F718E /* PlayerTextures.swift */; };
+		B8E032A91E92EB91004F718E /* SoundEffectPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E032991E92EB91004F718E /* SoundEffectPlayer.swift */; };
+		B8E032AA1E92EB91004F718E /* Rink.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E0329A1E92EB91004F718E /* Rink.swift */; };
+		B8E032AB1E92EB91004F718E /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E0329B1E92EB91004F718E /* Score.swift */; };
+		B8E032AC1E92EB91004F718E /* Scoreboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E0329C1E92EB91004F718E /* Scoreboard.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		B8D5B92A1E7D8D6500D303E4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B8D5B9071E7D8D6500D303E4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B8D5B90E1E7D8D6500D303E4;
-			remoteInfo = "Hockey Game";
-		};
-		B8D5B9351E7D8D6500D303E4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B8D5B9071E7D8D6500D303E4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B8D5B90E1E7D8D6500D303E4;
-			remoteInfo = "Hockey Game";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		B804737F1E7EFE2F0013CD36 /* GoalPresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalPresentation.swift; sourceTree = "<group>"; };
-		B80473811E7F08D10013CD36 /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
-		B83D0A711E8698CD0036E5BD /* PlayerComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerComponent.swift; sourceTree = "<group>"; };
-		B83D0A761E869A710036E5BD /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
-		B83D0A7C1E86A9D40036E5BD /* MoveComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveComponent.swift; sourceTree = "<group>"; };
 		B83D0A7E1E86D1AC0036E5BD /* UserComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserComponent.swift; sourceTree = "<group>"; };
-		B879AB961E8852410001376D /* MoveBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveBehavior.swift; sourceTree = "<group>"; };
-		B879AB991E88A29A0001376D /* Net.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Net.swift; sourceTree = "<group>"; };
-		B879AB9B1E88A2B40001376D /* NetComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetComponent.swift; sourceTree = "<group>"; };
-		B8D5B90F1E7D8D6500D303E4 /* Hockey Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hockey Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8D5B90F1E7D8D6500D303E4 /* Hockey Game (iOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hockey Game (iOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8D5B9121E7D8D6500D303E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8D5B9141E7D8D6500D303E4 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		B8D5B9161E7D8D6500D303E4 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		B8D5B91A1E7D8D6500D303E4 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		B8D5B91D1E7D8D6500D303E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B8D5B91F1E7D8D6500D303E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B8D5B91F1E7D8D6500D303E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../Hockey Game/Assets.xcassets"; sourceTree = "<group>"; };
 		B8D5B9221E7D8D6500D303E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B8D5B9241E7D8D6500D303E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B8D5B9291E7D8D6500D303E4 /* Hockey GameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hockey GameTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B8D5B92D1E7D8D6500D303E4 /* Hockey_GameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hockey_GameTests.swift; sourceTree = "<group>"; };
-		B8D5B92F1E7D8D6500D303E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B8D5B9341E7D8D6500D303E4 /* Hockey GameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hockey GameUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B8D5B9381E7D8D6500D303E4 /* Hockey_GameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hockey_GameUITests.swift; sourceTree = "<group>"; };
-		B8D5B93A1E7D8D6500D303E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B8D5B9461E7D8DF800D303E4 /* PuckNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuckNode.swift; sourceTree = "<group>"; };
-		B8D5B9471E7D8DF800D303E4 /* Rink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rink.swift; sourceTree = "<group>"; };
-		B8D5B9481E7D8DF800D303E4 /* SoundEffectPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundEffectPlayer.swift; sourceTree = "<group>"; };
 		B8D5B9491E7D8DF800D303E4 /* SwitchPlayerButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchPlayerButton.swift; sourceTree = "<group>"; };
 		B8D5B94A1E7D8DF800D303E4 /* Joystick.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Joystick.swift; sourceTree = "<group>"; };
-		B8D5B94D1E7D8DF800D303E4 /* PlayerTextures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTextures.swift; sourceTree = "<group>"; };
 		B8D5B9581E7D8E7400D303E4 /* puckHitBoards.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = puckHitBoards.m4a; sourceTree = "<group>"; };
+		B8E032721E92EB53004F718E /* Hockey Game (macOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hockey Game (macOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8E032741E92EB53004F718E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B8E0327C1E92EB53004F718E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B8E032811E92EB54004F718E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B8E032831E92EB54004F718E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B8E0328B1E92EB91004F718E /* BehaviorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BehaviorType.swift; sourceTree = "<group>"; };
+		B8E0328C1E92EB91004F718E /* MoveComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveComponent.swift; sourceTree = "<group>"; };
+		B8E0328D1E92EB91004F718E /* NetComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetComponent.swift; sourceTree = "<group>"; };
+		B8E0328E1E92EB91004F718E /* PlayerComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerComponent.swift; sourceTree = "<group>"; };
+		B8E0328F1E92EB91004F718E /* PuckComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuckComponent.swift; sourceTree = "<group>"; };
+		B8E032901E92EB91004F718E /* UserComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserComponent.swift; path = Components/UserComponent.swift; sourceTree = "<group>"; };
+		B8E032921E92EB91004F718E /* Net.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Net.swift; sourceTree = "<group>"; };
+		B8E032931E92EB91004F718E /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		B8E032941E92EB91004F718E /* Puck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Puck.swift; sourceTree = "<group>"; };
+		B8E032951E92EB91004F718E /* GameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		B8E032961E92EB91004F718E /* GoalPresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalPresentation.swift; sourceTree = "<group>"; };
+		B8E032981E92EB91004F718E /* PlayerTextures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTextures.swift; sourceTree = "<group>"; };
+		B8E032991E92EB91004F718E /* SoundEffectPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundEffectPlayer.swift; sourceTree = "<group>"; };
+		B8E0329A1E92EB91004F718E /* Rink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rink.swift; sourceTree = "<group>"; };
+		B8E0329B1E92EB91004F718E /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
+		B8E0329C1E92EB91004F718E /* Scoreboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scoreboard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,14 +100,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B8D5B9261E7D8D6500D303E4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B8D5B9311E7D8D6500D303E4 /* Frameworks */ = {
+		B8E0326F1E92EB53004F718E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -110,50 +110,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B83D0A731E8699A60036E5BD /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				B83D0A711E8698CD0036E5BD /* PlayerComponent.swift */,
-				B879AB9B1E88A2B40001376D /* NetComponent.swift */,
-				B879AB981E8854E30001376D /* MoveComponent */,
-				B83D0A7E1E86D1AC0036E5BD /* UserComponent.swift */,
-			);
-			name = Components;
-			sourceTree = "<group>";
-		};
-		B83D0A781E869C040036E5BD /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-				B83D0A761E869A710036E5BD /* Player.swift */,
-				B879AB991E88A29A0001376D /* Net.swift */,
-			);
-			name = Entities;
-			sourceTree = "<group>";
-		};
-		B83D0A7B1E869D940036E5BD /* Scoring */ = {
-			isa = PBXGroup;
-			children = (
-				B804737F1E7EFE2F0013CD36 /* GoalPresentation.swift */,
-				B80473811E7F08D10013CD36 /* Score.swift */,
-			);
-			name = Scoring;
-			sourceTree = "<group>";
-		};
-		B879AB981E8854E30001376D /* MoveComponent */ = {
-			isa = PBXGroup;
-			children = (
-				B83D0A7C1E86A9D40036E5BD /* MoveComponent.swift */,
-				B879AB961E8852410001376D /* MoveBehavior.swift */,
-			);
-			name = MoveComponent;
-			sourceTree = "<group>";
-		};
 		B8D5B9061E7D8D6500D303E4 = {
 			isa = PBXGroup;
 			children = (
-				B8D5B9111E7D8D6500D303E4 /* Hockey Game */,
-				B8D5B92C1E7D8D6500D303E4 /* Hockey GameTests */,
-				B8D5B9371E7D8D6500D303E4 /* Hockey GameUITests */,
+				B8E032881E92EB7B004F718E /* Shared */,
+				B8D5B9111E7D8D6500D303E4 /* iOS */,
+				B8E032731E92EB53004F718E /* macOS */,
 				B8D5B9101E7D8D6500D303E4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -161,61 +123,28 @@
 		B8D5B9101E7D8D6500D303E4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B8D5B90F1E7D8D6500D303E4 /* Hockey Game.app */,
-				B8D5B9291E7D8D6500D303E4 /* Hockey GameTests.xctest */,
-				B8D5B9341E7D8D6500D303E4 /* Hockey GameUITests.xctest */,
+				B8D5B90F1E7D8D6500D303E4 /* Hockey Game (iOS).app */,
+				B8E032721E92EB53004F718E /* Hockey Game (macOS).app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B8D5B9111E7D8D6500D303E4 /* Hockey Game */ = {
+		B8D5B9111E7D8D6500D303E4 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
 				B8D5B9121E7D8D6500D303E4 /* AppDelegate.swift */,
 				B8D5B9141E7D8D6500D303E4 /* GameScene.sks */,
 				B8D5B9161E7D8D6500D303E4 /* Actions.sks */,
 				B8D5B91A1E7D8D6500D303E4 /* GameViewController.swift */,
-				B83D0A7B1E869D940036E5BD /* Scoring */,
-				B8D5B9471E7D8DF800D303E4 /* Rink.swift */,
-				B83D0A781E869C040036E5BD /* Entities */,
-				B83D0A731E8699A60036E5BD /* Components */,
-				B8D5B9561E7D8E0200D303E4 /* Nodes */,
+				B83D0A7E1E86D1AC0036E5BD /* UserComponent.swift */,
 				B8D5B9571E7D8E1500D303E4 /* Controls */,
-				B8D5B9481E7D8DF800D303E4 /* SoundEffectPlayer.swift */,
-				B8D5B94D1E7D8DF800D303E4 /* PlayerTextures.swift */,
 				B8D5B91C1E7D8D6500D303E4 /* Main.storyboard */,
 				B8D5B95A1E7D8E7800D303E4 /* Sounds */,
-				B8D5B91F1E7D8D6500D303E4 /* Assets.xcassets */,
 				B8D5B9211E7D8D6500D303E4 /* LaunchScreen.storyboard */,
 				B8D5B9241E7D8D6500D303E4 /* Info.plist */,
 			);
+			name = iOS;
 			path = "Hockey Game";
-			sourceTree = "<group>";
-		};
-		B8D5B92C1E7D8D6500D303E4 /* Hockey GameTests */ = {
-			isa = PBXGroup;
-			children = (
-				B8D5B92D1E7D8D6500D303E4 /* Hockey_GameTests.swift */,
-				B8D5B92F1E7D8D6500D303E4 /* Info.plist */,
-			);
-			path = "Hockey GameTests";
-			sourceTree = "<group>";
-		};
-		B8D5B9371E7D8D6500D303E4 /* Hockey GameUITests */ = {
-			isa = PBXGroup;
-			children = (
-				B8D5B9381E7D8D6500D303E4 /* Hockey_GameUITests.swift */,
-				B8D5B93A1E7D8D6500D303E4 /* Info.plist */,
-			);
-			path = "Hockey GameUITests";
-			sourceTree = "<group>";
-		};
-		B8D5B9561E7D8E0200D303E4 /* Nodes */ = {
-			isa = PBXGroup;
-			children = (
-				B8D5B9461E7D8DF800D303E4 /* PuckNode.swift */,
-			);
-			name = Nodes;
 			sourceTree = "<group>";
 		};
 		B8D5B9571E7D8E1500D303E4 /* Controls */ = {
@@ -235,12 +164,81 @@
 			name = Sounds;
 			sourceTree = "<group>";
 		};
+		B8E032731E92EB53004F718E /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				B8E032741E92EB53004F718E /* AppDelegate.swift */,
+				B8E0327C1E92EB53004F718E /* ViewController.swift */,
+				B8E032901E92EB91004F718E /* UserComponent.swift */,
+				B8E032801E92EB54004F718E /* Main.storyboard */,
+				B8E032831E92EB54004F718E /* Info.plist */,
+			);
+			name = macOS;
+			path = HockeyGame;
+			sourceTree = "<group>";
+		};
+		B8E032881E92EB7B004F718E /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				B8D5B91F1E7D8D6500D303E4 /* Assets.xcassets */,
+				B8E032891E92EB91004F718E /* Components */,
+				B8E032911E92EB91004F718E /* Entities */,
+				B8E032951E92EB91004F718E /* GameView.swift */,
+				B8E032961E92EB91004F718E /* GoalPresentation.swift */,
+				B8E032971E92EB91004F718E /* ResourceHelpers */,
+				B8E0329A1E92EB91004F718E /* Rink.swift */,
+				B8E0329B1E92EB91004F718E /* Score.swift */,
+				B8E0329C1E92EB91004F718E /* Scoreboard.swift */,
+			);
+			name = Shared;
+			path = HockeyGame;
+			sourceTree = "<group>";
+		};
+		B8E032891E92EB91004F718E /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B8E0328A1E92EB91004F718E /* MoveComponent */,
+				B8E0328D1E92EB91004F718E /* NetComponent.swift */,
+				B8E0328E1E92EB91004F718E /* PlayerComponent.swift */,
+				B8E0328F1E92EB91004F718E /* PuckComponent.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		B8E0328A1E92EB91004F718E /* MoveComponent */ = {
+			isa = PBXGroup;
+			children = (
+				B8E0328B1E92EB91004F718E /* BehaviorType.swift */,
+				B8E0328C1E92EB91004F718E /* MoveComponent.swift */,
+			);
+			path = MoveComponent;
+			sourceTree = "<group>";
+		};
+		B8E032911E92EB91004F718E /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				B8E032921E92EB91004F718E /* Net.swift */,
+				B8E032931E92EB91004F718E /* Player.swift */,
+				B8E032941E92EB91004F718E /* Puck.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		B8E032971E92EB91004F718E /* ResourceHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				B8E032981E92EB91004F718E /* PlayerTextures.swift */,
+				B8E032991E92EB91004F718E /* SoundEffectPlayer.swift */,
+			);
+			path = ResourceHelpers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B8D5B90E1E7D8D6500D303E4 /* Hockey Game */ = {
+		B8D5B90E1E7D8D6500D303E4 /* Hockey Game (iOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B8D5B93D1E7D8D6500D303E4 /* Build configuration list for PBXNativeTarget "Hockey Game" */;
+			buildConfigurationList = B8D5B93D1E7D8D6500D303E4 /* Build configuration list for PBXNativeTarget "Hockey Game (iOS)" */;
 			buildPhases = (
 				B8D5B90B1E7D8D6500D303E4 /* Sources */,
 				B8D5B90C1E7D8D6500D303E4 /* Frameworks */,
@@ -250,46 +248,27 @@
 			);
 			dependencies = (
 			);
-			name = "Hockey Game";
+			name = "Hockey Game (iOS)";
 			productName = "Hockey Game";
-			productReference = B8D5B90F1E7D8D6500D303E4 /* Hockey Game.app */;
+			productReference = B8D5B90F1E7D8D6500D303E4 /* Hockey Game (iOS).app */;
 			productType = "com.apple.product-type.application";
 		};
-		B8D5B9281E7D8D6500D303E4 /* Hockey GameTests */ = {
+		B8E032711E92EB53004F718E /* Hockey Game (macOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B8D5B9401E7D8D6500D303E4 /* Build configuration list for PBXNativeTarget "Hockey GameTests" */;
+			buildConfigurationList = B8E032861E92EB54004F718E /* Build configuration list for PBXNativeTarget "Hockey Game (macOS)" */;
 			buildPhases = (
-				B8D5B9251E7D8D6500D303E4 /* Sources */,
-				B8D5B9261E7D8D6500D303E4 /* Frameworks */,
-				B8D5B9271E7D8D6500D303E4 /* Resources */,
+				B8E0326E1E92EB53004F718E /* Sources */,
+				B8E0326F1E92EB53004F718E /* Frameworks */,
+				B8E032701E92EB53004F718E /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				B8D5B92B1E7D8D6500D303E4 /* PBXTargetDependency */,
 			);
-			name = "Hockey GameTests";
-			productName = "Hockey GameTests";
-			productReference = B8D5B9291E7D8D6500D303E4 /* Hockey GameTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		B8D5B9331E7D8D6500D303E4 /* Hockey GameUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B8D5B9431E7D8D6500D303E4 /* Build configuration list for PBXNativeTarget "Hockey GameUITests" */;
-			buildPhases = (
-				B8D5B9301E7D8D6500D303E4 /* Sources */,
-				B8D5B9311E7D8D6500D303E4 /* Frameworks */,
-				B8D5B9321E7D8D6500D303E4 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B8D5B9361E7D8D6500D303E4 /* PBXTargetDependency */,
-			);
-			name = "Hockey GameUITests";
-			productName = "Hockey GameUITests";
-			productReference = B8D5B9341E7D8D6500D303E4 /* Hockey GameUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
+			name = "Hockey Game (macOS)";
+			productName = HockeyGame;
+			productReference = B8E032721E92EB53004F718E /* Hockey Game (macOS).app */;
+			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
@@ -306,17 +285,10 @@
 						DevelopmentTeam = AP48SCT3J2;
 						ProvisioningStyle = Automatic;
 					};
-					B8D5B9281E7D8D6500D303E4 = {
+					B8E032711E92EB53004F718E = {
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = AP48SCT3J2;
 						ProvisioningStyle = Automatic;
-						TestTargetID = B8D5B90E1E7D8D6500D303E4;
-					};
-					B8D5B9331E7D8D6500D303E4 = {
-						CreatedOnToolsVersion = 8.3;
-						DevelopmentTeam = AP48SCT3J2;
-						ProvisioningStyle = Automatic;
-						TestTargetID = B8D5B90E1E7D8D6500D303E4;
 					};
 				};
 			};
@@ -333,9 +305,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B8D5B90E1E7D8D6500D303E4 /* Hockey Game */,
-				B8D5B9281E7D8D6500D303E4 /* Hockey GameTests */,
-				B8D5B9331E7D8D6500D303E4 /* Hockey GameUITests */,
+				B8D5B90E1E7D8D6500D303E4 /* Hockey Game (iOS) */,
+				B8E032711E92EB53004F718E /* Hockey Game (macOS) */,
 			);
 		};
 /* End PBXProject section */
@@ -354,17 +325,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B8D5B9271E7D8D6500D303E4 /* Resources */ = {
+		B8E032701E92EB53004F718E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B8D5B9321E7D8D6500D303E4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				B8AB0BA01E92F8C600B4C356 /* Assets.xcassets in Resources */,
+				B8E032821E92EB54004F718E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,56 +341,55 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8E0329D1E92EB91004F718E /* BehaviorType.swift in Sources */,
 				B83D0A7F1E86D1AC0036E5BD /* UserComponent.swift in Sources */,
-				B83D0A771E869A710036E5BD /* Player.swift in Sources */,
-				B879AB9A1E88A29A0001376D /* Net.swift in Sources */,
-				B8D5B9551E7D8DF800D303E4 /* PlayerTextures.swift in Sources */,
+				B8E032A51E92EB91004F718E /* Puck.swift in Sources */,
+				B8E032A01E92EB91004F718E /* PlayerComponent.swift in Sources */,
+				B8E032A61E92EB91004F718E /* GameView.swift in Sources */,
 				B8D5B9521E7D8DF800D303E4 /* Joystick.swift in Sources */,
-				B879AB9C1E88A2B40001376D /* NetComponent.swift in Sources */,
-				B879AB971E8852410001376D /* MoveBehavior.swift in Sources */,
+				B8E0329F1E92EB91004F718E /* NetComponent.swift in Sources */,
+				B8E032A31E92EB91004F718E /* Net.swift in Sources */,
+				B8E032A71E92EB91004F718E /* GoalPresentation.swift in Sources */,
+				B8E032A11E92EB91004F718E /* PuckComponent.swift in Sources */,
 				B8D5B91B1E7D8D6500D303E4 /* GameViewController.swift in Sources */,
-				B80473801E7EFE2F0013CD36 /* GoalPresentation.swift in Sources */,
-				B8D5B94F1E7D8DF800D303E4 /* Rink.swift in Sources */,
-				B8D5B9501E7D8DF800D303E4 /* SoundEffectPlayer.swift in Sources */,
-				B8D5B94E1E7D8DF800D303E4 /* PuckNode.swift in Sources */,
+				B8E032A81E92EB91004F718E /* PlayerTextures.swift in Sources */,
+				B8E032A41E92EB91004F718E /* Player.swift in Sources */,
 				B8D5B9511E7D8DF800D303E4 /* SwitchPlayerButton.swift in Sources */,
-				B83D0A7D1E86A9D40036E5BD /* MoveComponent.swift in Sources */,
-				B80473821E7F08D10013CD36 /* Score.swift in Sources */,
-				B83D0A721E8698CD0036E5BD /* PlayerComponent.swift in Sources */,
+				B8E032AC1E92EB91004F718E /* Scoreboard.swift in Sources */,
+				B8E032AA1E92EB91004F718E /* Rink.swift in Sources */,
+				B8E032A91E92EB91004F718E /* SoundEffectPlayer.swift in Sources */,
+				B8E0329E1E92EB91004F718E /* MoveComponent.swift in Sources */,
+				B8E032AB1E92EB91004F718E /* Score.swift in Sources */,
 				B8D5B9131E7D8D6500D303E4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B8D5B9251E7D8D6500D303E4 /* Sources */ = {
+		B8E0326E1E92EB53004F718E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8D5B92E1E7D8D6500D303E4 /* Hockey_GameTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B8D5B9301E7D8D6500D303E4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B8D5B9391E7D8D6500D303E4 /* Hockey_GameUITests.swift in Sources */,
+				B8AB0B961E92EE8800B4C356 /* Player.swift in Sources */,
+				B8E0327D1E92EB53004F718E /* ViewController.swift in Sources */,
+				B8AB0B951E92EE8800B4C356 /* Net.swift in Sources */,
+				B8AB0B901E92EE8800B4C356 /* MoveComponent.swift in Sources */,
+				B8AB0B9B1E92EE8800B4C356 /* SoundEffectPlayer.swift in Sources */,
+				B8AB0B9A1E92EE8800B4C356 /* PlayerTextures.swift in Sources */,
+				B8AB0B921E92EE8800B4C356 /* PlayerComponent.swift in Sources */,
+				B8AB0B991E92EE8800B4C356 /* GoalPresentation.swift in Sources */,
+				B8AB0B931E92EE8800B4C356 /* PuckComponent.swift in Sources */,
+				B8AB0B941E92EE8800B4C356 /* UserComponent.swift in Sources */,
+				B8AB0B971E92EE8800B4C356 /* Puck.swift in Sources */,
+				B8E032751E92EB53004F718E /* AppDelegate.swift in Sources */,
+				B8AB0B8F1E92EE8800B4C356 /* BehaviorType.swift in Sources */,
+				B8AB0B9C1E92EE8800B4C356 /* Rink.swift in Sources */,
+				B8AB0B9E1E92EE8800B4C356 /* Scoreboard.swift in Sources */,
+				B8AB0B981E92EE8800B4C356 /* GameView.swift in Sources */,
+				B8AB0B9D1E92EE8800B4C356 /* Score.swift in Sources */,
+				B8AB0B911E92EE8800B4C356 /* NetComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		B8D5B92B1E7D8D6500D303E4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B8D5B90E1E7D8D6500D303E4 /* Hockey Game */;
-			targetProxy = B8D5B92A1E7D8D6500D303E4 /* PBXContainerItemProxy */;
-		};
-		B8D5B9361E7D8D6500D303E4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B8D5B90E1E7D8D6500D303E4 /* Hockey Game */;
-			targetProxy = B8D5B9351E7D8D6500D303E4 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B8D5B91C1E7D8D6500D303E4 /* Main.storyboard */ = {
@@ -441,6 +406,14 @@
 				B8D5B9221E7D8D6500D303E4 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		B8E032801E92EB54004F718E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B8E032811E92EB54004F718E /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -569,61 +542,39 @@
 			};
 			name = Release;
 		};
-		B8D5B9411E7D8D6500D303E4 /* Debug */ = {
+		B8E032841E92EB54004F718E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = AP48SCT3J2;
-				INFOPLIST_FILE = "Hockey GameTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.CollinDeWaters.Hockey-GameTests";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = HockeyGame/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CollinDeWaters.HockeyGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx;
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hockey Game.app/Hockey Game";
 			};
 			name = Debug;
 		};
-		B8D5B9421E7D8D6500D303E4 /* Release */ = {
+		B8E032851E92EB54004F718E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = AP48SCT3J2;
-				INFOPLIST_FILE = "Hockey GameTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.CollinDeWaters.Hockey-GameTests";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = HockeyGame/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CollinDeWaters.HockeyGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx;
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hockey Game.app/Hockey Game";
-			};
-			name = Release;
-		};
-		B8D5B9441E7D8D6500D303E4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = AP48SCT3J2;
-				INFOPLIST_FILE = "Hockey GameUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.CollinDeWaters.Hockey-GameUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = "Hockey Game";
-			};
-			name = Debug;
-		};
-		B8D5B9451E7D8D6500D303E4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = AP48SCT3J2;
-				INFOPLIST_FILE = "Hockey GameUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.CollinDeWaters.Hockey-GameUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = "Hockey Game";
 			};
 			name = Release;
 		};
@@ -639,7 +590,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B8D5B93D1E7D8D6500D303E4 /* Build configuration list for PBXNativeTarget "Hockey Game" */ = {
+		B8D5B93D1E7D8D6500D303E4 /* Build configuration list for PBXNativeTarget "Hockey Game (iOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B8D5B93E1E7D8D6500D303E4 /* Debug */,
@@ -648,20 +599,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B8D5B9401E7D8D6500D303E4 /* Build configuration list for PBXNativeTarget "Hockey GameTests" */ = {
+		B8E032861E92EB54004F718E /* Build configuration list for PBXNativeTarget "Hockey Game (macOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B8D5B9411E7D8D6500D303E4 /* Debug */,
-				B8D5B9421E7D8D6500D303E4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B8D5B9431E7D8D6500D303E4 /* Build configuration list for PBXNativeTarget "Hockey GameUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B8D5B9441E7D8D6500D303E4 /* Debug */,
-				B8D5B9451E7D8D6500D303E4 /* Release */,
+				B8E032841E92EB54004F718E /* Debug */,
+				B8E032851E92EB54004F718E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

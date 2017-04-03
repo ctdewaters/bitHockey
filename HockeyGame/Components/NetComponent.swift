@@ -16,10 +16,10 @@ public class NetComponent: GKAgent2D, GKAgentDelegate {
     
     var node: SKSpriteNode!
 
-    init(atRinkEnd rinkEnd: RinkEnd) {
+    public init(atRinkEnd rinkEnd: RinkEnd) {
         super.init()
         
-        self.node = SKSpriteNode(texture: SKTexture(imageNamed: "netTexture"), color: SKColor.clear, size: CGSize(width: netWidth, height: netDepth))
+        self.node = SKSpriteNode(texture: SKTexture(image: #imageLiteral(resourceName: "netTexture")), color: SKColor.clear, size: CGSize(width: netWidth, height: netDepth))
         node.position = rinkEnd.point
         node.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         self.setPhysicsBody()
@@ -44,11 +44,19 @@ public class NetComponent: GKAgent2D, GKAgentDelegate {
     
     //Sets the physics body
     fileprivate func setPhysicsBody() {
-        node.physicsBody = SKPhysicsBody(texture: PlayerTexture.netPhysicsBody, size: node.size)
+        let postSize = CGSize(width: 3, height: self.node.frame.height * 0.8)
+        let backSize = CGSize(width: self.node.frame.width, height: 3)
+        
+        let post1 = SKPhysicsBody(rectangleOf: postSize, center: CGPoint(x: self.node.frame.minX, y: 0))
+        let post2 = SKPhysicsBody(rectangleOf: postSize, center: CGPoint(x: self.node.frame.maxX - postSize.width, y: 0))
+        let back = SKPhysicsBody(rectangleOf: backSize, center: CGPoint(x: 0, y: -10))
+        
+        node.physicsBody = SKPhysicsBody(bodies: [post1, post2, back])
         node.physicsBody?.restitution = 0.1
         node.physicsBody?.allowsRotation = false
         node.physicsBody?.isDynamic = false
         node.physicsBody?.categoryBitMask = PhysicsCategory.net
+        node.physicsBody?.usesPreciseCollisionDetection = true
     }
         
     //MARK: - Calculated variables
