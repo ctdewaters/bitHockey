@@ -1,0 +1,6 @@
+framework module Pods_Hockey_Game__macOS_ {
+  umbrella header "Pods-Hockey Game (macOS)-umbrella.h"
+
+  export *
+  module * { export * }
+}

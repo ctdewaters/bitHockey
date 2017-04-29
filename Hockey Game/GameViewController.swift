@@ -47,7 +47,6 @@ class GameViewController: UIViewController {
         gameView.showsNodeCount = true
         gameView.showsDrawCount = true
 
-
     }
 
     override var shouldAutorotate: Bool {

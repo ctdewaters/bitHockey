@@ -6,14 +6,12 @@ public class GameView: SKView {
     public var controlKeyDelegate: ControlKeyDelegate?
     
     public override func keyDown(with event: NSEvent) {
-        super.keyDown(with: event)
         if let controlKey = ControlKey(rawValue: event.keyCode) {
             controlKeyDelegate?.didRecieveKeyInput(withControlKey: controlKey)
         }
     }
     
     public override func keyUp(with event: NSEvent) {
-        super.keyUp(with: event)
         if let controlKey = ControlKey(rawValue: event.keyCode) {
             controlKeyDelegate?.didEndKeyInput(withControlKey: controlKey)
         }
