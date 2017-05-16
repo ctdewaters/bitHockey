@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F43c" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F71b" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12118"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12120"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -67,29 +67,150 @@
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
         </scene>
+        <!--Menu-->
+        <scene sceneID="yA4-al-NGy">
+            <objects>
+                <viewController title="Menu" storyboardIdentifier="menuVC" id="Jys-cv-jYn" customClass="MenuViewController" customModule="bitHockey" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="xHg-j3-u1h">
+                        <rect key="frame" x="0.0" y="0.0" width="550" height="400"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nom-Xw-YZy">
+                                <rect key="frame" x="-2" y="297" width="554" height="73"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="73" id="0x0-Oo-uMX"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="bitHockey" id="QX7-mX-hHh">
+                                    <font key="font" size="50" name="Mexcellent-Regular"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="kq5-Us-0SS">
+                                <rect key="frame" x="243" y="98" width="65" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="hXh-eW-DUY"/>
+                                    <constraint firstAttribute="height" constant="55" id="oba-Dh-Ikx"/>
+                                </constraints>
+                                <buttonCell key="cell" type="square" title="Play" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" state="on" imageScaling="proportionallyUpOrDown" inset="2" id="WGV-HH-3fK">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="20" name="Rubik-Regular"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="next:" target="Jys-cv-jYn" id="F1O-x2-DkC"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2PO-Ay-yMl">
+                                <rect key="frame" x="470" y="10" width="69" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="DBS-4x-Tij"/>
+                                    <constraint firstAttribute="width" constant="69" id="V2p-Ek-xlw"/>
+                                </constraints>
+                                <buttonCell key="cell" type="square" title="Controls" bezelStyle="shadowlessSquare" alignment="center" imageScaling="proportionallyDown" inset="2" id="47R-TF-fKh">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="12.5" name="Rubik-Regular"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="showControls:" target="Jys-cv-jYn" id="Y5f-iF-qta"/>
+                                </connections>
+                            </button>
+                            <visualEffectView appearanceType="vibrantDark" blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="ZVa-YN-4ym" customClass="ControlsView" customModule="bitHockey" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="1000" width="550" height="400"/>
+                                <subviews>
+                                    <imageView focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ps0-9V-47Y">
+                                        <rect key="frame" x="0.0" y="-132" width="550" height="532"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="550" id="CDD-nI-Lfw"/>
+                                            <constraint firstAttribute="height" constant="532" id="LCu-bq-jau"/>
+                                        </constraints>
+                                        <imageCell key="cell" refusesFirstResponder="YES" focusRingType="none" alignment="left" imageScaling="proportionallyUpOrDown" image="macControls" id="Hkb-Mx-sLB"/>
+                                    </imageView>
+                                    <button focusRingType="none" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ss9-uP-G1P">
+                                        <rect key="frame" x="237" y="13" width="76" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="NEP-aU-kMS"/>
+                                            <constraint firstAttribute="width" constant="76" id="hru-sa-seJ"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="square" title="Close" bezelStyle="shadowlessSquare" alignment="center" focusRingType="none" imageScaling="proportionallyDown" inset="2" id="LmU-fx-Com">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" size="16" name="Rubik-Regular"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="closeControls:" target="Jys-cv-jYn" id="vSc-Jv-MYb"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ss9-uP-G1P" firstAttribute="centerX" secondItem="Ps0-9V-47Y" secondAttribute="centerX" id="Y1h-3F-ZXn"/>
+                                    <constraint firstItem="Ps0-9V-47Y" firstAttribute="centerX" secondItem="ZVa-YN-4ym" secondAttribute="centerX" id="vJA-nK-iYM"/>
+                                </constraints>
+                            </visualEffectView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2t2-KM-YLs">
+                                <rect key="frame" x="188" y="270" width="174" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="170" id="DhU-eW-zf1"/>
+                                    <constraint firstAttribute="height" constant="19" id="T5Q-Sg-46Y"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="A Game by Collin DeWaters." id="wqC-NP-jHu">
+                                    <font key="font" size="13" name="Rubik-Regular"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="ZVa-YN-4ym" firstAttribute="top" secondItem="xHg-j3-u1h" secondAttribute="top" constant="-1000" id="1T5-nE-OM7"/>
+                            <constraint firstAttribute="bottom" secondItem="kq5-Us-0SS" secondAttribute="bottom" constant="98" id="53o-Cv-rpa"/>
+                            <constraint firstItem="2t2-KM-YLs" firstAttribute="top" secondItem="Nom-Xw-YZy" secondAttribute="bottom" constant="8" id="6io-bJ-hv1"/>
+                            <constraint firstItem="ZVa-YN-4ym" firstAttribute="leading" secondItem="xHg-j3-u1h" secondAttribute="leading" id="Aqw-JP-7hn"/>
+                            <constraint firstAttribute="trailing" secondItem="2PO-Ay-yMl" secondAttribute="trailing" constant="11" id="Bd2-SK-wIp"/>
+                            <constraint firstAttribute="trailing" secondItem="Nom-Xw-YZy" secondAttribute="trailing" id="Dd9-GJ-dDD"/>
+                            <constraint firstItem="2t2-KM-YLs" firstAttribute="centerX" secondItem="Nom-Xw-YZy" secondAttribute="centerX" id="Fv1-cp-zja"/>
+                            <constraint firstAttribute="bottom" secondItem="2PO-Ay-yMl" secondAttribute="bottom" constant="10" id="Jy4-Hh-edQ"/>
+                            <constraint firstAttribute="trailing" secondItem="ZVa-YN-4ym" secondAttribute="trailing" id="N9G-42-iIM"/>
+                            <constraint firstItem="kq5-Us-0SS" firstAttribute="centerX" secondItem="xHg-j3-u1h" secondAttribute="centerX" id="T0X-Qh-IFu"/>
+                            <constraint firstItem="kq5-Us-0SS" firstAttribute="centerY" secondItem="xHg-j3-u1h" secondAttribute="centerY" constant="74.5" id="eMc-eW-LpB"/>
+                            <constraint firstItem="Nom-Xw-YZy" firstAttribute="top" secondItem="xHg-j3-u1h" secondAttribute="top" constant="30" id="g6u-jg-Dm0"/>
+                            <constraint firstItem="ZVa-YN-4ym" firstAttribute="height" secondItem="xHg-j3-u1h" secondAttribute="height" id="twr-GD-VZ4"/>
+                            <constraint firstItem="Nom-Xw-YZy" firstAttribute="leading" secondItem="xHg-j3-u1h" secondAttribute="leading" id="yWu-uP-ths"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="closeControlsButton" destination="ss9-uP-G1P" id="skW-aD-BOY"/>
+                        <outlet property="controlsButton" destination="2PO-Ay-yMl" id="G3D-wI-wBk"/>
+                        <outlet property="controlsView" destination="ZVa-YN-4ym" id="W3W-PC-F8i"/>
+                        <outlet property="controlsViewTopContraint" destination="1T5-nE-OM7" id="V3W-Jx-UFM"/>
+                        <outlet property="titleLabel" destination="Nom-Xw-YZy" id="gLc-Ue-TV1"/>
+                    </connections>
+                </viewController>
+                <customObject id="Q0o-Gy-W79" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-951" y="945"/>
+        </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="HockeyGame" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="IQv-IB-iLA">
+                <windowController storyboardIdentifier="WC" id="B8D-0N-5wS" customClass="WindowController" customModule="bitHockey" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" identifier="WC" title="HockeyGame" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" tabbingMode="disallowed" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <rect key="contentRect" x="196" y="240" width="480" height="480"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <value key="minSize" type="size" width="480" height="480"/>
                     </window>
                     <connections>
-                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
+                        <segue destination="Jys-cv-jYn" kind="relationship" relationship="window.shadowedContentViewController" id="U1k-1A-EJy"/>
                     </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="250"/>
+            <point key="canvasLocation" x="-508" y="277"/>
         </scene>
-        <!--View Controller-->
+        <!--bitHockey-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="bitHockey" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl" customClass="GameView" customModule="bitHockey" customModuleProvider="target">
+                <viewController title="bitHockey" storyboardIdentifier="gameVC" id="XfG-lQ-9wD" customClass="ViewController" customModule="bitHockey" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" identifier="gameVC" wantsLayer="YES" id="m2S-Jp-Qdl" customClass="GameView" customModule="bitHockey" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </view>
@@ -102,4 +223,7 @@
             <point key="canvasLocation" x="75" y="817"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="macControls" width="500.0596923828125" height="483.40298461914062"/>
+    </resources>
 </document>

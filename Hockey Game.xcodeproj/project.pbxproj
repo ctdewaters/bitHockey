@@ -8,7 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		097E63E8D7FDC86D7BC7D3F9 /* Pods_Hockey_Game__macOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03902A571D70F1C30A6BE4AD /* Pods_Hockey_Game__macOS_.framework */; };
+		0B02393048F0BFF96D8227DF /* Pods_bitHockey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67D01D20EE23917EA1BD5416 /* Pods_bitHockey.framework */; };
+		25B55C5E365D80F1B94FFEF2 /* Pods_bitHockey_Touch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3973D7B2903160416924C73A /* Pods_bitHockey_Touch.framework */; };
 		48CFDC37C8B06C31D29A5D61 /* Pods_Hockey_Game__iOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3130AA2B081CF1B826D178C8 /* Pods_Hockey_Game__iOS_.framework */; };
+		B81A7C5A1EC0F0940018D737 /* mexcellent.regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B81A7C591EC0F0940018D737 /* mexcellent.regular.ttf */; };
+		B81A7C5B1EC0F0940018D737 /* mexcellent.regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B81A7C591EC0F0940018D737 /* mexcellent.regular.ttf */; };
+		B81A7C5E1EC0F20F0018D737 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81A7C5C1EC0F20F0018D737 /* MenuViewController.swift */; };
+		B81A7C611EC1F2000018D737 /* ControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81A7C5F1EC1F2000018D737 /* ControlsView.swift */; };
+		B81A7C631EC235390018D737 /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B81A7C621EC235390018D737 /* Rubik-Regular.ttf */; };
+		B81A7C641EC235390018D737 /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B81A7C621EC235390018D737 /* Rubik-Regular.ttf */; };
+		B81A7C6A1EC35ADC0018D737 /* MenuTouchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81A7C681EC35ADC0018D737 /* MenuTouchBar.swift */; };
+		B81A7C6D1EC35FA30018D737 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81A7C6B1EC35FA30018D737 /* WindowController.swift */; };
+		B81A7C701EC79E2D0018D737 /* LoadingTouchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81A7C6E1EC79E2D0018D737 /* LoadingTouchBar.swift */; };
 		B83D0A7F1E86D1AC0036E5BD /* UserComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83D0A7E1E86D1AC0036E5BD /* UserComponent.swift */; };
 		B8AB0B8F1E92EE8800B4C356 /* BehaviorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E0328B1E92EB91004F718E /* BehaviorType.swift */; };
 		B8AB0B901E92EE8800B4C356 /* MoveComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E0328C1E92EB91004F718E /* MoveComponent.swift */; };
@@ -58,10 +69,21 @@
 
 /* Begin PBXFileReference section */
 		03902A571D70F1C30A6BE4AD /* Pods_Hockey_Game__macOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hockey_Game__macOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		06784FF0AEA17A79AAEBDC61 /* Pods-bitHockey Touch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bitHockey Touch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-bitHockey Touch/Pods-bitHockey Touch.debug.xcconfig"; sourceTree = "<group>"; };
 		2EA64638F04B17602A886A84 /* Pods-Hockey Game (iOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hockey Game (iOS).release.xcconfig"; path = "Pods/Target Support Files/Pods-Hockey Game (iOS)/Pods-Hockey Game (iOS).release.xcconfig"; sourceTree = "<group>"; };
 		3130AA2B081CF1B826D178C8 /* Pods_Hockey_Game__iOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hockey_Game__iOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3973D7B2903160416924C73A /* Pods_bitHockey_Touch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bitHockey_Touch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		44CDCE10F61839979BDE8756 /* Pods-bitHockey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bitHockey.debug.xcconfig"; path = "Pods/Target Support Files/Pods-bitHockey/Pods-bitHockey.debug.xcconfig"; sourceTree = "<group>"; };
+		67D01D20EE23917EA1BD5416 /* Pods_bitHockey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bitHockey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7723D2BFC83FCE54D10B65E7 /* Pods-Hockey Game (iOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hockey Game (iOS).debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hockey Game (iOS)/Pods-Hockey Game (iOS).debug.xcconfig"; sourceTree = "<group>"; };
 		B4DA028CDCAFEB99DBBFE5B1 /* Pods-Hockey Game (macOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hockey Game (macOS).debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hockey Game (macOS)/Pods-Hockey Game (macOS).debug.xcconfig"; sourceTree = "<group>"; };
+		B81A7C591EC0F0940018D737 /* mexcellent.regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = mexcellent.regular.ttf; sourceTree = "<group>"; };
+		B81A7C5C1EC0F20F0018D737 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		B81A7C5F1EC1F2000018D737 /* ControlsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlsView.swift; sourceTree = "<group>"; };
+		B81A7C621EC235390018D737 /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
+		B81A7C681EC35ADC0018D737 /* MenuTouchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTouchBar.swift; sourceTree = "<group>"; };
+		B81A7C6B1EC35FA30018D737 /* WindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
+		B81A7C6E1EC79E2D0018D737 /* LoadingTouchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingTouchBar.swift; sourceTree = "<group>"; };
 		B83D0A7E1E86D1AC0036E5BD /* UserComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserComponent.swift; sourceTree = "<group>"; };
 		B8D5B90F1E7D8D6500D303E4 /* bitHockey Touch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bitHockey Touch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8D5B9121E7D8D6500D303E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -95,7 +117,9 @@
 		B8E0329A1E92EB91004F718E /* Rink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rink.swift; sourceTree = "<group>"; };
 		B8E0329B1E92EB91004F718E /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		B8E0329C1E92EB91004F718E /* Scoreboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scoreboard.swift; sourceTree = "<group>"; };
+		C50C92481FD596F9AFBD5E9B /* Pods-bitHockey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bitHockey.release.xcconfig"; path = "Pods/Target Support Files/Pods-bitHockey/Pods-bitHockey.release.xcconfig"; sourceTree = "<group>"; };
 		EDEE6E27B53416CCDC4D3940 /* Pods-Hockey Game (macOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hockey Game (macOS).release.xcconfig"; path = "Pods/Target Support Files/Pods-Hockey Game (macOS)/Pods-Hockey Game (macOS).release.xcconfig"; sourceTree = "<group>"; };
+		FBF416AC12B6263A73A6A57B /* Pods-bitHockey Touch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bitHockey Touch.release.xcconfig"; path = "Pods/Target Support Files/Pods-bitHockey Touch/Pods-bitHockey Touch.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +128,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48CFDC37C8B06C31D29A5D61 /* Pods_Hockey_Game__iOS_.framework in Frameworks */,
+				25B55C5E365D80F1B94FFEF2 /* Pods_bitHockey_Touch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +137,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				097E63E8D7FDC86D7BC7D3F9 /* Pods_Hockey_Game__macOS_.framework in Frameworks */,
+				0B02393048F0BFF96D8227DF /* Pods_bitHockey.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,6 +149,8 @@
 			children = (
 				3130AA2B081CF1B826D178C8 /* Pods_Hockey_Game__iOS_.framework */,
 				03902A571D70F1C30A6BE4AD /* Pods_Hockey_Game__macOS_.framework */,
+				67D01D20EE23917EA1BD5416 /* Pods_bitHockey.framework */,
+				3973D7B2903160416924C73A /* Pods_bitHockey_Touch.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -134,8 +162,48 @@
 				2EA64638F04B17602A886A84 /* Pods-Hockey Game (iOS).release.xcconfig */,
 				B4DA028CDCAFEB99DBBFE5B1 /* Pods-Hockey Game (macOS).debug.xcconfig */,
 				EDEE6E27B53416CCDC4D3940 /* Pods-Hockey Game (macOS).release.xcconfig */,
+				44CDCE10F61839979BDE8756 /* Pods-bitHockey.debug.xcconfig */,
+				C50C92481FD596F9AFBD5E9B /* Pods-bitHockey.release.xcconfig */,
+				06784FF0AEA17A79AAEBDC61 /* Pods-bitHockey Touch.debug.xcconfig */,
+				FBF416AC12B6263A73A6A57B /* Pods-bitHockey Touch.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		B81A7C581EC0F0270018D737 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B81A7C621EC235390018D737 /* Rubik-Regular.ttf */,
+				B81A7C591EC0F0940018D737 /* mexcellent.regular.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		B81A7C651EC2379C0018D737 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				B81A7C5C1EC0F20F0018D737 /* MenuViewController.swift */,
+				B81A7C5F1EC1F2000018D737 /* ControlsView.swift */,
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
+		B81A7C661EC237A40018D737 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				B8E0327C1E92EB53004F718E /* ViewController.swift */,
+				B8E032901E92EB91004F718E /* UserComponent.swift */,
+			);
+			name = Game;
+			sourceTree = "<group>";
+		};
+		B81A7C671EC35AAC0018D737 /* TouchBars */ = {
+			isa = PBXGroup;
+			children = (
+				B81A7C681EC35ADC0018D737 /* MenuTouchBar.swift */,
+				B81A7C6E1EC79E2D0018D737 /* LoadingTouchBar.swift */,
+			);
+			name = TouchBars;
 			sourceTree = "<group>";
 		};
 		B8D5B9061E7D8D6500D303E4 = {
@@ -205,8 +273,10 @@
 			isa = PBXGroup;
 			children = (
 				B8E032741E92EB53004F718E /* AppDelegate.swift */,
-				B8E0327C1E92EB53004F718E /* ViewController.swift */,
-				B8E032901E92EB91004F718E /* UserComponent.swift */,
+				B81A7C6B1EC35FA30018D737 /* WindowController.swift */,
+				B81A7C671EC35AAC0018D737 /* TouchBars */,
+				B81A7C651EC2379C0018D737 /* Menu */,
+				B81A7C661EC237A40018D737 /* Game */,
 				B8E032801E92EB54004F718E /* Main.storyboard */,
 				B8E032831E92EB54004F718E /* Info.plist */,
 			);
@@ -218,6 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				B8D5B91F1E7D8D6500D303E4 /* Assets.xcassets */,
+				B81A7C581EC0F0270018D737 /* Fonts */,
 				B8E032891E92EB91004F718E /* Components */,
 				B8E032911E92EB91004F718E /* Entities */,
 				B8E032951E92EB91004F718E /* GameView.swift */,
@@ -360,9 +431,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8D5B9591E7D8E7400D303E4 /* puckHitBoards.m4a in Resources */,
+				B81A7C631EC235390018D737 /* Rubik-Regular.ttf in Resources */,
 				B8D5B91E1E7D8D6500D303E4 /* Main.storyboard in Resources */,
 				B8D5B9201E7D8D6500D303E4 /* Assets.xcassets in Resources */,
 				B8D5B9231E7D8D6500D303E4 /* LaunchScreen.storyboard in Resources */,
+				B81A7C5A1EC0F0940018D737 /* mexcellent.regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,6 +443,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B81A7C5B1EC0F0940018D737 /* mexcellent.regular.ttf in Resources */,
+				B81A7C641EC235390018D737 /* Rubik-Regular.ttf in Resources */,
 				B8AB0BA01E92F8C600B4C356 /* Assets.xcassets in Resources */,
 				B8E032821E92EB54004F718E /* Main.storyboard in Resources */,
 			);
@@ -405,7 +480,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hockey Game (iOS)/Pods-Hockey Game (iOS)-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-bitHockey Touch/Pods-bitHockey Touch-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7436B1C289BE88E4953596E4 /* [CP] Copy Pods Resources */ = {
@@ -420,7 +495,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hockey Game (macOS)/Pods-Hockey Game (macOS)-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-bitHockey/Pods-bitHockey-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7694F53B65958BDD050527C7 /* [CP] Check Pods Manifest.lock */ = {
@@ -450,7 +525,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hockey Game (iOS)/Pods-Hockey Game (iOS)-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-bitHockey Touch/Pods-bitHockey Touch-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E43335E7F3D004080DE5FF11 /* [CP] Embed Pods Frameworks */ = {
@@ -465,7 +540,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hockey Game (macOS)/Pods-Hockey Game (macOS)-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-bitHockey/Pods-bitHockey-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -506,17 +581,22 @@
 				B8AB0B961E92EE8800B4C356 /* Player.swift in Sources */,
 				B8E0327D1E92EB53004F718E /* ViewController.swift in Sources */,
 				B8AB0B951E92EE8800B4C356 /* Net.swift in Sources */,
+				B81A7C6A1EC35ADC0018D737 /* MenuTouchBar.swift in Sources */,
 				B8AB0B901E92EE8800B4C356 /* MoveComponent.swift in Sources */,
 				B8AB0B9B1E92EE8800B4C356 /* SoundEffectPlayer.swift in Sources */,
 				B8AB0B9A1E92EE8800B4C356 /* PlayerTextures.swift in Sources */,
+				B81A7C6D1EC35FA30018D737 /* WindowController.swift in Sources */,
+				B81A7C701EC79E2D0018D737 /* LoadingTouchBar.swift in Sources */,
 				B8AB0B921E92EE8800B4C356 /* PlayerComponent.swift in Sources */,
 				B8AB0B991E92EE8800B4C356 /* GoalPresentation.swift in Sources */,
+				B81A7C611EC1F2000018D737 /* ControlsView.swift in Sources */,
 				B8AB0B931E92EE8800B4C356 /* PuckComponent.swift in Sources */,
 				B8AB0B941E92EE8800B4C356 /* UserComponent.swift in Sources */,
 				B8AB0B971E92EE8800B4C356 /* Puck.swift in Sources */,
 				B8E032751E92EB53004F718E /* AppDelegate.swift in Sources */,
 				B8AB0B8F1E92EE8800B4C356 /* BehaviorType.swift in Sources */,
 				B8AB0B9C1E92EE8800B4C356 /* Rink.swift in Sources */,
+				B81A7C5E1EC0F20F0018D737 /* MenuViewController.swift in Sources */,
 				B8AB0B9E1E92EE8800B4C356 /* Scoreboard.swift in Sources */,
 				B8AB0B981E92EE8800B4C356 /* GameView.swift in Sources */,
 				B8AB0B9D1E92EE8800B4C356 /* Score.swift in Sources */,
@@ -651,7 +731,7 @@
 		};
 		B8D5B93E1E7D8D6500D303E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7723D2BFC83FCE54D10B65E7 /* Pods-Hockey Game (iOS).debug.xcconfig */;
+			baseConfigurationReference = 06784FF0AEA17A79AAEBDC61 /* Pods-bitHockey Touch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = AP48SCT3J2;
@@ -666,7 +746,7 @@
 		};
 		B8D5B93F1E7D8D6500D303E4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2EA64638F04B17602A886A84 /* Pods-Hockey Game (iOS).release.xcconfig */;
+			baseConfigurationReference = FBF416AC12B6263A73A6A57B /* Pods-bitHockey Touch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = AP48SCT3J2;
@@ -681,7 +761,7 @@
 		};
 		B8E032841E92EB54004F718E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B4DA028CDCAFEB99DBBFE5B1 /* Pods-Hockey Game (macOS).debug.xcconfig */;
+			baseConfigurationReference = 44CDCE10F61839979BDE8756 /* Pods-bitHockey.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer";
@@ -700,7 +780,7 @@
 		};
 		B8E032851E92EB54004F718E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EDEE6E27B53416CCDC4D3940 /* Pods-Hockey Game (macOS).release.xcconfig */;
+			baseConfigurationReference = C50C92481FD596F9AFBD5E9B /* Pods-bitHockey.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer";

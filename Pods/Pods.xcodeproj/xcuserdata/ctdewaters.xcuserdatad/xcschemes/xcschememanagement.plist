@@ -4,12 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-Hockey Game (iOS).xcscheme</key>
+		<key>Pods-bitHockey Touch.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-Hockey Game (macOS).xcscheme</key>
+		<key>Pods-bitHockey.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -17,12 +17,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>402C857AAD9DCB0743D3D3E204CF1410</key>
+		<key>85C9B13607E04EFA577C78891A7B823C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>82B42F7311F112A5BF19213B336A48BD</key>
+		<key>B83FFB73A75D8504788CB27809664C69</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -13,6 +13,7 @@ public let sceneBackgroundColor = UIColor(red:0.13, green:0.13, blue:0.13, alpha
 public let rinkSize = CGSize(width: 728, height: 1024)
 public let rinkCenterCircleWidth: CGFloat = 155
 
+//The physics body categories for all entities
 public struct PhysicsCategory {
     static let none : UInt32 = 0
     static let all : UInt32 = UInt32.max
@@ -22,6 +23,13 @@ public struct PhysicsCategory {
     static let puckCarrier: UInt32 = 4
     static let goalLine: UInt32 = 5
     static let net: UInt32 = 6
+}
+
+//Rink delegate
+
+protocol RinkDelegate {
+    func rinkDidPause()
+    func rinkDidResume()
 }
 
 public typealias Team = [Player]
@@ -125,6 +133,16 @@ public class Rink: SKScene, SKPhysicsContactDelegate, PlayerDelegate {
         #endif
         self.setPhysicsWorld()
         Puck.shared.position = FaceoffLocation.centerIce.coordinate
+    }
+    
+    //Pause the game
+    open func pause() {
+        self.speed = 0
+    }
+    
+    //Resume the game
+    open func resume() {
+        self.speed = 1
     }
     
     //Sets the physics body shape, gravity, and contact properties

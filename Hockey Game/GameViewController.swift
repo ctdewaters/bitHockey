@@ -21,6 +21,7 @@ class GameViewController: UIViewController {
         
         Joystick.shared.frame = CGRect(x: 20, y: gameView.frame.maxY - joystickSize - 20, width: joystickSize, height: joystickSize)
         gameView.addSubview(Joystick.shared)
+        Joystick.shared.delegate = UserComponent.shared
         
         self.button = SwitchPlayerButton(frame: CGRect(x: gameView.frame.maxX - buttonSize - 20 , y: gameView.frame.maxY - buttonSize - 20, width: buttonSize, height: buttonSize))
         button.center.y = Joystick.shared.center.y
@@ -41,7 +42,6 @@ class GameViewController: UIViewController {
         Scoreboard.shared.center = CGPoint(x: gameView.frame.width / 2, y: gameView.frame.height)
         gameView.addSubview(Scoreboard.shared)
 
-        
         gameView.showsPhysics = true
         gameView.showsFPS = true
         gameView.showsNodeCount = true

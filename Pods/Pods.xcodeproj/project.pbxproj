@@ -7,87 +7,78 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		20D90AA983E6D6B5244E40196B88D96A /* Pods-Hockey Game (iOS)-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C735BB2CE5F76395616C12A83B998D4 /* Pods-Hockey Game (iOS)-dummy.m */; };
-		2B4ED9B069FB380F7BDDD9C1C365FFE0 /* Pods-Hockey Game (macOS)-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F43E30F3A416FBEE8D183888BB4896A /* Pods-Hockey Game (macOS)-dummy.m */; };
-		874547EFFD7ACB9699854050C8D5474D /* Pods-Hockey Game (macOS)-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D5DCBDB0038174EFAADC4261EBD26C2 /* Pods-Hockey Game (macOS)-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9BB5F1B5A324F8BE6DB6025109CC1933 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65EEDD58EC35A4E9347CB06714F7040C /* Foundation.framework */; };
-		AE74781F3B12228ECF8E61CEA4A0553F /* Pods-Hockey Game (iOS)-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 65B04669E15B2C259F3785FFF63AD01C /* Pods-Hockey Game (iOS)-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BCA4C5C9DD8D5EC289171FFAEF6C89D8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDDAA23DDA8E082FC77E38FA01601C8F /* Cocoa.framework */; };
+		134993DE9FDE5C574760BC45FFBDC0C8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65EEDD58EC35A4E9347CB06714F7040C /* Foundation.framework */; };
+		20D7E741E1B75858AE288DB7E773082C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDDAA23DDA8E082FC77E38FA01601C8F /* Cocoa.framework */; };
+		9423BC9066BFD80680F19BE39AB0F84D /* Pods-bitHockey-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B8AB423E4900A823DC584585031A2729 /* Pods-bitHockey-dummy.m */; };
+		BCFBEBA88AEDF7696A4BE6F4D8669EA3 /* Pods-bitHockey Touch-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 94AF8122B533504E7EC3547666971A18 /* Pods-bitHockey Touch-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C38201B750BCC9FA42525D21D2507D2B /* Pods-bitHockey Touch-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 826924269A22FA81CC90BA48471AE5DB /* Pods-bitHockey Touch-dummy.m */; };
+		DB837D8EE4D1BF4FC1D59B767F3FEC1F /* Pods-bitHockey-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 957122B22061FEA6346F6CB582A878A5 /* Pods-bitHockey-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		010A472ED45D6BA967E38948A6EBD606 /* Pods-Hockey Game (iOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Hockey Game (iOS).debug.xcconfig"; sourceTree = "<group>"; };
-		02624A4688456359CCE10475CE15304B /* Pods-Hockey Game (iOS)-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Hockey Game (iOS)-resources.sh"; sourceTree = "<group>"; };
-		0A0788ED721B21853C7E09C85EE6C66C /* Pods-Hockey Game (macOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Hockey Game (macOS).release.xcconfig"; sourceTree = "<group>"; };
-		1BD84CFFFFD27057304516767C3E519D /* Pods-Hockey Game (macOS).modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Hockey Game (macOS).modulemap"; sourceTree = "<group>"; };
-		1F5185915FA5BCB7C85F9B9F07E3D146 /* Pods-Hockey Game (iOS)-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Hockey Game (iOS)-frameworks.sh"; sourceTree = "<group>"; };
-		2976E74CF735F307A42B1F26A4C05F20 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2C735BB2CE5F76395616C12A83B998D4 /* Pods-Hockey Game (iOS)-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Hockey Game (iOS)-dummy.m"; sourceTree = "<group>"; };
-		2DA9B10B91214FA6D3487C314FCFB947 /* Pods-Hockey Game (iOS)-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Hockey Game (iOS)-acknowledgements.markdown"; sourceTree = "<group>"; };
-		378C8A15311DACF797349F8E10161DFE /* Pods-Hockey Game (macOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Hockey Game (macOS).debug.xcconfig"; sourceTree = "<group>"; };
-		392FC998400ED61504C628DFB344432F /* Pods-Hockey Game (iOS)-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Hockey Game (iOS)-acknowledgements.plist"; sourceTree = "<group>"; };
-		4D5DCBDB0038174EFAADC4261EBD26C2 /* Pods-Hockey Game (macOS)-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Hockey Game (macOS)-umbrella.h"; sourceTree = "<group>"; };
-		597F6B4C30B2D2D66EF652455D7499F2 /* Pods-Hockey Game (macOS)-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Hockey Game (macOS)-acknowledgements.markdown"; sourceTree = "<group>"; };
-		65B04669E15B2C259F3785FFF63AD01C /* Pods-Hockey Game (iOS)-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Hockey Game (iOS)-umbrella.h"; sourceTree = "<group>"; };
+		10530CE1EA45F4ACAF61E6F051207D00 /* Pods-bitHockey Touch-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-bitHockey Touch-acknowledgements.plist"; sourceTree = "<group>"; };
+		16B20ECAFF58119443513204057FB4E4 /* Pods-bitHockey Touch.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-bitHockey Touch.modulemap"; sourceTree = "<group>"; };
+		1A19B3CE557AF285525DC9D2F9AFCBD1 /* Pods_bitHockey_Touch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_bitHockey_Touch.framework; path = "Pods-bitHockey Touch.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B21515416B48E90CB99DDDBE226539B /* Pods-bitHockey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-bitHockey.debug.xcconfig"; sourceTree = "<group>"; };
+		37D0CB5E99613BBFAA613E8206CBC4FC /* Pods-bitHockey Touch-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-bitHockey Touch-acknowledgements.markdown"; sourceTree = "<group>"; };
+		43C4ACB17D21EACE621F5071037D55C1 /* Pods-bitHockey-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-bitHockey-acknowledgements.plist"; sourceTree = "<group>"; };
 		65EEDD58EC35A4E9347CB06714F7040C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		8E211494D0435D5C6369F6CF4974A935 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		68391046799B840CE0E28E5D53C91FD3 /* Pods-bitHockey Touch-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-bitHockey Touch-resources.sh"; sourceTree = "<group>"; };
+		7B492890C7D6D77548D6A95C56BF16F8 /* Pods-bitHockey Touch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-bitHockey Touch.release.xcconfig"; sourceTree = "<group>"; };
+		826924269A22FA81CC90BA48471AE5DB /* Pods-bitHockey Touch-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-bitHockey Touch-dummy.m"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9A9E92CEF6BE863E141C4ED46EEAA624 /* Pods_Hockey_Game__macOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Hockey_Game__macOS_.framework; path = "Pods-Hockey Game (macOS).framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9E174C6DBBB48E2F2E61B705DB5F0C03 /* Pods-Hockey Game (iOS).modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Hockey Game (iOS).modulemap"; sourceTree = "<group>"; };
-		9F43E30F3A416FBEE8D183888BB4896A /* Pods-Hockey Game (macOS)-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Hockey Game (macOS)-dummy.m"; sourceTree = "<group>"; };
-		AE88D027537475FA7BFB68DD2B27CE08 /* Pods-Hockey Game (macOS)-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Hockey Game (macOS)-resources.sh"; sourceTree = "<group>"; };
-		B7ACC47431FE52975781D08D8F46FF89 /* Pods-Hockey Game (macOS)-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Hockey Game (macOS)-acknowledgements.plist"; sourceTree = "<group>"; };
-		C415186BC1A4CBCA62E145458B3DB4D1 /* Pods-Hockey Game (macOS)-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Hockey Game (macOS)-frameworks.sh"; sourceTree = "<group>"; };
+		94AF8122B533504E7EC3547666971A18 /* Pods-bitHockey Touch-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-bitHockey Touch-umbrella.h"; sourceTree = "<group>"; };
+		957122B22061FEA6346F6CB582A878A5 /* Pods-bitHockey-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-bitHockey-umbrella.h"; sourceTree = "<group>"; };
+		A2D276B014EAE2572E3E5176A0EAE9B8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A7599845022F0A927082E8B97A563D0D /* Pods-bitHockey Touch-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-bitHockey Touch-frameworks.sh"; sourceTree = "<group>"; };
+		A7682C7342EDDFC3D790AE41EE1E56EC /* Pods-bitHockey-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-bitHockey-frameworks.sh"; sourceTree = "<group>"; };
+		B63EFC82B9BA6C3B6C233DF86FB0273F /* Pods_bitHockey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_bitHockey.framework; path = "Pods-bitHockey.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8AB423E4900A823DC584585031A2729 /* Pods-bitHockey-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-bitHockey-dummy.m"; sourceTree = "<group>"; };
+		C5CF8C8279B83515D2AE885D3D37B7BA /* Pods-bitHockey.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-bitHockey.modulemap"; sourceTree = "<group>"; };
+		C6F1C92FF78689EAC6EE57890B43373C /* Pods-bitHockey-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-bitHockey-acknowledgements.markdown"; sourceTree = "<group>"; };
+		CC443D76464DB4F311163170675AF444 /* Pods-bitHockey-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-bitHockey-resources.sh"; sourceTree = "<group>"; };
+		CC9A76CC877AB8F9E21CE2B201FDAD68 /* Pods-bitHockey Touch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-bitHockey Touch.debug.xcconfig"; sourceTree = "<group>"; };
 		CDDAA23DDA8E082FC77E38FA01601C8F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
-		D008217570B1A37D1CD3D3F8B60975DC /* Pods-Hockey Game (iOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Hockey Game (iOS).release.xcconfig"; sourceTree = "<group>"; };
-		DA552A12305749BBA411587425BD52CC /* Pods_Hockey_Game__iOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Hockey_Game__iOS_.framework; path = "Pods-Hockey Game (iOS).framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA64089A2B70A64C73B8F5C46A5539A5 /* Pods-bitHockey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-bitHockey.release.xcconfig"; sourceTree = "<group>"; };
+		E2B343BDD0D6068025D6B07DAD6858E2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2C6B70B4010E2B4D28F5EEB3BF1436C9 /* Frameworks */ = {
+		D7AEDF6F0F10F835C915473649D25815 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9BB5F1B5A324F8BE6DB6025109CC1933 /* Foundation.framework in Frameworks */,
+				134993DE9FDE5C574760BC45FFBDC0C8 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E45348CD308F0139A57EBB6BEC2DE378 /* Frameworks */ = {
+		ED7BCB690F4C78DAFB9FC291150A7F01 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BCA4C5C9DD8D5EC289171FFAEF6C89D8 /* Cocoa.framework in Frameworks */,
+				20D7E741E1B75858AE288DB7E773082C /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		047D4095F4FEF58CC71BABE1C636BAEE /* Pods-Hockey Game (macOS) */ = {
+		22FD835C9529F5EB9F0472C6DADE6884 /* Pods-bitHockey Touch */ = {
 			isa = PBXGroup;
 			children = (
-				2976E74CF735F307A42B1F26A4C05F20 /* Info.plist */,
-				1BD84CFFFFD27057304516767C3E519D /* Pods-Hockey Game (macOS).modulemap */,
-				597F6B4C30B2D2D66EF652455D7499F2 /* Pods-Hockey Game (macOS)-acknowledgements.markdown */,
-				B7ACC47431FE52975781D08D8F46FF89 /* Pods-Hockey Game (macOS)-acknowledgements.plist */,
-				9F43E30F3A416FBEE8D183888BB4896A /* Pods-Hockey Game (macOS)-dummy.m */,
-				C415186BC1A4CBCA62E145458B3DB4D1 /* Pods-Hockey Game (macOS)-frameworks.sh */,
-				AE88D027537475FA7BFB68DD2B27CE08 /* Pods-Hockey Game (macOS)-resources.sh */,
-				4D5DCBDB0038174EFAADC4261EBD26C2 /* Pods-Hockey Game (macOS)-umbrella.h */,
-				378C8A15311DACF797349F8E10161DFE /* Pods-Hockey Game (macOS).debug.xcconfig */,
-				0A0788ED721B21853C7E09C85EE6C66C /* Pods-Hockey Game (macOS).release.xcconfig */,
+				A2D276B014EAE2572E3E5176A0EAE9B8 /* Info.plist */,
+				16B20ECAFF58119443513204057FB4E4 /* Pods-bitHockey Touch.modulemap */,
+				37D0CB5E99613BBFAA613E8206CBC4FC /* Pods-bitHockey Touch-acknowledgements.markdown */,
+				10530CE1EA45F4ACAF61E6F051207D00 /* Pods-bitHockey Touch-acknowledgements.plist */,
+				826924269A22FA81CC90BA48471AE5DB /* Pods-bitHockey Touch-dummy.m */,
+				A7599845022F0A927082E8B97A563D0D /* Pods-bitHockey Touch-frameworks.sh */,
+				68391046799B840CE0E28E5D53C91FD3 /* Pods-bitHockey Touch-resources.sh */,
+				94AF8122B533504E7EC3547666971A18 /* Pods-bitHockey Touch-umbrella.h */,
+				CC9A76CC877AB8F9E21CE2B201FDAD68 /* Pods-bitHockey Touch.debug.xcconfig */,
+				7B492890C7D6D77548D6A95C56BF16F8 /* Pods-bitHockey Touch.release.xcconfig */,
 			);
-			name = "Pods-Hockey Game (macOS)";
-			path = "Target Support Files/Pods-Hockey Game (macOS)";
-			sourceTree = "<group>";
-		};
-		1AF938F80DAF2565E31083FBEB69210E /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				DA552A12305749BBA411587425BD52CC /* Pods_Hockey_Game__iOS_.framework */,
-				9A9E92CEF6BE863E141C4ED46EEAA624 /* Pods_Hockey_Game__macOS_.framework */,
-			);
-			name = Products;
+			name = "Pods-bitHockey Touch";
+			path = "Target Support Files/Pods-bitHockey Touch";
 			sourceTree = "<group>";
 		};
 		2EDFAB15A7E74F864EB353FCB5A57006 /* OS X */ = {
@@ -107,13 +98,31 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		4AC032368524350570531E909C951EEE /* Targets Support Files */ = {
+		6E3AE0B699F490512F06335E6559B213 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				A3ECA1163EB15808533490B518C93373 /* Pods-Hockey Game (iOS) */,
-				047D4095F4FEF58CC71BABE1C636BAEE /* Pods-Hockey Game (macOS) */,
+				75BA405BBBB51AC34D83E56747444238 /* Pods-bitHockey */,
+				22FD835C9529F5EB9F0472C6DADE6884 /* Pods-bitHockey Touch */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		75BA405BBBB51AC34D83E56747444238 /* Pods-bitHockey */ = {
+			isa = PBXGroup;
+			children = (
+				E2B343BDD0D6068025D6B07DAD6858E2 /* Info.plist */,
+				C5CF8C8279B83515D2AE885D3D37B7BA /* Pods-bitHockey.modulemap */,
+				C6F1C92FF78689EAC6EE57890B43373C /* Pods-bitHockey-acknowledgements.markdown */,
+				43C4ACB17D21EACE621F5071037D55C1 /* Pods-bitHockey-acknowledgements.plist */,
+				B8AB423E4900A823DC584585031A2729 /* Pods-bitHockey-dummy.m */,
+				A7682C7342EDDFC3D790AE41EE1E56EC /* Pods-bitHockey-frameworks.sh */,
+				CC443D76464DB4F311163170675AF444 /* Pods-bitHockey-resources.sh */,
+				957122B22061FEA6346F6CB582A878A5 /* Pods-bitHockey-umbrella.h */,
+				2B21515416B48E90CB99DDDBE226539B /* Pods-bitHockey.debug.xcconfig */,
+				DA64089A2B70A64C73B8F5C46A5539A5 /* Pods-bitHockey.release.xcconfig */,
+			);
+			name = "Pods-bitHockey";
+			path = "Target Support Files/Pods-bitHockey";
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -121,8 +130,8 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				3AEF7D761E8EA8419BB4A7000AB770CB /* Frameworks */,
-				1AF938F80DAF2565E31083FBEB69210E /* Products */,
-				4AC032368524350570531E909C951EEE /* Targets Support Files */,
+				95D66D82AA95A67BD095FC63DCD11F6D /* Products */,
+				6E3AE0B699F490512F06335E6559B213 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,78 +143,69 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		A3ECA1163EB15808533490B518C93373 /* Pods-Hockey Game (iOS) */ = {
+		95D66D82AA95A67BD095FC63DCD11F6D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8E211494D0435D5C6369F6CF4974A935 /* Info.plist */,
-				9E174C6DBBB48E2F2E61B705DB5F0C03 /* Pods-Hockey Game (iOS).modulemap */,
-				2DA9B10B91214FA6D3487C314FCFB947 /* Pods-Hockey Game (iOS)-acknowledgements.markdown */,
-				392FC998400ED61504C628DFB344432F /* Pods-Hockey Game (iOS)-acknowledgements.plist */,
-				2C735BB2CE5F76395616C12A83B998D4 /* Pods-Hockey Game (iOS)-dummy.m */,
-				1F5185915FA5BCB7C85F9B9F07E3D146 /* Pods-Hockey Game (iOS)-frameworks.sh */,
-				02624A4688456359CCE10475CE15304B /* Pods-Hockey Game (iOS)-resources.sh */,
-				65B04669E15B2C259F3785FFF63AD01C /* Pods-Hockey Game (iOS)-umbrella.h */,
-				010A472ED45D6BA967E38948A6EBD606 /* Pods-Hockey Game (iOS).debug.xcconfig */,
-				D008217570B1A37D1CD3D3F8B60975DC /* Pods-Hockey Game (iOS).release.xcconfig */,
+				B63EFC82B9BA6C3B6C233DF86FB0273F /* Pods_bitHockey.framework */,
+				1A19B3CE557AF285525DC9D2F9AFCBD1 /* Pods_bitHockey_Touch.framework */,
 			);
-			name = "Pods-Hockey Game (iOS)";
-			path = "Target Support Files/Pods-Hockey Game (iOS)";
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		747C3ED8BE70EE4AEFD40AE5FD74D370 /* Headers */ = {
+		9C9FB46735722577570221357A867503 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE74781F3B12228ECF8E61CEA4A0553F /* Pods-Hockey Game (iOS)-umbrella.h in Headers */,
+				BCFBEBA88AEDF7696A4BE6F4D8669EA3 /* Pods-bitHockey Touch-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E0E28FEC2661AC1F30710B84463DFE03 /* Headers */ = {
+		ECCA8D28A914F04E04AF86F0FB843738 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				874547EFFD7ACB9699854050C8D5474D /* Pods-Hockey Game (macOS)-umbrella.h in Headers */,
+				DB837D8EE4D1BF4FC1D59B767F3FEC1F /* Pods-bitHockey-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		402C857AAD9DCB0743D3D3E204CF1410 /* Pods-Hockey Game (iOS) */ = {
+		85C9B13607E04EFA577C78891A7B823C /* Pods-bitHockey */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 733448835DAA66866E36CCEFF7A5FE75 /* Build configuration list for PBXNativeTarget "Pods-Hockey Game (iOS)" */;
+			buildConfigurationList = D5C0500FF8425D6E13C175104534A053 /* Build configuration list for PBXNativeTarget "Pods-bitHockey" */;
 			buildPhases = (
-				2E23306C23FEBFBE503D829D66063E57 /* Sources */,
-				2C6B70B4010E2B4D28F5EEB3BF1436C9 /* Frameworks */,
-				747C3ED8BE70EE4AEFD40AE5FD74D370 /* Headers */,
+				D312E2C0621CAD914B62458415FD86A7 /* Sources */,
+				ED7BCB690F4C78DAFB9FC291150A7F01 /* Frameworks */,
+				ECCA8D28A914F04E04AF86F0FB843738 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Pods-Hockey Game (iOS)";
-			productName = "Pods-Hockey Game (iOS)";
-			productReference = DA552A12305749BBA411587425BD52CC /* Pods_Hockey_Game__iOS_.framework */;
+			name = "Pods-bitHockey";
+			productName = "Pods-bitHockey";
+			productReference = B63EFC82B9BA6C3B6C233DF86FB0273F /* Pods_bitHockey.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		82B42F7311F112A5BF19213B336A48BD /* Pods-Hockey Game (macOS) */ = {
+		B83FFB73A75D8504788CB27809664C69 /* Pods-bitHockey Touch */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4FB425F86A0253201C6F3630E999ED30 /* Build configuration list for PBXNativeTarget "Pods-Hockey Game (macOS)" */;
+			buildConfigurationList = BA6BF471D0F8444981FBB0BCECAFF559 /* Build configuration list for PBXNativeTarget "Pods-bitHockey Touch" */;
 			buildPhases = (
-				1639609DF7616A33B87B6353420744C2 /* Sources */,
-				E45348CD308F0139A57EBB6BEC2DE378 /* Frameworks */,
-				E0E28FEC2661AC1F30710B84463DFE03 /* Headers */,
+				F264DCF577955517F36532FA0C1DE2F1 /* Sources */,
+				D7AEDF6F0F10F835C915473649D25815 /* Frameworks */,
+				9C9FB46735722577570221357A867503 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Pods-Hockey Game (macOS)";
-			productName = "Pods-Hockey Game (macOS)";
-			productReference = 9A9E92CEF6BE863E141C4ED46EEAA624 /* Pods_Hockey_Game__macOS_.framework */;
+			name = "Pods-bitHockey Touch";
+			productName = "Pods-bitHockey Touch";
+			productReference = 1A19B3CE557AF285525DC9D2F9AFCBD1 /* Pods_bitHockey_Touch.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -225,145 +225,36 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 1AF938F80DAF2565E31083FBEB69210E /* Products */;
+			productRefGroup = 95D66D82AA95A67BD095FC63DCD11F6D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				402C857AAD9DCB0743D3D3E204CF1410 /* Pods-Hockey Game (iOS) */,
-				82B42F7311F112A5BF19213B336A48BD /* Pods-Hockey Game (macOS) */,
+				85C9B13607E04EFA577C78891A7B823C /* Pods-bitHockey */,
+				B83FFB73A75D8504788CB27809664C69 /* Pods-bitHockey Touch */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1639609DF7616A33B87B6353420744C2 /* Sources */ = {
+		D312E2C0621CAD914B62458415FD86A7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B4ED9B069FB380F7BDDD9C1C365FFE0 /* Pods-Hockey Game (macOS)-dummy.m in Sources */,
+				9423BC9066BFD80680F19BE39AB0F84D /* Pods-bitHockey-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2E23306C23FEBFBE503D829D66063E57 /* Sources */ = {
+		F264DCF577955517F36532FA0C1DE2F1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20D90AA983E6D6B5244E40196B88D96A /* Pods-Hockey Game (iOS)-dummy.m in Sources */,
+				C38201B750BCC9FA42525D21D2507D2B /* Pods-bitHockey Touch-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		002EF734F1106F6374FF3BDDD7275DAE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 378C8A15311DACF797349F8E10161DFE /* Pods-Hockey Game (macOS).debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_VERSION = A;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Hockey Game (macOS)/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MODULEMAP_FILE = "Target Support Files/Pods-Hockey Game (macOS)/Pods-Hockey Game (macOS).modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Hockey_Game__macOS_;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		012B78D11371ADC8DEF2D6FF67465970 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 010A472ED45D6BA967E38948A6EBD606 /* Pods-Hockey Game (iOS).debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Hockey Game (iOS)/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Hockey Game (iOS)/Pods-Hockey Game (iOS).modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Hockey_Game__iOS_;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		111947F0B4D213FA3C8496EB069867EC /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0A0788ED721B21853C7E09C85EE6C66C /* Pods-Hockey Game (macOS).release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_VERSION = A;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Hockey Game (macOS)/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MODULEMAP_FILE = "Target Support Files/Pods-Hockey Game (macOS)/Pods-Hockey Game (macOS).modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Hockey_Game__macOS_;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		219AFD9FB638A12C38F9775C8188112A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -409,6 +300,113 @@
 			};
 			name = Debug;
 		};
+		21D54BE0880CAF859B72202A94407136 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC9A76CC877AB8F9E21CE2B201FDAD68 /* Pods-bitHockey Touch.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-bitHockey Touch/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-bitHockey Touch/Pods-bitHockey Touch.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_bitHockey_Touch;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		2D2FEE2F723F118110FAB9EC9EFA9BF3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B492890C7D6D77548D6A95C56BF16F8 /* Pods-bitHockey Touch.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-bitHockey Touch/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-bitHockey Touch/Pods-bitHockey Touch.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_bitHockey_Touch;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		307DC309FDFE1F22D967B9BC69859769 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B21515416B48E90CB99DDDBE226539B /* Pods-bitHockey.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-bitHockey/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MODULEMAP_FILE = "Target Support Files/Pods-bitHockey/Pods-bitHockey.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_bitHockey;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		78ABED328FEA6772DB99F3C87C17458E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -450,13 +448,15 @@
 			};
 			name = Release;
 		};
-		BC475595C13F3E9D94DBB73B37F600BC /* Release */ = {
+		DA27E8B3ED5F61724A9FDF5AE6A5C649 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D008217570B1A37D1CD3D3F8B60975DC /* Pods-Hockey Game (iOS).release.xcconfig */;
+			baseConfigurationReference = DA64089A2B70A64C73B8F5C46A5539A5 /* Pods-bitHockey.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
@@ -464,22 +464,22 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Hockey Game (iOS)/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-bitHockey/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Hockey Game (iOS)/Pods-Hockey Game (iOS).modulemap";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MODULEMAP_FILE = "Target Support Files/Pods-bitHockey/Pods-bitHockey.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Hockey_Game__iOS_;
-				SDKROOT = iphoneos;
+				PRODUCT_NAME = Pods_bitHockey;
+				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -497,20 +497,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4FB425F86A0253201C6F3630E999ED30 /* Build configuration list for PBXNativeTarget "Pods-Hockey Game (macOS)" */ = {
+		BA6BF471D0F8444981FBB0BCECAFF559 /* Build configuration list for PBXNativeTarget "Pods-bitHockey Touch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				002EF734F1106F6374FF3BDDD7275DAE /* Debug */,
-				111947F0B4D213FA3C8496EB069867EC /* Release */,
+				21D54BE0880CAF859B72202A94407136 /* Debug */,
+				2D2FEE2F723F118110FAB9EC9EFA9BF3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		733448835DAA66866E36CCEFF7A5FE75 /* Build configuration list for PBXNativeTarget "Pods-Hockey Game (iOS)" */ = {
+		D5C0500FF8425D6E13C175104534A053 /* Build configuration list for PBXNativeTarget "Pods-bitHockey" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				012B78D11371ADC8DEF2D6FF67465970 /* Debug */,
-				BC475595C13F3E9D94DBB73B37F600BC /* Release */,
+				307DC309FDFE1F22D967B9BC69859769 /* Debug */,
+				DA27E8B3ED5F61724A9FDF5AE6A5C649 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

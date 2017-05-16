@@ -1,0 +1,6 @@
+framework module Pods_bitHockey {
+  umbrella header "Pods-bitHockey-umbrella.h"
+
+  export *
+  module * { export * }
+}

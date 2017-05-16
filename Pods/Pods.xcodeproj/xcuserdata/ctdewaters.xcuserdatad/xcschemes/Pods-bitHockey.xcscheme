@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "402C857AAD9DCB0743D3D3E204CF1410"
-               BuildableName = "Pods_Hockey_Game__iOS_.framework"
-               BlueprintName = "Pods-Hockey Game (iOS)"
+               BlueprintIdentifier = "85C9B13607E04EFA577C78891A7B823C"
+               BuildableName = "Pods_bitHockey.framework"
+               BlueprintName = "Pods-bitHockey"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "402C857AAD9DCB0743D3D3E204CF1410"
-            BuildableName = "Pods_Hockey_Game__iOS_.framework"
-            BlueprintName = "Pods-Hockey Game (iOS)"
+            BlueprintIdentifier = "85C9B13607E04EFA577C78891A7B823C"
+            BuildableName = "Pods_bitHockey.framework"
+            BlueprintName = "Pods-bitHockey"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
