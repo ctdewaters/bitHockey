@@ -208,14 +208,14 @@
             teamNameLabel = UILabel(frame: CGRect(x: 0, y: -2.5, width: frameRect.width * 0.7, height: frameRect.height))
             teamNameLabel.text = isOnUserTeam ? "Home" : "Away"
             teamNameLabel.textColor = .white
-            teamNameLabel.font = UIFont.systemFont(ofSize: frameRect.height * 0.6, weight: UIFontWeightRegular)
+            teamNameLabel.font = UIFont.systemFont(ofSize: frameRect.height * 0.6, weight: UIFont.Weight.regular)
             teamNameLabel.frame = CGRect(x: 0, y: -2.5, width: frameRect.width * 0.7, height: frameRect.height)
             teamNameLabel.textAlignment = .center
             self.addSubview(teamNameLabel)
             
             //Setting up the team's score label
             scoreLabel = UILabel(frame: CGRect(x: teamNameLabel.frame.maxX, y: -2.5, width: frameRect.width * 0.3, height: frameRect.height))
-            scoreLabel.font = UIFont.systemFont(ofSize: frameRect.height * 0.6, weight: UIFontWeightBold)
+            scoreLabel.font = UIFont.systemFont(ofSize: frameRect.height * 0.6, weight: UIFont.Weight.bold)
             scoreLabel.textAlignment = .right
             scoreLabel.textColor = .white
             self.addSubview(scoreLabel)
@@ -257,7 +257,7 @@
             //Setting and adding the time label
             self.timeLabel = UILabel(frame: self.bounds)
             self.timeLabel.text = self.currentTime.string
-            self.timeLabel.font = UIFont.systemFont(ofSize: frameRect.height * 0.6, weight: UIFontWeightRegular)
+            self.timeLabel.font = UIFont.systemFont(ofSize: frameRect.height * 0.6, weight: UIFont.Weight.regular)
             self.timeLabel.textColor = .white
             self.timeLabel.textAlignment = .center
             self.timeLabel.frame = self.bounds

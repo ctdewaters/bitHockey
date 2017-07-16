@@ -73,12 +73,12 @@ class GoalPresentation: NSObject {
                 goalLabel = UILabel(frame: CGRect(x: 0, y: (view.frame.height / 2) + 50, width: presentationView.frame.width, height: 100))
                 goalLabel.text = "GOAL!!!"
                 goalLabel.textAlignment = .center
-                goalLabel.font = UIFont.systemFont(ofSize: 90, weight: UIFontWeightBlack)
+                goalLabel.font = UIFont.systemFont(ofSize: 90, weight: UIFont.Weight.black)
                 self.presentationView.addSubview(goalLabel)
                 
                 promptLabel = UILabel(frame: CGRect(x: 0, y: presentationView.frame.minY + 30, width: presentationView.frame.width, height: 30))
                 promptLabel.text = "Tap the screen to skip."
-                promptLabel.font = UIFont.systemFont(ofSize: 15, weight: UIFontWeightBold)
+                promptLabel.font = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.bold)
                 promptLabel.textColor = UIColor.blue.withAlphaComponent(0.7)
                 promptLabel.textAlignment = .center
                 self.presentationView.addSubview(promptLabel)
