@@ -9,9 +9,9 @@
 
 import Cocoa
 
-let storyboard = NSStoryboard(name: "Main", bundle: nil)
-let gameVC = storyboard.instantiateController(withIdentifier: "gameVC") as! ViewController
-let menuVC = storyboard.instantiateController(withIdentifier: "menuVC") as! MenuViewController
+let storyboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
+let gameVC = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "gameVC")) as! ViewController
+let menuVC = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "menuVC")) as! MenuViewController
 
 var windowController: WindowController!
 
@@ -21,7 +21,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
         
-        windowController = storyboard.instantiateController(withIdentifier: "WC") as! WindowController
+        windowController = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "WC")) as! WindowController
         windowController.showWindow(self)
     }
     

@@ -24,17 +24,17 @@ class LoadingTouchBar: NSTouchBar, NSTouchBarDelegate {
     }
 
     //MARK: - NSTouchBarDelegate
-    func touchBar(_ touchBar: NSTouchBar, makeItemForIdentifier identifier: NSTouchBarItemIdentifier) -> NSTouchBarItem? {
+    func touchBar(_ touchBar: NSTouchBar, makeItemForIdentifier identifier: NSTouchBarItem.Identifier) -> NSTouchBarItem? {
         switch identifier {
-        case NSTouchBarItemIdentifier.loadingIndicator :
+        case NSTouchBarItem.Identifier.loadingIndicator :
             let item = NSCustomTouchBarItem(identifier: identifier)
             let progressIndicator = NSProgressIndicator()
-            progressIndicator.style = .spinningStyle
+            progressIndicator.style = .spinning
             progressIndicator.controlTint = .blueControlTint
             
             item.view = progressIndicator
             return item
-        case NSTouchBarItemIdentifier.loadingLabel :
+        case NSTouchBarItem.Identifier.loadingLabel :
             let item = NSCustomTouchBarItem(identifier: identifier)
             let label = NSTextField(labelWithString: "Loading Game...")
             label.font = NSFont(name: "Rubik", size: 17)
@@ -47,7 +47,8 @@ class LoadingTouchBar: NSTouchBar, NSTouchBarDelegate {
     }
 }
 
-fileprivate extension NSTouchBarItemIdentifier {
-    static let loadingIndicator = NSTouchBarItemIdentifier("com.CollinDeWaters.bitHockey.loadingIndicator")
-    static let loadingLabel = NSTouchBarItemIdentifier("com.CollinDeWaters.bitHockey.loadingLabel")
+@available(OSX 10.12.2, *)
+fileprivate extension NSTouchBarItem.Identifier {
+    static let loadingIndicator = NSTouchBarItem.Identifier("com.CollinDeWaters.bitHockey.loadingIndicator")
+    static let loadingLabel = NSTouchBarItem.Identifier("com.CollinDeWaters.bitHockey.loadingLabel")
 }

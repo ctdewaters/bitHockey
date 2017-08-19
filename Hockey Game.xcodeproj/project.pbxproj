@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		097E63E8D7FDC86D7BC7D3F9 /* Pods_Hockey_Game__macOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03902A571D70F1C30A6BE4AD /* Pods_Hockey_Game__macOS_.framework */; };
 		0B02393048F0BFF96D8227DF /* Pods_bitHockey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67D01D20EE23917EA1BD5416 /* Pods_bitHockey.framework */; };
 		25B55C5E365D80F1B94FFEF2 /* Pods_bitHockey_Touch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3973D7B2903160416924C73A /* Pods_bitHockey_Touch.framework */; };
 		B81A7C5A1EC0F0940018D737 /* mexcellent.regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B81A7C591EC0F0940018D737 /* mexcellent.regular.ttf */; };
@@ -32,7 +31,6 @@
 		B8AB0B981E92EE8800B4C356 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E032951E92EB91004F718E /* GameView.swift */; };
 		B8AB0B991E92EE8800B4C356 /* GoalPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E032961E92EB91004F718E /* GoalPresentation.swift */; };
 		B8AB0B9A1E92EE8800B4C356 /* PlayerTextures.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E032981E92EB91004F718E /* PlayerTextures.swift */; };
-		B8AB0B9B1E92EE8800B4C356 /* SoundEffectPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E032991E92EB91004F718E /* SoundEffectPlayer.swift */; };
 		B8AB0B9C1E92EE8800B4C356 /* Rink.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E0329A1E92EB91004F718E /* Rink.swift */; };
 		B8AB0B9D1E92EE8800B4C356 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E0329B1E92EB91004F718E /* Score.swift */; };
 		B8AB0B9E1E92EE8800B4C356 /* Scoreboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E0329C1E92EB91004F718E /* Scoreboard.swift */; };
@@ -130,7 +128,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				097E63E8D7FDC86D7BC7D3F9 /* Pods_Hockey_Game__macOS_.framework in Frameworks */,
 				0B02393048F0BFF96D8227DF /* Pods_bitHockey.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -393,6 +390,7 @@
 					B8E032711E92EB53004F718E = {
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = AP48SCT3J2;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -574,7 +572,6 @@
 				B8AB0B951E92EE8800B4C356 /* Net.swift in Sources */,
 				B81A7C6A1EC35ADC0018D737 /* MenuTouchBar.swift in Sources */,
 				B8AB0B901E92EE8800B4C356 /* MoveComponent.swift in Sources */,
-				B8AB0B9B1E92EE8800B4C356 /* SoundEffectPlayer.swift in Sources */,
 				B8AB0B9A1E92EE8800B4C356 /* PlayerTextures.swift in Sources */,
 				B81A7C6D1EC35FA30018D737 /* WindowController.swift in Sources */,
 				B81A7C701EC79E2D0018D737 /* LoadingTouchBar.swift in Sources */,
@@ -779,7 +776,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -798,7 +796,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
