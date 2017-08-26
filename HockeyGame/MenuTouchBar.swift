@@ -40,8 +40,8 @@ class MenuTouchBar: NSTouchBar, NSTouchBarDelegate {
         switch identifier {
         case NSTouchBarItem.Identifier.homeTitleLabel :
             let item = NSCustomTouchBarItem(identifier: identifier)
-            let font = NSFont(name: "Mexcellent", size: 27)!
-            let label = NSTextField(labelWithAttributedString: NSAttributedString(string: "bitHockey", attributes: [NSAttributedStringKey.font: font, NSAttributedStringKey.foregroundColor: NSColor.white]))
+            let font = NSFont(name: "Krunch", size: 27)!
+            let label = NSTextField(labelWithAttributedString: NSAttributedString(string: "Bit Hockey", attributes: [NSAttributedStringKey.font: font, NSAttributedStringKey.foregroundColor: NSColor.white]))
             item.view = label
             return item
             

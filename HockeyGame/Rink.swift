@@ -26,7 +26,6 @@ public struct PhysicsCategory {
 }
 
 //Rink delegate
-
 protocol RinkDelegate {
     func rinkDidPause()
     func rinkDidResume()

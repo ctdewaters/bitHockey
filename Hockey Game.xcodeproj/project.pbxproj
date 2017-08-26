@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		0B02393048F0BFF96D8227DF /* Pods_bitHockey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67D01D20EE23917EA1BD5416 /* Pods_bitHockey.framework */; };
 		25B55C5E365D80F1B94FFEF2 /* Pods_bitHockey_Touch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3973D7B2903160416924C73A /* Pods_bitHockey_Touch.framework */; };
-		B81A7C5A1EC0F0940018D737 /* mexcellent.regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B81A7C591EC0F0940018D737 /* mexcellent.regular.ttf */; };
-		B81A7C5B1EC0F0940018D737 /* mexcellent.regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B81A7C591EC0F0940018D737 /* mexcellent.regular.ttf */; };
 		B81A7C5E1EC0F20F0018D737 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81A7C5C1EC0F20F0018D737 /* MenuViewController.swift */; };
 		B81A7C611EC1F2000018D737 /* ControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81A7C5F1EC1F2000018D737 /* ControlsView.swift */; };
 		B81A7C631EC235390018D737 /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B81A7C621EC235390018D737 /* Rubik-Regular.ttf */; };
@@ -62,6 +60,12 @@
 		B8E032AA1E92EB91004F718E /* Rink.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E0329A1E92EB91004F718E /* Rink.swift */; };
 		B8E032AB1E92EB91004F718E /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E0329B1E92EB91004F718E /* Score.swift */; };
 		B8E032AC1E92EB91004F718E /* Scoreboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E0329C1E92EB91004F718E /* Scoreboard.swift */; };
+		B8F585C91F5214C100FCF981 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B8D5B9241E7D8D6500D303E4 /* Info.plist */; };
+		B8F585CA1F5214C900FCF981 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B8E032831E92EB54004F718E /* Info.plist */; };
+		B8F585CB1F52157A00FCF981 /* krunch_italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8F585C61F5212D900FCF981 /* krunch_italic.ttf */; };
+		B8F585CC1F52157A00FCF981 /* krunch_bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8F585C71F5212D900FCF981 /* krunch_bold.ttf */; };
+		B8F585CD1F52157A00FCF981 /* krunch_italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8F585C61F5212D900FCF981 /* krunch_italic.ttf */; };
+		B8F585CE1F52157A00FCF981 /* krunch_bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8F585C71F5212D900FCF981 /* krunch_bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,7 +75,6 @@
 		3973D7B2903160416924C73A /* Pods_bitHockey_Touch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bitHockey_Touch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44CDCE10F61839979BDE8756 /* Pods-bitHockey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bitHockey.debug.xcconfig"; path = "Pods/Target Support Files/Pods-bitHockey/Pods-bitHockey.debug.xcconfig"; sourceTree = "<group>"; };
 		67D01D20EE23917EA1BD5416 /* Pods_bitHockey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bitHockey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B81A7C591EC0F0940018D737 /* mexcellent.regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = mexcellent.regular.ttf; sourceTree = "<group>"; };
 		B81A7C5C1EC0F20F0018D737 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		B81A7C5F1EC1F2000018D737 /* ControlsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlsView.swift; sourceTree = "<group>"; };
 		B81A7C621EC235390018D737 /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
@@ -79,7 +82,7 @@
 		B81A7C6B1EC35FA30018D737 /* WindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 		B81A7C6E1EC79E2D0018D737 /* LoadingTouchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingTouchBar.swift; sourceTree = "<group>"; };
 		B83D0A7E1E86D1AC0036E5BD /* UserComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserComponent.swift; sourceTree = "<group>"; };
-		B8D5B90F1E7D8D6500D303E4 /* bitHockey Touch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bitHockey Touch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8D5B90F1E7D8D6500D303E4 /* Bit Hockey (iOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bit Hockey (iOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8D5B9121E7D8D6500D303E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8D5B91A1E7D8D6500D303E4 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		B8D5B91D1E7D8D6500D303E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -90,7 +93,7 @@
 		B8D5B94A1E7D8DF800D303E4 /* Joystick.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Joystick.swift; sourceTree = "<group>"; };
 		B8D5B9581E7D8E7400D303E4 /* puckHitBoards.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = puckHitBoards.m4a; sourceTree = "<group>"; };
 		B8DB05321E93D52D000FFFF4 /* GameOverPresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverPresentation.swift; sourceTree = "<group>"; };
-		B8E032721E92EB53004F718E /* bitHockey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bitHockey.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8E032721E92EB53004F718E /* Bit Hockey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bit Hockey.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8E032741E92EB53004F718E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8E0327C1E92EB53004F718E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B8E032811E92EB54004F718E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -111,6 +114,8 @@
 		B8E0329A1E92EB91004F718E /* Rink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rink.swift; sourceTree = "<group>"; };
 		B8E0329B1E92EB91004F718E /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		B8E0329C1E92EB91004F718E /* Scoreboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scoreboard.swift; sourceTree = "<group>"; };
+		B8F585C61F5212D900FCF981 /* krunch_italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = krunch_italic.ttf; sourceTree = "<group>"; };
+		B8F585C71F5212D900FCF981 /* krunch_bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = krunch_bold.ttf; sourceTree = "<group>"; };
 		C50C92481FD596F9AFBD5E9B /* Pods-bitHockey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bitHockey.release.xcconfig"; path = "Pods/Target Support Files/Pods-bitHockey/Pods-bitHockey.release.xcconfig"; sourceTree = "<group>"; };
 		FBF416AC12B6263A73A6A57B /* Pods-bitHockey Touch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bitHockey Touch.release.xcconfig"; path = "Pods/Target Support Files/Pods-bitHockey Touch/Pods-bitHockey Touch.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -161,7 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				B81A7C621EC235390018D737 /* Rubik-Regular.ttf */,
-				B81A7C591EC0F0940018D737 /* mexcellent.regular.ttf */,
+				B8F585C81F5212E000FCF981 /* Title */,
 			);
 			name = Fonts;
 			sourceTree = "<group>";
@@ -208,8 +213,8 @@
 		B8D5B9101E7D8D6500D303E4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B8D5B90F1E7D8D6500D303E4 /* bitHockey Touch.app */,
-				B8E032721E92EB53004F718E /* bitHockey.app */,
+				B8D5B90F1E7D8D6500D303E4 /* Bit Hockey (iOS).app */,
+				B8E032721E92EB53004F718E /* Bit Hockey.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -276,8 +281,8 @@
 			children = (
 				B8D5B91F1E7D8D6500D303E4 /* Assets.xcassets */,
 				B81A7C581EC0F0270018D737 /* Fonts */,
-				B8E032891E92EB91004F718E /* Components */,
 				B8E032911E92EB91004F718E /* Entities */,
+				B8E032891E92EB91004F718E /* Components */,
 				B8E032951E92EB91004F718E /* GameView.swift */,
 				B8DB05311E93D515000FFFF4 /* EventPresentations */,
 				B8E032971E92EB91004F718E /* ResourceHelpers */,
@@ -328,12 +333,21 @@
 			path = ResourceHelpers;
 			sourceTree = "<group>";
 		};
+		B8F585C81F5212E000FCF981 /* Title */ = {
+			isa = PBXGroup;
+			children = (
+				B8F585C61F5212D900FCF981 /* krunch_italic.ttf */,
+				B8F585C71F5212D900FCF981 /* krunch_bold.ttf */,
+			);
+			path = Title;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B8D5B90E1E7D8D6500D303E4 /* bitHockey Touch */ = {
+		B8D5B90E1E7D8D6500D303E4 /* Bit Hockey (iOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B8D5B93D1E7D8D6500D303E4 /* Build configuration list for PBXNativeTarget "bitHockey Touch" */;
+			buildConfigurationList = B8D5B93D1E7D8D6500D303E4 /* Build configuration list for PBXNativeTarget "Bit Hockey (iOS)" */;
 			buildPhases = (
 				7694F53B65958BDD050527C7 /* [CP] Check Pods Manifest.lock */,
 				B8D5B90B1E7D8D6500D303E4 /* Sources */,
@@ -346,14 +360,14 @@
 			);
 			dependencies = (
 			);
-			name = "bitHockey Touch";
+			name = "Bit Hockey (iOS)";
 			productName = "Hockey Game";
-			productReference = B8D5B90F1E7D8D6500D303E4 /* bitHockey Touch.app */;
+			productReference = B8D5B90F1E7D8D6500D303E4 /* Bit Hockey (iOS).app */;
 			productType = "com.apple.product-type.application";
 		};
-		B8E032711E92EB53004F718E /* bitHockey */ = {
+		B8E032711E92EB53004F718E /* Bit Hockey */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B8E032861E92EB54004F718E /* Build configuration list for PBXNativeTarget "bitHockey" */;
+			buildConfigurationList = B8E032861E92EB54004F718E /* Build configuration list for PBXNativeTarget "Bit Hockey" */;
 			buildPhases = (
 				11A72791BAA5E1E6CBB311B0 /* [CP] Check Pods Manifest.lock */,
 				B8E0326E1E92EB53004F718E /* Sources */,
@@ -366,9 +380,9 @@
 			);
 			dependencies = (
 			);
-			name = bitHockey;
+			name = "Bit Hockey";
 			productName = HockeyGame;
-			productReference = B8E032721E92EB53004F718E /* bitHockey.app */;
+			productReference = B8E032721E92EB53004F718E /* Bit Hockey.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -408,8 +422,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B8D5B90E1E7D8D6500D303E4 /* bitHockey Touch */,
-				B8E032711E92EB53004F718E /* bitHockey */,
+				B8D5B90E1E7D8D6500D303E4 /* Bit Hockey (iOS) */,
+				B8E032711E92EB53004F718E /* Bit Hockey */,
 			);
 		};
 /* End PBXProject section */
@@ -421,10 +435,12 @@
 			files = (
 				B8D5B9591E7D8E7400D303E4 /* puckHitBoards.m4a in Resources */,
 				B81A7C631EC235390018D737 /* Rubik-Regular.ttf in Resources */,
+				B8F585C91F5214C100FCF981 /* Info.plist in Resources */,
+				B8F585CB1F52157A00FCF981 /* krunch_italic.ttf in Resources */,
 				B8D5B91E1E7D8D6500D303E4 /* Main.storyboard in Resources */,
 				B8D5B9201E7D8D6500D303E4 /* Assets.xcassets in Resources */,
+				B8F585CC1F52157A00FCF981 /* krunch_bold.ttf in Resources */,
 				B8D5B9231E7D8D6500D303E4 /* LaunchScreen.storyboard in Resources */,
-				B81A7C5A1EC0F0940018D737 /* mexcellent.regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,9 +448,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B81A7C5B1EC0F0940018D737 /* mexcellent.regular.ttf in Resources */,
+				B8F585CD1F52157A00FCF981 /* krunch_italic.ttf in Resources */,
+				B8F585CA1F5214C900FCF981 /* Info.plist in Resources */,
 				B81A7C641EC235390018D737 /* Rubik-Regular.ttf in Resources */,
 				B8AB0BA01E92F8C600B4C356 /* Assets.xcassets in Resources */,
+				B8F585CE1F52157A00FCF981 /* krunch_bold.ttf in Resources */,
 				B8E032821E92EB54004F718E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -733,7 +751,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 06784FF0AEA17A79AAEBDC61 /* Pods-bitHockey Touch.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = iOSAppIcon;
 				DEVELOPMENT_TEAM = AP48SCT3J2;
 				INFOPLIST_FILE = "Hockey Game/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
@@ -749,7 +767,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FBF416AC12B6263A73A6A57B /* Pods-bitHockey Touch.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = iOSAppIcon;
 				DEVELOPMENT_TEAM = AP48SCT3J2;
 				INFOPLIST_FILE = "Hockey Game/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
@@ -765,7 +783,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 44CDCE10F61839979BDE8756 /* Pods-bitHockey.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = macAppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
@@ -785,7 +803,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C50C92481FD596F9AFBD5E9B /* Pods-bitHockey.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = macAppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
@@ -813,7 +831,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B8D5B93D1E7D8D6500D303E4 /* Build configuration list for PBXNativeTarget "bitHockey Touch" */ = {
+		B8D5B93D1E7D8D6500D303E4 /* Build configuration list for PBXNativeTarget "Bit Hockey (iOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B8D5B93E1E7D8D6500D303E4 /* Debug */,
@@ -822,7 +840,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B8E032861E92EB54004F718E /* Build configuration list for PBXNativeTarget "bitHockey" */ = {
+		B8E032861E92EB54004F718E /* Build configuration list for PBXNativeTarget "Bit Hockey" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B8E032841E92EB54004F718E /* Debug */,

@@ -31,7 +31,8 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Rubik-Regular.ttf</string>
-		<string>mexcellent.regular.ttf</string>
+		<string>krunch_italic.ttf</string>
+		<string>krunch_bold.ttf</string>
 	</array>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
