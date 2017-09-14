@@ -34,7 +34,7 @@ public class MoveComponent: GKAgent2D, GKAgentDelegate {
         for i in 0..<type.goals.count {
             let goal = type.goals[i]
             let weight = type.weights[i]
-            self.behavior?.setWeight(Float(weight), for: goal)
+            self.behavior?.setWeight(Float(truncating: weight), for: goal)
         }
     }
     

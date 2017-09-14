@@ -45,6 +45,13 @@ public class Player: GKEntity {
         self.addComponent(moveComponent)
     }
     
+    //Adds a MoveComponent to wander.
+    public func addWander() {
+        self.playerComponent?.animateSkatingTextures()
+        let moveComponent = MoveComponent(maxSpeed: 150, maxAcceleration: 100, radius: Float(playerNodeSize.width / 2), mass: 0.3, withBehaviorType: .wander)
+        self.addComponent(moveComponent)
+    }
+    
     ///Updates the behavior of the player's MoveComponent.
     public func updateMoveComponent(withType type: BehaviorType) {
         self.moveComponent?.update(withBehaviorType: type)

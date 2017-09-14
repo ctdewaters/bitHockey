@@ -80,25 +80,27 @@
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
                                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kq5-Us-0SS">
-                                        <rect key="frame" x="242" y="173" width="65" height="55"/>
+                                        <rect key="frame" x="234" y="181" width="82" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="square" title="Play" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" state="on" imageScaling="proportionallyUpOrDown" inset="2" id="WGV-HH-3fK">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" size="20" name="HelveticaNeue"/>
+                                            <font key="font" metaFont="system"/>
                                         </buttonCell>
                                         <connections>
                                             <action selector="next:" target="Jys-cv-jYn" id="F1O-x2-DkC"/>
                                         </connections>
                                     </button>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2t2-KM-YLs">
-                                        <rect key="frame" x="172" y="311" width="204" height="10"/>
+                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2PO-Ay-yMl">
+                                        <rect key="frame" x="234" y="117" width="82" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="A Game by Collin DeWaters." id="wqC-NP-jHu">
-                                            <font key="font" size="13" name="Krunch-BoldItalic"/>
-                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                    </textField>
+                                        <buttonCell key="cell" type="square" title="Controls" bezelStyle="shadowlessSquare" alignment="center" imageScaling="proportionallyDown" inset="2" id="47R-TF-fKh">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system" size="12.5"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="showControls:" target="Jys-cv-jYn" id="Y5f-iF-qta"/>
+                                        </connections>
+                                    </button>
                                     <visualEffectView appearanceType="vibrantDark" fixedFrame="YES" blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="ZVa-YN-4ym" customClass="ControlsView" customModule="Bit_Hockey" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="400" width="550" height="400"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -113,7 +115,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                 <buttonCell key="cell" type="square" title="Close" bezelStyle="shadowlessSquare" alignment="center" focusRingType="none" imageScaling="proportionallyDown" inset="2" id="LmU-fx-Com">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" metaFont="system" size="16"/>
+                                                    <font key="font" size="16" name="Krunch-Bold"/>
                                                 </buttonCell>
                                                 <connections>
                                                     <action selector="closeControls:" target="Jys-cv-jYn" id="vSc-Jv-MYb"/>
@@ -121,8 +123,17 @@
                                             </button>
                                         </subviews>
                                     </visualEffectView>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2t2-KM-YLs">
+                                        <rect key="frame" x="172" y="326" width="204" height="10"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="A Game by Collin DeWaters." id="wqC-NP-jHu">
+                                            <font key="font" size="13" name="Krunch-BoldItalic"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nom-Xw-YZy">
-                                        <rect key="frame" x="78" y="329" width="394" height="36"/>
+                                        <rect key="frame" x="78" y="344" width="394" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Bit Hockey 2018" id="QX7-mX-hHh">
                                             <font key="font" size="50" name="Krunch-Bold"/>
@@ -130,17 +141,6 @@
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2PO-Ay-yMl">
-                                        <rect key="frame" x="461" y="20" width="69" height="31"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <buttonCell key="cell" type="square" title="Controls" bezelStyle="shadowlessSquare" alignment="center" imageScaling="proportionallyDown" inset="2" id="47R-TF-fKh">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system" size="12.5"/>
-                                        </buttonCell>
-                                        <connections>
-                                            <action selector="showControls:" target="Jys-cv-jYn" id="Y5f-iF-qta"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                             </view>
                         </subviews>
@@ -150,6 +150,7 @@
                         <outlet property="closeControlsButton" destination="ss9-uP-G1P" id="skW-aD-BOY"/>
                         <outlet property="controlsButton" destination="2PO-Ay-yMl" id="G3D-wI-wBk"/>
                         <outlet property="controlsView" destination="ZVa-YN-4ym" id="W3W-PC-F8i"/>
+                        <outlet property="playButton" destination="kq5-Us-0SS" id="LTq-gq-ctB"/>
                         <outlet property="titleLabel" destination="Nom-Xw-YZy" id="gLc-Ue-TV1"/>
                     </connections>
                 </viewController>

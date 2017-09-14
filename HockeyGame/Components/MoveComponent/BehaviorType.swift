@@ -23,8 +23,7 @@ public enum BehaviorType: String {
         case .attackPuckCarrier :
             return self.attackPuckCarrierGoals
         case .wander :
-            let goal = GKGoal(toWander: 100)
-            return [goal]
+            return self.wanderGoals
         case .attackGoal :
             return self.attackGoalGoals
         }
@@ -40,6 +39,8 @@ public enum BehaviorType: String {
             return [0.3, 0.3, 0.8, 1]
         case .supportPuckCarrier :
             return [0.4, 0.7, 1, 1]
+        case .wander :
+            return [1000]
         }
     }
     
@@ -78,6 +79,11 @@ public enum BehaviorType: String {
         let attackNet = GKGoal(toSeekAgent: goalToAttack)
         let avoidOtherTeam = GKGoal(toAvoid: Rink.shared.puckCarrier!.oppositeTeam.agents, maxPredictionTime: 0.2)
         return [attackNet, avoidOtherTeam]
+    }
+    
+    private var wanderGoals: [GKGoal] {
+        let wander = GKGoal(toWander: 150)
+        return [wander]
     }
     
 }

@@ -99,7 +99,7 @@ public class Rink: SKScene, SKPhysicsContactDelegate, PlayerDelegate {
     //The camera for the scene
     let cameraNode: SKCameraNode = SKCameraNode()
     
-    fileprivate var backgroundNode: SKSpriteNode!
+    var backgroundNode: SKSpriteNode!
         
     public override init(size: CGSize) {
         super.init(size: size)
@@ -127,8 +127,9 @@ public class Rink: SKScene, SKPhysicsContactDelegate, PlayerDelegate {
         super.didMove(to: view)
         
         #if os(OSX)
-        let skView = view as! GameView
-        skView.controlKeyDelegate = UserComponent.shared
+        if let skView = view as? GameView {
+            skView.controlKeyDelegate = UserComponent.shared
+        }
         #endif
         self.setPhysicsWorld()
         Puck.shared.position = FaceoffLocation.centerIce.coordinate
@@ -228,7 +229,7 @@ public class Rink: SKScene, SKPhysicsContactDelegate, PlayerDelegate {
 
     }
     
-    fileprivate func generateTeams(withPlayers playerCount: Int, andHomeTeamColor homeColor: SKColor) {
+    func generateTeams(withPlayers playerCount: Int, andHomeTeamColor homeColor: SKColor) {
         userTeam = Team()
         opposingTeam = Team()
         
@@ -248,7 +249,7 @@ public class Rink: SKScene, SKPhysicsContactDelegate, PlayerDelegate {
     }
     
     ///Adds a teams players to the ice
-    fileprivate func add(_ team: Team) {
+    func add(_ team: Team) {
         for player in team {
             var position = self.position(forPlayer: player, atFaceoffLocation: .centerIce)
             
@@ -277,9 +278,11 @@ public class Rink: SKScene, SKPhysicsContactDelegate, PlayerDelegate {
     }
     
     public func positionPlayers(atFaceoffLocation location: FaceoffLocation, withDuration duration: TimeInterval, andCompletion completion: (()->Void)? = nil) {
-        for player in userTeam! {
-            player.playerComponent?.node.physicsBody = nil
-            player.position(atFaceoffLocation: location, withDuration: duration)
+        if let userTeam = userTeam {
+            for player in userTeam {
+                player.playerComponent?.node.physicsBody = nil
+                player.position(atFaceoffLocation: location, withDuration: duration)
+            }
         }
         for player in opposingTeam! {
             player.playerComponent?.node.physicsBody = nil
