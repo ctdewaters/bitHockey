@@ -15,18 +15,19 @@ class MenuViewController: NSViewController, GameViewControllerDelegate {
     @IBOutlet weak var controlsButton: NSButton!
     @IBOutlet weak var controlsView: ControlsView!
     @IBOutlet weak var closeControlsButton: NSButton!
-    @IBOutlet weak var backgroundView: BackgroundView!
     @IBOutlet weak var playButton: NSButton!
+    @IBOutlet weak var captionLabel: NSTextField!
     
     override func viewDidAppear() {
         super.viewDidAppear()
         
-        self.backgroundView.wantsLayer = true
-        self.backgroundView.setup()
-        
+        self.titleLabel.removeFromSuperview()
+        self.captionLabel.removeFromSuperview()
+        self.view.addSubview(titleLabel)
+        self.view.addSubview(captionLabel)
         self.controlsView.set()
         self.controlsView.removeFromSuperview()
-        self.backgroundView.addSubview(controlsView)
+        self.view.addSubview(self.controlsView)
         
         self.playButton.wantsLayer = true
         self.playButton.layer?.backgroundColor = NSColor(deviceRed:0.153, green:0.169, blue:0.208, alpha:1.000).cgColor

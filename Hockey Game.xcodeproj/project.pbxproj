@@ -17,8 +17,6 @@
 		B81A7C6D1EC35FA30018D737 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81A7C6B1EC35FA30018D737 /* WindowController.swift */; };
 		B81A7C701EC79E2D0018D737 /* LoadingTouchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81A7C6E1EC79E2D0018D737 /* LoadingTouchBar.swift */; };
 		B83D0A7F1E86D1AC0036E5BD /* UserComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83D0A7E1E86D1AC0036E5BD /* UserComponent.swift */; };
-		B86331CD1F6AA322007C43F7 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86331CC1F6AA322007C43F7 /* BackgroundView.swift */; };
-		B86331CE1F6AA322007C43F7 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86331CC1F6AA322007C43F7 /* BackgroundView.swift */; };
 		B8AB0B8F1E92EE8800B4C356 /* BehaviorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E0328B1E92EB91004F718E /* BehaviorType.swift */; };
 		B8AB0B901E92EE8800B4C356 /* MoveComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E0328C1E92EB91004F718E /* MoveComponent.swift */; };
 		B8AB0B911E92EE8800B4C356 /* NetComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E0328D1E92EB91004F718E /* NetComponent.swift */; };
@@ -84,7 +82,6 @@
 		B81A7C6B1EC35FA30018D737 /* WindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 		B81A7C6E1EC79E2D0018D737 /* LoadingTouchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingTouchBar.swift; sourceTree = "<group>"; };
 		B83D0A7E1E86D1AC0036E5BD /* UserComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserComponent.swift; sourceTree = "<group>"; };
-		B86331CC1F6AA322007C43F7 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		B8D5B90F1E7D8D6500D303E4 /* Bit Hockey (iOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bit Hockey (iOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8D5B9121E7D8D6500D303E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8D5B91A1E7D8D6500D303E4 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -287,7 +284,6 @@
 				B8E032911E92EB91004F718E /* Entities */,
 				B8E032891E92EB91004F718E /* Components */,
 				B8E032951E92EB91004F718E /* GameView.swift */,
-				B86331CC1F6AA322007C43F7 /* BackgroundView.swift */,
 				B8DB05311E93D515000FFFF4 /* EventPresentations */,
 				B8E032971E92EB91004F718E /* ResourceHelpers */,
 				B8E0329A1E92EB91004F718E /* Rink.swift */,
@@ -563,7 +559,6 @@
 			files = (
 				B8E0329D1E92EB91004F718E /* BehaviorType.swift in Sources */,
 				B83D0A7F1E86D1AC0036E5BD /* UserComponent.swift in Sources */,
-				B86331CD1F6AA322007C43F7 /* BackgroundView.swift in Sources */,
 				B8DB05331E93D52D000FFFF4 /* GameOverPresentation.swift in Sources */,
 				B8E032A51E92EB91004F718E /* Puck.swift in Sources */,
 				B8E032A01E92EB91004F718E /* PlayerComponent.swift in Sources */,
@@ -594,7 +589,6 @@
 				B8E0327D1E92EB53004F718E /* ViewController.swift in Sources */,
 				B8AB0B951E92EE8800B4C356 /* Net.swift in Sources */,
 				B81A7C6A1EC35ADC0018D737 /* MenuTouchBar.swift in Sources */,
-				B86331CE1F6AA322007C43F7 /* BackgroundView.swift in Sources */,
 				B8AB0B901E92EE8800B4C356 /* MoveComponent.swift in Sources */,
 				B8AB0B9A1E92EE8800B4C356 /* PlayerTextures.swift in Sources */,
 				B81A7C6D1EC35FA30018D737 /* WindowController.swift in Sources */,
