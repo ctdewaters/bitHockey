@@ -7,27 +7,25 @@
 //
 
 import Cocoa
+import SpriteKit
 
 class MenuViewController: NSViewController, GameViewControllerDelegate {
     
     @IBOutlet weak var titleLabel: NSTextField!
     @IBOutlet weak var controlsButton: NSButton!
-    @IBOutlet weak var controlsViewTopContraint: NSLayoutConstraint!
     @IBOutlet weak var controlsView: ControlsView!
     @IBOutlet weak var closeControlsButton: NSButton!
+    @IBOutlet weak var backgroundView: BackgroundView!
     
     override func viewDidAppear() {
         super.viewDidAppear()
         
-        view.wantsLayer = true
-        view.layer?.backgroundColor = NSColor.lightGray.cgColor
+        self.backgroundView.wantsLayer = true
+        self.backgroundView.setup()
         
-        controlsViewTopContraint.constant = -self.view.frame.height
-        controlsView.set()
-        
-        for view in self.view.subviews {
-            view.translatesAutoresizingMaskIntoConstraints = false
-        }
+        self.controlsView.set()
+        self.controlsView.removeFromSuperview()
+        self.backgroundView.addSubview(controlsView)
         
         if #available(OSX 10.12.2, *) {
             //Add NotificationCenter observers
@@ -59,10 +57,7 @@ class MenuViewController: NSViewController, GameViewControllerDelegate {
             context in
             context.duration = 0.35
             context.allowsImplicitAnimation = true
-            
-            controlsViewTopContraint.animator().constant = 0
-            self.view.layoutSubtreeIfNeeded()
-            self.view.layout()
+            self.controlsView.animator().frame.origin.y = 0
         }, completionHandler: {
             if #available(OSX 10.12.2, *) {
                 let touchBar = MenuTouchBar(withState: .controlsOpen)
@@ -76,7 +71,7 @@ class MenuViewController: NSViewController, GameViewControllerDelegate {
             context in
             context.duration = 0.35
             context.allowsImplicitAnimation = true
-            controlsViewTopContraint.animator().constant = -self.view.frame.height
+            self.controlsView.animator().frame.origin.y = self.view.frame.height
         }, completionHandler: {
             if #available(OSX 10.12.2, *) {
                 let touchBar = MenuTouchBar(withState: .controlsClosed)
@@ -90,6 +85,4 @@ class MenuViewController: NSViewController, GameViewControllerDelegate {
         print("\n\n\n\nGAME LOADED, PRESENTING NOW.\n\n\n\n\n")
         self.view.window?.contentViewController = gameVC
     }
-    
-    //MARK: - NSTouchBar
 }

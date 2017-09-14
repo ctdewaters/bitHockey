@@ -10,7 +10,7 @@ import Cocoa
 
 class ControlsView: NSVisualEffectView {
     func set() {
-        wantsLayer = true
+        self.wantsLayer = true
         
         self.state = .followsWindowActiveState
         self.material = .light

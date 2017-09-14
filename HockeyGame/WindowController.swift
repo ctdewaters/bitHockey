@@ -14,6 +14,8 @@ class WindowController: NSWindowController, NSTouchBarDelegate {
         super.windowDidLoad()
         print("WINDOW LOADED\n\n\n")
         
+        self.window?.styleMask.remove(.resizable)
+        
     }
 
     //MARK: - NSTouchBar

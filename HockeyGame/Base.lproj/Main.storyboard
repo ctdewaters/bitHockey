@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13189.4"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13196"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -75,111 +75,81 @@
                         <rect key="frame" x="0.0" y="0.0" width="550" height="400"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Nom-Xw-YZy">
-                                <rect key="frame" x="-2" y="297" width="554" height="73"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="73" id="0x0-Oo-uMX"/>
-                                </constraints>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Bit Hockey 2018" id="QX7-mX-hHh">
-                                    <font key="font" size="50" name="Krunch-Bold"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <button translatesAutoresizingMaskIntoConstraints="NO" id="kq5-Us-0SS">
-                                <rect key="frame" x="243" y="98" width="65" height="55"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="65" id="hXh-eW-DUY"/>
-                                    <constraint firstAttribute="height" constant="55" id="oba-Dh-Ikx"/>
-                                </constraints>
-                                <buttonCell key="cell" type="square" title="Play" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" state="on" imageScaling="proportionallyUpOrDown" inset="2" id="WGV-HH-3fK">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" size="20" name="HelveticaNeue"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="next:" target="Jys-cv-jYn" id="F1O-x2-DkC"/>
-                                </connections>
-                            </button>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2PO-Ay-yMl">
-                                <rect key="frame" x="470" y="10" width="69" height="31"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="31" id="DBS-4x-Tij"/>
-                                    <constraint firstAttribute="width" constant="69" id="V2p-Ek-xlw"/>
-                                </constraints>
-                                <buttonCell key="cell" type="square" title="Controls" bezelStyle="shadowlessSquare" alignment="center" imageScaling="proportionallyDown" inset="2" id="47R-TF-fKh">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system" size="12.5"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="showControls:" target="Jys-cv-jYn" id="Y5f-iF-qta"/>
-                                </connections>
-                            </button>
-                            <visualEffectView appearanceType="vibrantDark" blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="ZVa-YN-4ym" customClass="ControlsView" customModule="Bit_Hockey" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="1000" width="550" height="400"/>
+                            <view identifier="gameVC" wantsLayer="YES" focusRingType="none" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ML5-MH-3BJ" customClass="BackgroundView" customModule="Bit_Hockey" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="550" height="400"/>
+                                <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
-                                    <imageView focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ps0-9V-47Y">
-                                        <rect key="frame" x="0.0" y="-132" width="550" height="532"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="550" id="CDD-nI-Lfw"/>
-                                            <constraint firstAttribute="height" constant="532" id="LCu-bq-jau"/>
-                                        </constraints>
-                                        <imageCell key="cell" refusesFirstResponder="YES" focusRingType="none" alignment="left" imageScaling="proportionallyUpOrDown" image="macControls" id="Hkb-Mx-sLB"/>
-                                    </imageView>
-                                    <button focusRingType="none" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ss9-uP-G1P">
-                                        <rect key="frame" x="237" y="13" width="76" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="NEP-aU-kMS"/>
-                                            <constraint firstAttribute="width" constant="76" id="hru-sa-seJ"/>
-                                        </constraints>
-                                        <buttonCell key="cell" type="square" title="Close" bezelStyle="shadowlessSquare" alignment="center" focusRingType="none" imageScaling="proportionallyDown" inset="2" id="LmU-fx-Com">
+                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kq5-Us-0SS">
+                                        <rect key="frame" x="242" y="173" width="65" height="55"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="square" title="Play" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" state="on" imageScaling="proportionallyUpOrDown" inset="2" id="WGV-HH-3fK">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system" size="16"/>
+                                            <font key="font" size="20" name="HelveticaNeue"/>
                                         </buttonCell>
                                         <connections>
-                                            <action selector="closeControls:" target="Jys-cv-jYn" id="vSc-Jv-MYb"/>
+                                            <action selector="next:" target="Jys-cv-jYn" id="F1O-x2-DkC"/>
+                                        </connections>
+                                    </button>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2t2-KM-YLs">
+                                        <rect key="frame" x="172" y="311" width="204" height="10"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="A Game by Collin DeWaters." id="wqC-NP-jHu">
+                                            <font key="font" size="13" name="Krunch-BoldItalic"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <visualEffectView appearanceType="vibrantDark" fixedFrame="YES" blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="ZVa-YN-4ym" customClass="ControlsView" customModule="Bit_Hockey" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="400" width="550" height="400"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <subviews>
+                                            <imageView focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ps0-9V-47Y">
+                                                <rect key="frame" x="0.0" y="-139" width="550" height="539"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                <imageCell key="cell" refusesFirstResponder="YES" focusRingType="none" alignment="left" imageScaling="proportionallyUpOrDown" image="macControls" id="Hkb-Mx-sLB"/>
+                                            </imageView>
+                                            <button focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ss9-uP-G1P">
+                                                <rect key="frame" x="237" y="13" width="76" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                <buttonCell key="cell" type="square" title="Close" bezelStyle="shadowlessSquare" alignment="center" focusRingType="none" imageScaling="proportionallyDown" inset="2" id="LmU-fx-Com">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="system" size="16"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="closeControls:" target="Jys-cv-jYn" id="vSc-Jv-MYb"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </visualEffectView>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nom-Xw-YZy">
+                                        <rect key="frame" x="78" y="329" width="394" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Bit Hockey 2018" id="QX7-mX-hHh">
+                                            <font key="font" size="50" name="Krunch-Bold"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2PO-Ay-yMl">
+                                        <rect key="frame" x="461" y="20" width="69" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="square" title="Controls" bezelStyle="shadowlessSquare" alignment="center" imageScaling="proportionallyDown" inset="2" id="47R-TF-fKh">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system" size="12.5"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="showControls:" target="Jys-cv-jYn" id="Y5f-iF-qta"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="ss9-uP-G1P" firstAttribute="centerX" secondItem="Ps0-9V-47Y" secondAttribute="centerX" id="Y1h-3F-ZXn"/>
-                                    <constraint firstItem="Ps0-9V-47Y" firstAttribute="centerX" secondItem="ZVa-YN-4ym" secondAttribute="centerX" id="vJA-nK-iYM"/>
-                                </constraints>
-                            </visualEffectView>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2t2-KM-YLs">
-                                <rect key="frame" x="173" y="279" width="204" height="10"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="DhU-eW-zf1"/>
-                                    <constraint firstAttribute="height" constant="10" id="T5Q-Sg-46Y"/>
-                                </constraints>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="A Game by Collin DeWaters." id="wqC-NP-jHu">
-                                    <font key="font" size="13" name="Krunch-BoldItalic"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
+                            </view>
                         </subviews>
-                        <constraints>
-                            <constraint firstItem="ZVa-YN-4ym" firstAttribute="top" secondItem="xHg-j3-u1h" secondAttribute="top" constant="-1000" id="1T5-nE-OM7"/>
-                            <constraint firstAttribute="bottom" secondItem="kq5-Us-0SS" secondAttribute="bottom" constant="98" id="53o-Cv-rpa"/>
-                            <constraint firstItem="2t2-KM-YLs" firstAttribute="top" secondItem="Nom-Xw-YZy" secondAttribute="bottom" constant="8" id="6io-bJ-hv1"/>
-                            <constraint firstItem="ZVa-YN-4ym" firstAttribute="leading" secondItem="xHg-j3-u1h" secondAttribute="leading" id="Aqw-JP-7hn"/>
-                            <constraint firstAttribute="trailing" secondItem="2PO-Ay-yMl" secondAttribute="trailing" constant="11" id="Bd2-SK-wIp"/>
-                            <constraint firstAttribute="trailing" secondItem="Nom-Xw-YZy" secondAttribute="trailing" id="Dd9-GJ-dDD"/>
-                            <constraint firstItem="2t2-KM-YLs" firstAttribute="centerX" secondItem="Nom-Xw-YZy" secondAttribute="centerX" id="Fv1-cp-zja"/>
-                            <constraint firstAttribute="bottom" secondItem="2PO-Ay-yMl" secondAttribute="bottom" constant="10" id="Jy4-Hh-edQ"/>
-                            <constraint firstAttribute="trailing" secondItem="ZVa-YN-4ym" secondAttribute="trailing" id="N9G-42-iIM"/>
-                            <constraint firstItem="kq5-Us-0SS" firstAttribute="centerX" secondItem="xHg-j3-u1h" secondAttribute="centerX" id="T0X-Qh-IFu"/>
-                            <constraint firstItem="kq5-Us-0SS" firstAttribute="centerY" secondItem="xHg-j3-u1h" secondAttribute="centerY" constant="74.5" id="eMc-eW-LpB"/>
-                            <constraint firstItem="Nom-Xw-YZy" firstAttribute="top" secondItem="xHg-j3-u1h" secondAttribute="top" constant="30" id="g6u-jg-Dm0"/>
-                            <constraint firstItem="ZVa-YN-4ym" firstAttribute="height" secondItem="xHg-j3-u1h" secondAttribute="height" id="twr-GD-VZ4"/>
-                            <constraint firstItem="Nom-Xw-YZy" firstAttribute="leading" secondItem="xHg-j3-u1h" secondAttribute="leading" id="yWu-uP-ths"/>
-                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="backgroundView" destination="ML5-MH-3BJ" id="c9F-Go-hUc"/>
                         <outlet property="closeControlsButton" destination="ss9-uP-G1P" id="skW-aD-BOY"/>
                         <outlet property="controlsButton" destination="2PO-Ay-yMl" id="G3D-wI-wBk"/>
                         <outlet property="controlsView" destination="ZVa-YN-4ym" id="W3W-PC-F8i"/>
-                        <outlet property="controlsViewTopContraint" destination="1T5-nE-OM7" id="V3W-Jx-UFM"/>
                         <outlet property="titleLabel" destination="Nom-Xw-YZy" id="gLc-Ue-TV1"/>
                     </connections>
                 </viewController>
@@ -194,9 +164,10 @@
                     <window key="window" identifier="WC" title="HockeyGame" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" tabbingMode="disallowed" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="480" height="480"/>
+                        <rect key="contentRect" x="643" y="310" width="480" height="480"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-                        <value key="minSize" type="size" width="480" height="480"/>
+                        <value key="minSize" type="size" width="550" height="400"/>
+                        <value key="maxSize" type="size" width="550" height="400"/>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="kkO-HK-5Dm"/>
                         </connections>
