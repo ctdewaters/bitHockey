@@ -123,6 +123,32 @@ public class Rink: SKScene, SKPhysicsContactDelegate, PlayerDelegate {
         fatalError("init(coder:) has not been implemented")
     }
     
+    ///Ends the game, and removes nodes from the rink.
+    func deactivate() {
+        self.removeAllActions()
+        
+        for child in children {
+            if child != self.backgroundNode && child != self.cameraNode {
+                child.removeAllActions()
+                child.removeFromParent()
+            }
+        }
+        
+        self.entities.removeAll()
+        self.entitiesToRemove.removeAll()
+    }
+    
+    ///Adds nodes to the rink, and starts the game.
+    func activate() {
+        //Generating the nets, players, and puck
+        self.generateAndAddNodes(withTeamSize: .five, andHomeTeamColor: .blue)
+    }
+    
+    func animateCameraScale(toValue value: CGFloat, withDuration duration: TimeInterval = 0.75) {
+        let action = SKAction.scale(to: value, duration: duration)
+        cameraNode.run(action)
+    }
+    
     open override func didMove(to view: SKView) {
         super.didMove(to: view)
         
@@ -191,7 +217,7 @@ public class Rink: SKScene, SKPhysicsContactDelegate, PlayerDelegate {
         if let playerEntity = entity as? Player {
             playerEntity.node!.removeFromParent()
         }
-        entities.remove(entity)
+        self.entities.remove(entity)
         
         self.entitiesToRemove.insert(entity)
     }
@@ -203,6 +229,8 @@ public class Rink: SKScene, SKPhysicsContactDelegate, PlayerDelegate {
     
     //Generates and adds nodes for both teams, the puck, and the rink
     public func generateAndAddNodes(withTeamSize teamSize: TeamSize = .five, andHomeTeamColor homeColor: SKColor = .red) {
+        userTeam = nil
+        opposingTeam = nil
         homeTeamColor = homeColor
         generateTeams(withPlayers: teamSize.intVal, andHomeTeamColor: homeColor)
         add(userTeam!)

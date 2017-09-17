@@ -1,24 +1,120 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F43c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Rubik-Regular.ttf">
+            <string>Rubik-Regular</string>
+        </array>
+        <array key="krunch_bold.ttf">
+            <string>Krunch-Bold</string>
+        </array>
+        <array key="krunch_italic.ttf">
+            <string>Krunch-BoldItalic</string>
+        </array>
+    </customFonts>
     <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="Wg4-cX-ies">
+            <objects>
+                <viewController storyboardIdentifier="homeVC" id="SUt-jw-heB" customClass="HomeViewController" customModule="Bit_Hockey__iOS_" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3FE-h5-c23"/>
+                        <viewControllerLayoutGuide type="bottom" id="EPe-2x-ORZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zOy-aV-tBZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bit Hockey" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8js-HM-kyz">
+                                <rect key="frame" x="0.0" y="104" width="375" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="57" id="ocX-Ck-L9T"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Krunch-Bold" family="Krunch" pointSize="58"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A Game by Collin DeWaters." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8oN-tk-mcy">
+                                <rect key="frame" x="82" y="156" width="212" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="212" id="F4k-jm-kn0"/>
+                                    <constraint firstAttribute="height" constant="21" id="Nol-Ic-nYg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Krunch-BoldItalic" family="Krunch" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgd-rd-uzi">
+                                <rect key="frame" x="89.666666666666686" y="381" width="197" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.94999999999999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="VkG-un-wVD"/>
+                                    <constraint firstAttribute="width" constant="197" id="q5H-h3-jTE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="27"/>
+                                <state key="normal" title="Play">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="SUt-jw-heB" eventType="touchUpInside" id="jLA-AL-ivd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4VJ-kt-nO7">
+                                <rect key="frame" x="89.666666666666686" y="450" width="197" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.94999999999999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="197" id="48Y-A8-AXT"/>
+                                    <constraint firstAttribute="height" constant="50" id="N9U-Yj-tnZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="24"/>
+                                <state key="normal" title="Show Controls">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="SUt-jw-heB" eventType="touchUpInside" id="JZh-PL-Tfc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="8oN-tk-mcy" firstAttribute="centerX" secondItem="8js-HM-kyz" secondAttribute="centerX" id="69i-Rg-F63"/>
+                            <constraint firstItem="hgd-rd-uzi" firstAttribute="centerY" secondItem="zOy-aV-tBZ" secondAttribute="centerY" id="6sL-kp-qyi"/>
+                            <constraint firstItem="8js-HM-kyz" firstAttribute="top" secondItem="3FE-h5-c23" secondAttribute="bottom" constant="60" id="KMO-pW-jKt"/>
+                            <constraint firstItem="hgd-rd-uzi" firstAttribute="centerX" secondItem="zOy-aV-tBZ" secondAttribute="centerX" id="S6q-sP-FPy"/>
+                            <constraint firstItem="8js-HM-kyz" firstAttribute="leading" secondItem="zOy-aV-tBZ" secondAttribute="leading" id="TkX-px-XM8"/>
+                            <constraint firstItem="8oN-tk-mcy" firstAttribute="top" secondItem="8js-HM-kyz" secondAttribute="bottom" constant="-5" id="YMn-wO-gCf"/>
+                            <constraint firstItem="4VJ-kt-nO7" firstAttribute="top" secondItem="hgd-rd-uzi" secondAttribute="bottom" constant="19" id="jrv-5M-m0c"/>
+                            <constraint firstAttribute="trailing" secondItem="8js-HM-kyz" secondAttribute="trailing" id="rAA-6c-I1Q"/>
+                            <constraint firstItem="4VJ-kt-nO7" firstAttribute="centerX" secondItem="hgd-rd-uzi" secondAttribute="centerX" id="yf6-5C-Mix"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="captionLabel" destination="8oN-tk-mcy" id="GNw-T6-sod"/>
+                        <outlet property="controlsButton" destination="4VJ-kt-nO7" id="QzS-nl-1V6"/>
+                        <outlet property="playButton" destination="hgd-rd-uzi" id="DPw-S8-9MZ"/>
+                        <outlet property="titleLabel" destination="8js-HM-kyz" id="Daa-Er-aJk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KKP-oS-KTB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1294" y="61"/>
+        </scene>
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="Hockey_Game__iOS_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="Bit_Hockey__iOS_" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8aa-yV-Osq"/>
                         <viewControllerLayoutGuide type="bottom" id="qHh-Mt-9TT"/>
                     </layoutGuides>
-                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="GameView" customModule="Hockey_Game__iOS_" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="GameView" customModule="Bit_Hockey__iOS_" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>

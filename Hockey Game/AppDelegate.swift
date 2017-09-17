@@ -8,6 +8,9 @@
 
 import UIKit
 
+let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+let homeVC: HomeViewController = mainStoryboard.instantiateViewController(withIdentifier: "homeVC") as! HomeViewController
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

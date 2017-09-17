@@ -17,6 +17,7 @@
 		B81A7C6D1EC35FA30018D737 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81A7C6B1EC35FA30018D737 /* WindowController.swift */; };
 		B81A7C701EC79E2D0018D737 /* LoadingTouchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81A7C6E1EC79E2D0018D737 /* LoadingTouchBar.swift */; };
 		B83D0A7F1E86D1AC0036E5BD /* UserComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83D0A7E1E86D1AC0036E5BD /* UserComponent.swift */; };
+		B87F213A1F6EC35D00B956F6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87F21391F6EC35D00B956F6 /* HomeViewController.swift */; };
 		B8AB0B8F1E92EE8800B4C356 /* BehaviorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E0328B1E92EB91004F718E /* BehaviorType.swift */; };
 		B8AB0B901E92EE8800B4C356 /* MoveComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E0328C1E92EB91004F718E /* MoveComponent.swift */; };
 		B8AB0B911E92EE8800B4C356 /* NetComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E0328D1E92EB91004F718E /* NetComponent.swift */; };
@@ -82,6 +83,7 @@
 		B81A7C6B1EC35FA30018D737 /* WindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 		B81A7C6E1EC79E2D0018D737 /* LoadingTouchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingTouchBar.swift; sourceTree = "<group>"; };
 		B83D0A7E1E86D1AC0036E5BD /* UserComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserComponent.swift; sourceTree = "<group>"; };
+		B87F21391F6EC35D00B956F6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B8D5B90F1E7D8D6500D303E4 /* Bit Hockey (iOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bit Hockey (iOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8D5B9121E7D8D6500D303E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8D5B91A1E7D8D6500D303E4 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				B8D5B9121E7D8D6500D303E4 /* AppDelegate.swift */,
+				B87F21391F6EC35D00B956F6 /* HomeViewController.swift */,
 				B8D5B91A1E7D8D6500D303E4 /* GameViewController.swift */,
 				B83D0A7E1E86D1AC0036E5BD /* UserComponent.swift */,
 				B8D5B9571E7D8E1500D303E4 /* Controls */,
@@ -564,6 +567,7 @@
 				B8E032A01E92EB91004F718E /* PlayerComponent.swift in Sources */,
 				B8E032A61E92EB91004F718E /* GameView.swift in Sources */,
 				B8D5B9521E7D8DF800D303E4 /* Joystick.swift in Sources */,
+				B87F213A1F6EC35D00B956F6 /* HomeViewController.swift in Sources */,
 				B8E0329F1E92EB91004F718E /* NetComponent.swift in Sources */,
 				B8E032A31E92EB91004F718E /* Net.swift in Sources */,
 				B8E032A71E92EB91004F718E /* GoalPresentation.swift in Sources */,
