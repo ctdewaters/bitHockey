@@ -170,9 +170,9 @@
             
             let viewWidth = frameRect.width / 3
             
-            userScoreView = ScoreView(frame: CGRect(x: 0, y: 0, width: viewWidth, height: frameRect.height), isUserTeam: true)
-            opposingScoreView = ScoreView(frame: CGRect(x: userScoreView.frame.maxX, y: 0, width: viewWidth, height: frameRect.height), isUserTeam: false)
-            clockView = ClockView(frame: CGRect(x: opposingScoreView.frame.maxX, y: 0, width: viewWidth, height: frameRect.height), withTotalTime: time)
+            self.userScoreView = ScoreView(frame: CGRect(x: 0, y: 0, width: viewWidth, height: frameRect.height), isUserTeam: true)
+            self.opposingScoreView = ScoreView(frame: CGRect(x: userScoreView.frame.maxX, y: 0, width: viewWidth, height: frameRect.height), isUserTeam: false)
+            self.clockView = ClockView(frame: CGRect(x: opposingScoreView.frame.maxX, y: 0, width: viewWidth, height: frameRect.height), withTotalTime: time)
             
             self.contentView.addSubview(userScoreView)
             self.contentView.addSubview(opposingScoreView)

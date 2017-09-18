@@ -38,6 +38,8 @@ public class UserComponent: GKAgent2D, GKAgentDelegate, JoystickDelegate, Switch
     
     public func joystick(_ joystick: Joystick, didGenerateData joystickData: JoystickData) {
         self.playerComponent?.move(withJoystickData: joystickData)
+        
+        print("joystickData.magnitude = \(joystickData.magnitude!), angle = \(joystickData.angle!)")
     }
     
     //MARK: - SwitchPlayerButtonDelegate

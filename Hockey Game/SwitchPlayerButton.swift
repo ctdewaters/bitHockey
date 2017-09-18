@@ -4,6 +4,8 @@ public let buttonSize: CGFloat = 75
 
 public class SwitchPlayerButton: UIButton {
     
+    static var shared: SwitchPlayerButton?
+    
     open var delegate: SwitchPlayerButtonDelegate?
     
     override public init(frame: CGRect) {

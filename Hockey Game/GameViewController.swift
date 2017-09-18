@@ -13,8 +13,6 @@ import GameplayKit
 class GameViewController: UIViewController, HomeViewControllerDelegate {
     @IBOutlet var gameView: GameView!
     
-    var button: SwitchPlayerButton!
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -52,25 +50,17 @@ class GameViewController: UIViewController, HomeViewControllerDelegate {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         Joystick.shared.frame = CGRect(x: 20, y: gameView.frame.maxY - joystickSize - 20, width: joystickSize, height: joystickSize)
-
-        if self.button != nil {
-            self.button.frame = CGRect(x: gameView.frame.maxX - buttonSize - 20 , y: gameView.frame.maxY - buttonSize - 20, width: buttonSize, height: buttonSize)
-        }
+        SwitchPlayerButton.shared?.frame = CGRect(x: gameView.frame.maxX - buttonSize - 20 , y: 0, width: buttonSize, height: buttonSize)
+        SwitchPlayerButton.shared?.center.y = Joystick.shared.center.y
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        Rink.shared.deactivate()
-        self.removeGameUI()
-        self.presentHomeView(animated: true)
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Release any cached data, images, etc that aren't in use.
     }
 
     override var prefersStatusBarHidden: Bool {
-        return true
+        return false
     }
     
     //MARK: - Home view presentation.
@@ -98,10 +88,16 @@ class GameViewController: UIViewController, HomeViewControllerDelegate {
         }) { (completed) in
             if completed {
                 homeVC.view.removeFromSuperview()
-                
                 completion()
             }
         }
+    }
+    
+    ///Ends the game.
+    func endGame() {
+        Rink.shared.deactivate()
+        self.removeGameUI()
+        self.presentHomeView(animated: true)
     }
     
     func addGameUI () {
@@ -116,10 +112,10 @@ class GameViewController: UIViewController, HomeViewControllerDelegate {
         Joystick.shared.delegate = UserComponent.shared
         
         //Pass / change player button.
-        self.button = SwitchPlayerButton(frame: CGRect(x: gameView.frame.maxX - buttonSize - 20 , y: gameView.frame.maxY - buttonSize - 20, width: buttonSize, height: buttonSize))
-        button.center.y = Joystick.shared.center.y
-        button.delegate = UserComponent.shared
-        self.view.addSubview(button)
+        SwitchPlayerButton.shared = SwitchPlayerButton(frame: CGRect(x: gameView.frame.maxX - buttonSize - 20 , y: 0, width: buttonSize, height: buttonSize))
+        SwitchPlayerButton.shared?.center.y = Joystick.shared.center.y
+        SwitchPlayerButton.shared?.delegate = UserComponent.shared
+        self.view.addSubview(SwitchPlayerButton.shared!)
         
         //Scoreboard.
         let time = TimeInterval(withMinutes: 2, andSeconds: 0)
@@ -134,7 +130,7 @@ class GameViewController: UIViewController, HomeViewControllerDelegate {
     
     func removeGameUI () {
         Joystick.shared.removeFromSuperview()
-        self.button.removeFromSuperview()
+        SwitchPlayerButton.shared?.removeFromSuperview()
         Scoreboard.shared.removeFromSuperview()
     }
     

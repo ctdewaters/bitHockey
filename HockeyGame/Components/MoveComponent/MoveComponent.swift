@@ -56,6 +56,15 @@ public class MoveComponent: GKAgent2D, GKAgentDelegate {
         
         let velocityVector = CGVector(dx: CGFloat(self.velocity.x), dy: CGFloat(self.velocity.y))
         
+        print(velocityVector.magnitude)
+        
+        if abs(velocityVector.magnitude) < 1 {
+            playerComponent.stopSkatingAction()
+        }
+        else {
+            playerComponent.animateSkatingTextures()
+        }
+        
         playerComponent.node.physicsBody?.velocity = velocityVector
 
         let facePoint = CGPoint(x: playerComponent.node.position.x + CGFloat(self.velocity.x), y: playerComponent.node.position.y + CGFloat(self.velocity.y))
@@ -77,9 +86,6 @@ public class MoveComponent: GKAgent2D, GKAgentDelegate {
             }
         }
         
-        if !playerComponent.animatingSkating {
-            playerComponent.animateSkatingTextures()
-        }
     }
     
     //MARK: - Movement functions

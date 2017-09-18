@@ -31,16 +31,16 @@ public enum BehaviorType: String {
     
     var weights: [NSNumber] {
         switch self {
-        case .chasePuck, .attackPuckCarrier, .wander :
-            return [1]
+        case .chasePuck, .wander :
+            return [250]
         case .attackGoal :
-            return [0.5, 1]
+            return [100, 5000, 5000]
         case .defendGoal :
-            return [0.3, 0.3, 0.8, 1]
+            return [200, 200, 200, 5000]
         case .supportPuckCarrier :
-            return [0.4, 0.7, 1, 1]
-        case .wander :
-            return [1000]
+            return [750, 100, 5000, 5000]
+        case .attackPuckCarrier :
+            return [5000, 5000, 250]
         }
     }
     
@@ -71,14 +71,17 @@ public enum BehaviorType: String {
     private var attackPuckCarrierGoals: [GKGoal] {
         let puckCarrier = Rink.shared.puckCarrier!.agent
         let attackGoal = GKGoal(toSeekAgent: puckCarrier)
-        return [attackGoal]
+        let spreadOut = GKGoal(toAvoid: userTeam!.hasPuck ? opposingTeam!.agents : userTeam!.agents, maxPredictionTime: 1)
+        let avoidOtherTeam = GKGoal(toAvoid: userTeam!.hasPuck ? userTeam!.agents : opposingTeam!.agents, maxPredictionTime: 0.1)
+        return [spreadOut, avoidOtherTeam, attackGoal]
     }
     
     private var attackGoalGoals: [GKGoal] {
         let goalToAttack = Rink.shared.puckCarrier!.isOnOpposingTeam ? Net.bottomNet.netComponent : Net.topNet.netComponent
         let attackNet = GKGoal(toSeekAgent: goalToAttack)
         let avoidOtherTeam = GKGoal(toAvoid: Rink.shared.puckCarrier!.oppositeTeam.agents, maxPredictionTime: 0.2)
-        return [attackNet, avoidOtherTeam]
+        let spreadOut = GKGoal(toAvoid: userTeam!.hasPuck ? userTeam!.agents : opposingTeam!.agents, maxPredictionTime: 1)
+        return [attackNet, spreadOut, avoidOtherTeam]
     }
     
     private var wanderGoals: [GKGoal] {

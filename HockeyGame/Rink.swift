@@ -150,9 +150,7 @@ public class Rink: SKScene, SKPhysicsContactDelegate, PlayerDelegate {
         }
         self.entitiesToRemove.removeAll()
 
-        
-        self.animateCameraScale(toValue: 0.25, withDuration: 0.25)
-        self.animateCamera(toPosition: .zero, withDuration: 0.25)
+        self.animateCameraScale(toValue: 0.25, center: true, withDuration: 0.25)
     }
     
     ///Adds nodes to the rink, and starts the game.
@@ -161,8 +159,13 @@ public class Rink: SKScene, SKPhysicsContactDelegate, PlayerDelegate {
         self.generateAndAddNodes(withTeamSize: .five, andHomeTeamColor: .blue)
     }
     
-    func animateCameraScale(toValue value: CGFloat, withDuration duration: TimeInterval = 0.75) {
+    func animateCameraScale(toValue value: CGFloat, center: Bool = false, withDuration duration: TimeInterval = 0.75) {
         let action = SKAction.scale(to: value, duration: duration)
+        if center {
+            let group = SKAction.group([action, SKAction.move(to: .zero, duration: duration)])
+            self.cameraNode.run(group)
+            return
+        }
         cameraNode.run(action)
     }
     
@@ -467,7 +470,12 @@ public class Rink: SKScene, SKPhysicsContactDelegate, PlayerDelegate {
             point = position
         }
         else if let puckCarrier = puckCarrier {
-            point = puckCarrier.position
+            if puckCarrier.node?.parent != nil {
+                point = puckCarrier.position
+            }
+            else {
+                point = .zero
+            }
         }
         else {
             //calculate point to move camera to
