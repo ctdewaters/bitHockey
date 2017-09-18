@@ -163,6 +163,8 @@
         public init(frame frameRect: CGRect, withTotalTime time: TimeInterval) {
             super.init(effect: UIBlurEffect(style: .dark))
             
+            self.frame = frameRect
+            
             self.layer.cornerRadius = frameRect.height / 2
             self.clipsToBounds = true
             

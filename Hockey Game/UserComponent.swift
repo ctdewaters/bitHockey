@@ -48,7 +48,11 @@ public class UserComponent: GKAgent2D, GKAgentDelegate, JoystickDelegate, Switch
     
     //MARK: - GKAgentDelegate
     public func agentWillUpdate(_ agent: GKAgent) {
-        self.position = float2(withCGPoint: self.player!.node!.position)
+        if self.player != nil {
+            if self.player!.node != nil {
+                self.position = float2(withCGPoint: self.player!.node!.position)
+            }
+        }
     }
     
     public func agentDidUpdate(_ agent: GKAgent) {

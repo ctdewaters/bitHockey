@@ -89,17 +89,19 @@ public class PlayerComponent: GKAgent2D {
     //Remove puck and add it to the rink at its current position
     fileprivate func addPuckBackToRink() {
         //Convert position of puck in this node to the rink's coordinate system
-        let puckPosition = Rink.shared.convert(Puck.shared.position, from: Puck.shared.node.parent!)
-        
-        Puck.shared.node.removeFromParent()
-        Puck.shared.position = puckPosition
-        Rink.shared.addChild(Puck.shared.node)
-        
-        Rink.shared.bringNetsToFront()
-        
-        self.hasPuck = false
-        
-        self.playerEntity?.delegate?.playerDidReleasePuck(playerEntity!)
+        if Puck.shared.node.parent != nil {
+            let puckPosition = Rink.shared.convert(Puck.shared.position, from: Puck.shared.node.parent!)
+            
+            Puck.shared.node.removeFromParent()
+            Puck.shared.position = puckPosition
+            Rink.shared.addChild(Puck.shared.node)
+            
+            Rink.shared.bringNetsToFront()
+            
+            self.hasPuck = false
+            
+            self.playerEntity?.delegate?.playerDidReleasePuck(playerEntity!)
+        }
     }
     
     //Shoots the puck at a point

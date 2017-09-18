@@ -23,35 +23,13 @@ class GameViewController: UIViewController, HomeViewControllerDelegate {
         homeVC.delegate = self
         
         
-//        if #available(iOS 11.0, *) {
-//            Joystick.shared.frame = CGRect(x: 20, y: gameView.safeAreaInsets.bottom - joystickSize - 20, width: joystickSize, height: joystickSize)
-//        } else {
-//            // Fallback on earlier versions
-//            Joystick.shared.frame = CGRect(x: 20, y: gameView.frame.maxY - joystickSize - 20, width: joystickSize, height: joystickSize)
-//        }
-//        gameView.addSubview(Joystick.shared)
-//        Joystick.shared.delegate = UserComponent.shared
-//
-//        self.button = SwitchPlayerButton(frame: CGRect(x: gameView.frame.maxX - buttonSize - 20 , y: gameView.frame.maxY - buttonSize - 20, width: buttonSize, height: buttonSize))
-//        button.center.y = Joystick.shared.center.y
-//        button.delegate = UserComponent.shared
-//        gameView.addSubview(button)
-
         //Setting the rink
         Rink.shared.size = CGSize(width: 728, height: 1024)
         Rink.shared.scaleMode = .aspectFill
         gameView.presentScene(Rink.shared)
         
-        //Adding the scoreboard
-//        let time = TimeInterval(withMinutes: 2, andSeconds: 0)
-//        if #available(iOS 11.0, *) {
-//            Scoreboard.shared = Scoreboard(frame: CGRect(x: 20, y: gameView.safeAreaInsets.top - 50, width: 250, height: 30), withTotalTime: time)
-//        } else {
-//            // Fallback on earlier versions
-//            Scoreboard.shared = Scoreboard(frame: CGRect(x: 20, y: gameView.frame.maxY - 50, width: 250, height: 30), withTotalTime: time)
-//        }
-//        gameView.addSubview(Scoreboard.shared)
-
+        Rink.shared.animateCameraScale(toValue: 0.25, withDuration: 0.3)
+        
         gameView.showsPhysics = true
         gameView.showsFPS = true
         gameView.showsNodeCount = true
@@ -82,6 +60,7 @@ class GameViewController: UIViewController, HomeViewControllerDelegate {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         Rink.shared.deactivate()
+        self.removeGameUI()
         self.presentHomeView(animated: true)
     }
 
@@ -95,8 +74,8 @@ class GameViewController: UIViewController, HomeViewControllerDelegate {
     }
     
     //MARK: - Home view presentation.
+    ///Presents the home view.
     func presentHomeView(animated: Bool) {
-        Rink.shared.animateCameraScale(toValue: 0.25, withDuration: 0.3)
         //Add homeVC's view.
         homeVC.view.frame = self.view.frame
         self.view.addSubview(homeVC.view)
@@ -110,6 +89,7 @@ class GameViewController: UIViewController, HomeViewControllerDelegate {
         }
     }
     
+    ///Dismisses the home view.
     func dismissHomeView(completion: @escaping ()->Void) {
         Rink.shared.animateCameraScale(toValue: 0.6, withDuration: 0.3)
         UIView.animate(withDuration: 0.3, animations: {
@@ -124,10 +104,45 @@ class GameViewController: UIViewController, HomeViewControllerDelegate {
         }
     }
     
+    func addGameUI () {
+        //Joystick.
+        if #available(iOS 11.0, *) {
+            Joystick.shared.frame = CGRect(x: 20, y: gameView.safeAreaInsets.bottom - joystickSize - 20, width: joystickSize, height: joystickSize)
+        } else {
+            // Fallback on earlier versions
+            Joystick.shared.frame = CGRect(x: 20, y: gameView.frame.maxY - joystickSize - 20, width: joystickSize, height: joystickSize)
+        }
+        self.view.addSubview(Joystick.shared)
+        Joystick.shared.delegate = UserComponent.shared
+        
+        //Pass / change player button.
+        self.button = SwitchPlayerButton(frame: CGRect(x: gameView.frame.maxX - buttonSize - 20 , y: gameView.frame.maxY - buttonSize - 20, width: buttonSize, height: buttonSize))
+        button.center.y = Joystick.shared.center.y
+        button.delegate = UserComponent.shared
+        self.view.addSubview(button)
+        
+        //Scoreboard.
+        let time = TimeInterval(withMinutes: 2, andSeconds: 0)
+        if #available(iOS 11.0, *) {
+            Scoreboard.shared = Scoreboard(frame: CGRect(x: 20, y: gameView.frame.minY + gameView.safeAreaInsets.top + 15, width: 250, height: 30), withTotalTime: time)
+        } else {
+            // Fallback on earlier versions
+            Scoreboard.shared = Scoreboard(frame: CGRect(x: 20, y: gameView.frame.minY + 50, width: 250, height: 30), withTotalTime: time)
+        }
+        self.view.addSubview(Scoreboard.shared)
+    }
+    
+    func removeGameUI () {
+        Joystick.shared.removeFromSuperview()
+        self.button.removeFromSuperview()
+        Scoreboard.shared.removeFromSuperview()
+    }
+    
     //MARK: - Home view controller delegate.
     func homeVCDidRespondToPlayButton() {
         //Dismiss the home view controller.
         self.dismissHomeView {
+            self.addGameUI()
             Rink.shared.activate()
         }
     }

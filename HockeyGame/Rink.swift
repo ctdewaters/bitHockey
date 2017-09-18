@@ -127,6 +127,8 @@ public class Rink: SKScene, SKPhysicsContactDelegate, PlayerDelegate {
     func deactivate() {
         self.removeAllActions()
         
+        self.selectedPlayer?.removeComponent(ofType: UserComponent.self)
+        
         for child in children {
             if child != self.backgroundNode && child != self.cameraNode {
                 child.removeAllActions()
@@ -134,8 +136,23 @@ public class Rink: SKScene, SKPhysicsContactDelegate, PlayerDelegate {
             }
         }
         
-        self.entities.removeAll()
+        Puck.shared.node.removeFromParent()
+        
+        for entity in self.entities {
+            self.remove(entity: entity)
+        }
+        
+        //Removing entities in entitiesToRemove
+        for remove in entitiesToRemove {
+            for componentSystem in componentSystems {
+                componentSystem.removeComponent(foundIn: remove)
+            }
+        }
         self.entitiesToRemove.removeAll()
+
+        
+        self.animateCameraScale(toValue: 0.25, withDuration: 0.25)
+        self.animateCamera(toPosition: .zero, withDuration: 0.25)
     }
     
     ///Adds nodes to the rink, and starts the game.
@@ -146,6 +163,12 @@ public class Rink: SKScene, SKPhysicsContactDelegate, PlayerDelegate {
     
     func animateCameraScale(toValue value: CGFloat, withDuration duration: TimeInterval = 0.75) {
         let action = SKAction.scale(to: value, duration: duration)
+        cameraNode.run(action)
+    }
+    
+    func animateCamera(toPosition position: CGPoint, withDuration duration: TimeInterval = 0.75) {
+        let action = SKAction.move(to: position, duration: duration)
+        action.timingMode = .easeInEaseOut
         cameraNode.run(action)
     }
     
