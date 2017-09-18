@@ -55,10 +55,8 @@ public class MoveComponent: GKAgent2D, GKAgentDelegate {
         }
         
         let velocityVector = CGVector(dx: CGFloat(self.velocity.x), dy: CGFloat(self.velocity.y))
-        
-        print(velocityVector.magnitude)
-        
-        if abs(velocityVector.magnitude) < 1 {
+                
+        if abs(velocityVector.magnitude) < 35 {
             playerComponent.stopSkatingAction()
         }
         else {
@@ -128,7 +126,7 @@ public extension GKAgent2D {
 
 public extension CGVector {
     var magnitude: CGFloat {
-        return atan2(self.dy, self.dx)
+        return sqrt(dx*dx + dy*dy)
     }
 }
 

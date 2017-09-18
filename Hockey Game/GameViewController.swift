@@ -27,12 +27,6 @@ class GameViewController: UIViewController, HomeViewControllerDelegate {
         gameView.presentScene(Rink.shared)
         
         Rink.shared.animateCameraScale(toValue: 0.25, withDuration: 0.3)
-        
-        gameView.showsPhysics = true
-        gameView.showsFPS = true
-        gameView.showsNodeCount = true
-        gameView.showsDrawCount = true
-
     }
 
     override var shouldAutorotate: Bool {

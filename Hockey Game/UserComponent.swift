@@ -23,7 +23,7 @@ public class UserComponent: GKAgent2D, GKAgentDelegate, JoystickDelegate, Switch
     deinit {
         self.playerComponent?.deselect()
     }
-    
+        
     //MARK: - JoystickDelegate
     
     public func joystickDidExitIdle(_ joystick: Joystick) {
@@ -34,12 +34,6 @@ public class UserComponent: GKAgent2D, GKAgentDelegate, JoystickDelegate, Switch
         playerComponent?.stopSkatingAction()
         player?.texture = PlayerTexture.faceoff
         playerComponent?.applySkatingImpulse()
-    }
-    
-    public func joystick(_ joystick: Joystick, didGenerateData joystickData: JoystickData) {
-        self.playerComponent?.move(withJoystickData: joystickData)
-        
-        print("joystickData.magnitude = \(joystickData.magnitude!), angle = \(joystickData.angle!)")
     }
     
     //MARK: - SwitchPlayerButtonDelegate
@@ -59,6 +53,19 @@ public class UserComponent: GKAgent2D, GKAgentDelegate, JoystickDelegate, Switch
     
     public func agentDidUpdate(_ agent: GKAgent) {
     }
+    
+    public override func update(deltaTime seconds: TimeInterval) {
+        super.update(deltaTime: seconds)
+        
+        
+        if let player = self.player {
+            let data = Joystick.shared.getUpdateData()
+            if !data.x.isNaN && !data.y.isNaN && Joystick.shared.isActive {
+                self.playerComponent?.move(withJoystickData: data)
+            }
+        }
+    }
+
 
     
     //MARK: - Calculated variables

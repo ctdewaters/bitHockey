@@ -3,12 +3,14 @@ import UIKit
 public let joystickSize: CGFloat = 100
 
 public class Joystick: UIView {
-    fileprivate var joystickView: UIView!
+    public var joystickView: UIView!
     fileprivate var joystickOutlineView: UIView!
     
     fileprivate var panGesture: UIPanGestureRecognizer!
     
     public var delegate: JoystickDelegate?
+    
+    var isActive = false
     
     static let shared = Joystick(frame: CGRect(x: 0, y: 0, width: joystickSize, height: joystickSize))
     
@@ -42,8 +44,10 @@ public class Joystick: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
     @objc fileprivate func pan(_ panGesture: UIPanGestureRecognizer) {
         if panGesture.state == .began {
+            self.isActive = true
             delegate?.joystickDidExitIdle(self)
             UIView.animate(withDuration: 0.25, animations: {
                 self.joystickView.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
@@ -57,17 +61,23 @@ public class Joystick: UIView {
             var point = CGPoint(x: (self.frame.width / 2) + translation.x, y: (self.frame.height / 2) + translation.y)
             point = process(point: point)
             
-            //calculate data and send to the protocol
-            let data = self.generateData(fromPoint: point)
-            delegate?.joystick(self, didGenerateData: data)
-            
             UIView.animate(withDuration: 0.05, animations: {
                 self.joystickView.center = point
             })
         }
         else if panGesture.state == .ended {
+            self.isActive = false
             self.returnJoystickToCenter()
         }
+    }
+    
+    func getUpdateData() -> JoystickData {
+        //Calculating the point to move the joystick to
+        let point = self.joystickView.center
+                
+        //calculate data and send to the protocol
+        let data = self.generateData(fromPoint: point)
+        return data
     }
     
     fileprivate func process(point: CGPoint) -> CGPoint {
@@ -89,7 +99,6 @@ public class Joystick: UIView {
     
     fileprivate func generateData(fromPoint point: CGPoint) -> JoystickData {
         let center = CGPoint(x: self.frame.width / 2, y: self.frame.height / 2)
-        
         return JoystickData(withDX: point.x - center.x, andDY: -(point.y - center.y))
 
     }
@@ -142,6 +151,5 @@ public class JoystickData: TextOutputStreamable {
 
 public protocol JoystickDelegate {
     func joystickDidExitIdle(_ joystick: Joystick)
-    func joystick(_ joystick: Joystick, didGenerateData joystickData: JoystickData)
     func joystickDidReturnToIdle(_ joystick: Joystick)
 }

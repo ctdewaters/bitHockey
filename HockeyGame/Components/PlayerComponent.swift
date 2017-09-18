@@ -286,10 +286,21 @@ public class PlayerComponent: GKAgent2D {
             self.node.removeAction(forKey: "skatingImpulse")
         }
         
-        self.node.run(SKAction.rotateAction(toAngle: data.angle))
+        if !self.animatingSkating {
+            self.animateSkatingTextures()
+        }
+        
+        var rotationAngle = data.angle - (CGFloat.pi / 2)
+        rotationAngle = rotationAngle < 0 ? rotationAngle + (2 * CGFloat.pi) : rotationAngle
+        self.node.zRotation = rotationAngle
         
         let length = sqrt(pow(data.x, 2) + pow(data.y, 2))
         let normalizedPoint = CGPoint(x: data.x / length, y: data.y / length)
+        
+        
+        if normalizedPoint.x.isNaN || normalizedPoint.y.isNaN {
+            return
+        }
         
         let playerSpeed = self.pSpeed
         
