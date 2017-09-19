@@ -155,6 +155,7 @@ public class Rink: SKScene, SKPhysicsContactDelegate, PlayerDelegate {
     
     ///Adds nodes to the rink, and starts the game.
     func activate() {
+        self.resume()
         //Generating the nets, players, and puck
         self.generateAndAddNodes(withTeamSize: .five, andHomeTeamColor: .blue)
     }
@@ -189,12 +190,12 @@ public class Rink: SKScene, SKPhysicsContactDelegate, PlayerDelegate {
     
     //Pause the game
     open func pause() {
-        self.speed = 0
+        self.view?.isPaused = true
     }
     
     //Resume the game
     open func resume() {
-        self.speed = 1
+        self.view?.isPaused = false
     }
     
     //Sets the physics body shape, gravity, and contact properties

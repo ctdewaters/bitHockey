@@ -38,7 +38,7 @@ public enum BehaviorType: String {
         case .defendGoal :
             return [200, 200, 200, 5000]
         case .supportPuckCarrier :
-            return [750, 100, 5000, 5000]
+            return [200, 100, 5000, 5000]
         case .attackPuckCarrier :
             return [5000, 5000, 250]
         }

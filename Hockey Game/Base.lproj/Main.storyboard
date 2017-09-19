@@ -33,7 +33,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bit Hockey" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8js-HM-kyz">
-                                <rect key="frame" x="0.0" y="104" width="375" height="57"/>
+                                <rect key="frame" x="0.0" y="94" width="375" height="57"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="57" id="ocX-Ck-L9T"/>
                                 </constraints>
@@ -42,7 +42,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A Game by Collin DeWaters." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8oN-tk-mcy">
-                                <rect key="frame" x="82.333333333333314" y="156" width="212" height="21"/>
+                                <rect key="frame" x="81.666666666666686" y="146" width="212" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="212" id="F4k-jm-kn0"/>
                                     <constraint firstAttribute="height" constant="21" id="Nol-Ic-nYg"/>
@@ -60,7 +60,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="27"/>
                                 <state key="normal" title="Play">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" red="0.74182068960000003" green="0.9311934395" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="SUt-jw-heB" eventType="touchUpInside" id="jLA-AL-ivd"/>
@@ -75,7 +75,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="24"/>
                                 <state key="normal" title="Show Controls">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" red="0.38878807432418583" green="1" blue="0.74228443214817097" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="SUt-jw-heB" eventType="touchUpInside" id="JZh-PL-Tfc"/>
@@ -85,7 +85,7 @@
                         <constraints>
                             <constraint firstItem="8oN-tk-mcy" firstAttribute="centerX" secondItem="8js-HM-kyz" secondAttribute="centerX" id="69i-Rg-F63"/>
                             <constraint firstItem="hgd-rd-uzi" firstAttribute="centerY" secondItem="zOy-aV-tBZ" secondAttribute="centerY" id="6sL-kp-qyi"/>
-                            <constraint firstItem="8js-HM-kyz" firstAttribute="top" secondItem="3FE-h5-c23" secondAttribute="bottom" constant="60" id="KMO-pW-jKt"/>
+                            <constraint firstItem="8js-HM-kyz" firstAttribute="top" secondItem="3FE-h5-c23" secondAttribute="bottom" constant="50" id="KMO-pW-jKt"/>
                             <constraint firstItem="hgd-rd-uzi" firstAttribute="centerX" secondItem="zOy-aV-tBZ" secondAttribute="centerX" id="S6q-sP-FPy"/>
                             <constraint firstItem="8js-HM-kyz" firstAttribute="leading" secondItem="zOy-aV-tBZ" secondAttribute="leading" id="TkX-px-XM8"/>
                             <constraint firstItem="8oN-tk-mcy" firstAttribute="top" secondItem="8js-HM-kyz" secondAttribute="bottom" constant="-5" id="YMn-wO-gCf"/>
@@ -103,7 +103,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KKP-oS-KTB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1294" y="61"/>
+            <point key="canvasLocation" x="-343" y="57"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
@@ -124,6 +124,145 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Pause Menu View Controller-->
+        <scene sceneID="eRY-OD-AkK">
+            <objects>
+                <viewController storyboardIdentifier="pauseVC" id="rEm-9v-Hts" customClass="PauseMenuViewController" customModule="Bit_Hockey__iOS_" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ue0-cV-mPn"/>
+                        <viewControllerLayoutGuide type="bottom" id="ejG-eE-pod"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jjn-dn-zp1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zfm-Eh-Plt">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="yWg-bS-M1g">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qNN-PE-5Lo">
+                                            <rect key="frame" x="46.666666666666657" y="60" width="283" height="216"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Idr-4m-wAx">
+                                                    <rect key="frame" x="163" y="20" width="100" height="100"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Krunch-Bold" family="Krunch" pointSize="60"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Away" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z5d-dR-9Ku">
+                                                    <rect key="frame" x="163" y="128" width="100" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="25"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Home" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F0C-aY-RTb">
+                                                    <rect key="frame" x="20" y="128" width="100" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="25"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VK4-bd-Hcr">
+                                                    <rect key="frame" x="20" y="20" width="100" height="100"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Krunch-Bold" family="Krunch" pointSize="60"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqf-qa-Ssn">
+                                                    <rect key="frame" x="91" y="166" width="100" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="25"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.7268650968" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="216" id="23S-mw-r8Q"/>
+                                                <constraint firstAttribute="width" constant="283" id="x4J-kG-XFQ"/>
+                                            </constraints>
+                                        </view>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9d-1y-dbJ">
+                                            <rect key="frame" x="89.666666666666686" y="347" width="197" height="50"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.94999999999999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="7Xn-ah-cQ6"/>
+                                                <constraint firstAttribute="width" constant="197" id="FgA-Bt-7OZ"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="27"/>
+                                            <state key="normal" title="Resume">
+                                                <color key="titleColor" red="0.74182068959827618" green="0.93119343946411648" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="buttonPressed:" destination="SUt-jw-heB" eventType="touchUpInside" id="Wao-IL-O96"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EJ1-R2-yva">
+                                            <rect key="frame" x="89.666666666666686" y="416" width="197" height="50"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.94999999999999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="GVf-ea-hiG"/>
+                                                <constraint firstAttribute="width" constant="197" id="osX-d5-fAR"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="24"/>
+                                            <state key="normal" title="Quit">
+                                                <color key="titleColor" red="1" green="0.50989445140565492" blue="0.5005228733060707" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="buttonPressed:" destination="SUt-jw-heB" eventType="touchUpInside" id="jkz-Xo-nOS"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paused" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRJ-rC-sU7">
+                                            <rect key="frame" x="127.66666666666666" y="291" width="119.99999999999997" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="120" id="9aQ-iv-90g"/>
+                                                <constraint firstAttribute="height" constant="40" id="JE1-9F-F15"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Krunch-Bold" family="Krunch" pointSize="27"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="qNN-PE-5Lo" firstAttribute="centerX" secondItem="yWg-bS-M1g" secondAttribute="centerX" id="0t1-3p-wQu"/>
+                                        <constraint firstItem="h9d-1y-dbJ" firstAttribute="centerX" secondItem="yWg-bS-M1g" secondAttribute="centerX" id="2V0-kp-Wcm"/>
+                                        <constraint firstItem="dRJ-rC-sU7" firstAttribute="top" secondItem="qNN-PE-5Lo" secondAttribute="bottom" constant="15" id="3Qk-n5-Ed4"/>
+                                        <constraint firstItem="dRJ-rC-sU7" firstAttribute="centerX" secondItem="qNN-PE-5Lo" secondAttribute="centerX" id="OOL-Yy-AQx"/>
+                                        <constraint firstItem="h9d-1y-dbJ" firstAttribute="top" secondItem="dRJ-rC-sU7" secondAttribute="bottom" constant="16" id="QwJ-CF-jpj"/>
+                                        <constraint firstItem="EJ1-R2-yva" firstAttribute="top" secondItem="h9d-1y-dbJ" secondAttribute="bottom" constant="19" id="ToQ-Pf-nNd"/>
+                                        <constraint firstItem="EJ1-R2-yva" firstAttribute="centerX" secondItem="h9d-1y-dbJ" secondAttribute="centerX" id="d6t-wE-wRr"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Zfm-Eh-Plt" firstAttribute="leading" secondItem="Jjn-dn-zp1" secondAttribute="leading" id="0pF-3f-aZI"/>
+                            <constraint firstItem="qNN-PE-5Lo" firstAttribute="top" secondItem="Ue0-cV-mPn" secondAttribute="bottom" constant="16" id="1ip-Sc-cj1"/>
+                            <constraint firstItem="Zfm-Eh-Plt" firstAttribute="top" secondItem="Jjn-dn-zp1" secondAttribute="top" id="Alx-K6-Z9A"/>
+                            <constraint firstAttribute="bottom" secondItem="Zfm-Eh-Plt" secondAttribute="bottom" id="QJ9-5H-UyM"/>
+                            <constraint firstAttribute="trailing" secondItem="Zfm-Eh-Plt" secondAttribute="trailing" id="YAZ-XN-x1n"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="blur" destination="Zfm-Eh-Plt" id="ct7-La-RTl"/>
+                        <outlet property="homeScoreLabel" destination="VK4-bd-Hcr" id="t2H-Xh-NCb"/>
+                        <outlet property="quitButton" destination="EJ1-R2-yva" id="Cia-4L-DK8"/>
+                        <outlet property="resumeButton" destination="h9d-1y-dbJ" id="2RI-Ku-gDo"/>
+                        <outlet property="roadScoreLabel" destination="Idr-4m-wAx" id="HNX-DC-X5v"/>
+                        <outlet property="scoreboardView" destination="qNN-PE-5Lo" id="DNm-Uu-ALG"/>
+                        <outlet property="timeRemainingLabel" destination="dqf-qa-Ssn" id="vhQ-Y7-w2c"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7MX-eV-xVS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1357.5999999999999" y="294.82758620689657"/>
         </scene>
     </scenes>
 </document>

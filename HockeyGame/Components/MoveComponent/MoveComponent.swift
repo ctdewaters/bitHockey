@@ -11,7 +11,6 @@ import GameplayKit
 
 public class MoveComponent: GKAgent2D, GKAgentDelegate {
     
-    
     public init(maxSpeed: Float, maxAcceleration: Float, radius: Float, mass: Float, withBehaviorType type: BehaviorType) {
         super.init()
         

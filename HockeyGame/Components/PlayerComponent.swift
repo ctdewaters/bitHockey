@@ -313,21 +313,21 @@ public class PlayerComponent: GKAgent2D {
         return atan2(point.y, point.x)
     }
     
-    fileprivate func animateDeke(toRight: Bool) {
+    public func animateDeke(toRight: Bool) {
         if toRight {
             self.dekeSide = .right
-            let dekeAnimation = SKAction.animate(with: PlayerTexture.dekeRightTextures, timePerFrame: 0.1, resize: false, restore: false)
+            let dekeAnimation = SKAction.animate(with: PlayerTexture.dekeRightTextures, timePerFrame: 0.05, resize: false, restore: false)
             self.playerNode.run(dekeAnimation)
             
-            let puckAnimation = SKAction.moveTo(x: 7, duration: 0.45)
+            let puckAnimation = SKAction.moveTo(x: 7, duration: 0.2)
             Puck.shared.node.run(puckAnimation)
         }
         else {
             self.dekeSide = .left
-            let dekeAnimation = SKAction.animate(with: PlayerTexture.dekeLeftTextures, timePerFrame: 0.1, resize: false, restore: false)
+            let dekeAnimation = SKAction.animate(with: PlayerTexture.dekeLeftTextures, timePerFrame: 0.05, resize: false, restore: false)
             self.playerNode.run(dekeAnimation)
             
-            let puckAnimation = SKAction.moveTo(x: -15, duration: 0.45)
+            let puckAnimation = SKAction.moveTo(x: -15, duration: 0.2)
             Puck.shared.node.run(puckAnimation)
         }
     }

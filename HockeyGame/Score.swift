@@ -12,8 +12,8 @@ public class Score: NSObject {
     
     static let shared = Score()
     
-    fileprivate var userScore: Int = 0
-    fileprivate var cpuScore: Int = 0
+    public var userScore: Int = 0
+    public var cpuScore: Int = 0
     
     public func score(forUserTeam userGoal: Bool) {
         if userGoal {

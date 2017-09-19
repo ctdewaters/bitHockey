@@ -10,6 +10,7 @@ import UIKit
 
 let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
 let homeVC: HomeViewController = mainStoryboard.instantiateViewController(withIdentifier: "homeVC") as! HomeViewController
+let pauseVC: PauseMenuViewController = mainStoryboard.instantiateViewController(withIdentifier: "pauseVC") as! PauseMenuViewController
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

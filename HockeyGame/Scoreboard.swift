@@ -158,21 +158,23 @@
         //Holding views
         private var userScoreView: ScoreView!
         private var opposingScoreView: ScoreView!
-        private var clockView: ClockView!
+        public var clockView: ClockView!
         
         public init(frame frameRect: CGRect, withTotalTime time: TimeInterval) {
-            super.init(effect: UIBlurEffect(style: .dark))
+            super.init(effect: nil)
             
             self.frame = frameRect
             
             self.layer.cornerRadius = frameRect.height / 2
             self.clipsToBounds = true
             
+            self.contentView.backgroundColor = UIColor.black.withAlphaComponent(0.9)
+            
             let viewWidth = frameRect.width / 3
             
-            self.userScoreView = ScoreView(frame: CGRect(x: 0, y: 0, width: viewWidth, height: frameRect.height), isUserTeam: true)
-            self.opposingScoreView = ScoreView(frame: CGRect(x: userScoreView.frame.maxX, y: 0, width: viewWidth, height: frameRect.height), isUserTeam: false)
-            self.clockView = ClockView(frame: CGRect(x: opposingScoreView.frame.maxX, y: 0, width: viewWidth, height: frameRect.height), withTotalTime: time)
+            self.userScoreView = ScoreView(frame: CGRect(x: 0, y: 3, width: viewWidth, height: frameRect.height), isUserTeam: true)
+            self.opposingScoreView = ScoreView(frame: CGRect(x: userScoreView.frame.maxX, y: 3, width: viewWidth, height: frameRect.height), isUserTeam: false)
+            self.clockView = ClockView(frame: CGRect(x: opposingScoreView.frame.maxX, y: 3, width: viewWidth, height: frameRect.height), withTotalTime: time)
             
             self.contentView.addSubview(userScoreView)
             self.contentView.addSubview(opposingScoreView)
@@ -181,6 +183,10 @@
         
         public func startTimer() {
             self.clockView.startTimer()
+        }
+        
+        public func pauseTimer() {
+            self.clockView.pauseTimer()
         }
         
         required public init?(coder: NSCoder) {
@@ -216,12 +222,12 @@
             self.addSubview(teamNameLabel)
             
             //Setting up the team's score label
-            scoreLabel = UILabel(frame: CGRect(x: teamNameLabel.frame.maxX, y: -2.5, width: frameRect.width * 0.3, height: frameRect.height))
+            scoreLabel = UILabel(frame: CGRect(x: teamNameLabel.frame.maxX - 5, y: -2.5, width: frameRect.width * 0.3, height: frameRect.height))
             scoreLabel.font = UIFont.systemFont(ofSize: frameRect.height * 0.6, weight: UIFont.Weight.bold)
             scoreLabel.textAlignment = .right
             scoreLabel.textColor = .white
+            scoreLabel.text = "0"
             self.addSubview(scoreLabel)
-            
         }
         
         @objc private func scoreGoal() {
@@ -245,11 +251,11 @@
         }
     }
     
-    fileprivate class ClockView: UIView {
+    public class ClockView: UIView {
         
         private var timer: Timer!
         private var currentTime: TimeInterval!
-        private var timeLabel: UILabel!
+        public var timeLabel: UILabel!
         
         init(frame frameRect: CGRect, withTotalTime time: TimeInterval) {
             super.init(frame: frameRect)
@@ -277,9 +283,11 @@
             self.timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
         }
         
-        @objc private func pauseTimer() {
-            self.timer.invalidate()
-            self.timer = nil
+        @objc fileprivate func pauseTimer() {
+            if self.timer != nil {
+                self.timer.invalidate()
+                self.timer = nil
+            }
         }
         
         @objc private func update() {
@@ -292,7 +300,7 @@
             }
         }
         
-        required init?(coder: NSCoder) {
+        required public init?(coder: NSCoder) {
             fatalError("init(coder:) has not been implemented")
         }
     }

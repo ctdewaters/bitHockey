@@ -395,10 +395,9 @@ extension Array where Element:Player {
         for player: Player in self {
             if player.pPosition.isDefenseman {
                 player.updateMoveComponent(withType: .defendGoal)
+                return
             }
-            else {
-                player.updateMoveComponent(withType: .attackPuckCarrier)
-            }
+            player.updateMoveComponent(withType: .attackPuckCarrier)
         }
     }
     

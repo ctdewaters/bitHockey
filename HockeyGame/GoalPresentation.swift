@@ -192,14 +192,23 @@ class GoalPresentation: NSObject {
             UIView.animate(withDuration: duration, animations: {
                 self.isHidden = false
                 self.alpha = 1
+            }, completion: { (completed) in
+                if completed {
+                    completion?()
+                }
             })
         }
         
         func fadeOut(withDuration duration: TimeInterval, andCompletionBlock completion: (()->Void)? = nil) {
             UIView.animate(withDuration: duration, animations: {
-                self.isHidden = false
+                self.isHidden = true
                 self.alpha = 0
+            }, completion: { (completed) in
+                if completed {
+                    completion?()
+                }
             })
+
         }
     }
     
