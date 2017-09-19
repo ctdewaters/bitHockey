@@ -125,6 +125,7 @@ public class Rink: SKScene, SKPhysicsContactDelegate, PlayerDelegate {
     
     ///Ends the game, and removes nodes from the rink.
     func deactivate() {
+        self.resume()
         self.removeAllActions()
         
         self.selectedPlayer?.removeComponent(ofType: UserComponent.self)
