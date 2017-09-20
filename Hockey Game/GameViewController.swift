@@ -16,7 +16,6 @@ class GameViewController: UIViewController, HomeViewControllerDelegate, UIGestur
     
     var panGesture: UIPanGestureRecognizer!
     var pauseButton: UIButton!
-    var avPlayer: AVAudioPlayer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,11 +67,6 @@ class GameViewController: UIViewController, HomeViewControllerDelegate, UIGestur
                 homeVC.view.frame.origin.y = 0
             }, completion: {
                 completed in
-                let url = Bundle.main.url(forResource: "music", withExtension: "m4a")
-                self.avPlayer = try? AVAudioPlayer(contentsOf: url!)
-                self.avPlayer.numberOfLoops = -1
-                self.avPlayer.prepareToPlay()
-                self.avPlayer.play()
             })
         }
     }
@@ -87,8 +81,6 @@ class GameViewController: UIViewController, HomeViewControllerDelegate, UIGestur
             if completed {
                 homeVC.view.removeFromSuperview()
                 
-                self.avPlayer.pause()
-                self.avPlayer = nil
                 completion()
             }
         }
@@ -96,6 +88,7 @@ class GameViewController: UIViewController, HomeViewControllerDelegate, UIGestur
     
     //MARK: - Pause menu
     func presentPauseView() {
+        Haptics.shared.playPeekHaptic()
         //Add pauseVC's view.
         pauseVC.view.frame = self.view.frame
         //Setup pauseVC info.
@@ -152,6 +145,7 @@ class GameViewController: UIViewController, HomeViewControllerDelegate, UIGestur
     }
     
     @objc func dismissControlsView() {
+        Haptics.shared.playPopHaptic()
         UIView.animate(withDuration: 0.3, animations: {
             controlsVC.blur.effect = nil
             controlsVC.image.transform = CGAffineTransform(scaleX: 0.75, y: 0.75)
@@ -299,6 +293,7 @@ class GameViewController: UIViewController, HomeViewControllerDelegate, UIGestur
     @objc func resumeGame() {
         //Resume the game.
         
+        Haptics.shared.playPopHaptic()
         self.dismissPauseView {
             Rink.shared.resume()
             Scoreboard.shared.startTimer()
@@ -306,6 +301,7 @@ class GameViewController: UIViewController, HomeViewControllerDelegate, UIGestur
     }
     
     @objc func exitGame() {
+        Haptics.shared.sendNotificationHaptic(withType: .warning)
         self.dismissPauseView {
             Rink.shared.deactivate()
             self.removeGameUI()
@@ -317,6 +313,7 @@ class GameViewController: UIViewController, HomeViewControllerDelegate, UIGestur
     //MARK: - Home view controller delegate.
     func homeVCDidRespondToPlayButton() {
         //Dismiss the home view controller.
+        Haptics.shared.sendNotificationHaptic(withType: .success)
         self.dismissHomeView {
             self.addGameUI()
             Rink.shared.activate()
@@ -324,6 +321,7 @@ class GameViewController: UIViewController, HomeViewControllerDelegate, UIGestur
     }
     
     func homeVCDidRespondToControlsButton() {
+        Haptics.shared.playPeekHaptic()
         self.presentControlsView()
     }
 }

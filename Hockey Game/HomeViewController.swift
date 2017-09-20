@@ -44,7 +44,6 @@ class HomeViewController: UIViewController {
         guard let button = sender as? UIButton else {
             return
         }
-        
         if button == self.playButton {
             //Play button pressed.
             self.delegate?.homeVCDidRespondToPlayButton()
