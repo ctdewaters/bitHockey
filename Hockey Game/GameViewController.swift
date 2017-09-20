@@ -243,7 +243,7 @@ class GameViewController: UIViewController, HomeViewControllerDelegate, UIGestur
                 let x = translation.x
                 let y = translation.y
                 
-                if y < -75 {
+                if y < -75 && selectedPlayer.hasPuck {
                     //Shoot the puck.
                     let velocity = recognizer.velocity(in: self.gameView)
                     let shootPoint = CGPoint(x: selectedPlayer.position.x + velocity.x, y: selectedPlayer.position.y - velocity.y)
@@ -262,8 +262,10 @@ class GameViewController: UIViewController, HomeViewControllerDelegate, UIGestur
                 
             case .ended :
                 let velocity = recognizer.velocity(in: self.gameView)
-                let magnitude = sqrt(velocity.x * 2 + velocity.y * 2)
-                print(magnitude)
+                let shootPoint = CGPoint(x: selectedPlayer.position.x + velocity.x, y: selectedPlayer.position.y - velocity.y)
+                if selectedPlayer.hasPuck {
+                    selectedPlayer.playerComponent?.shootPuck(atPoint: shootPoint)
+                }
             default :
                 break
             }

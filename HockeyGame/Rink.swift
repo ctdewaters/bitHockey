@@ -1,5 +1,6 @@
 import SpriteKit
 import GameplayKit
+import AVFoundation
 #if os(OSX)
 import Cocoa
     
@@ -37,6 +38,8 @@ public var userTeam: Team?
 public var opposingTeam: Team?
 
 public var homeTeamColor: SKColor!
+
+var player: AVPlayer!
 
 public class Rink: SKScene, SKPhysicsContactDelegate, PlayerDelegate {
     
@@ -443,10 +446,14 @@ public class Rink: SKScene, SKPhysicsContactDelegate, PlayerDelegate {
                 if puckInNet == Net.topNet {
                     Score.shared.score(forUserTeam: true)
                     goalVC.updateScore(forUserTeam: true)
+                    
+                    Haptics.shared.sendNotificationHaptic(withType: .success)
                 }
                 else {
                     Score.shared.score(forUserTeam: false)
                     goalVC.updateScore(forUserTeam: false)
+                    
+                    Haptics.shared.sendNotificationHaptic(withType: .error)
                 }
                 
                 goalVC.tapCompletion = {
@@ -541,6 +548,11 @@ public class Rink: SKScene, SKPhysicsContactDelegate, PlayerDelegate {
         if bodyA.categoryBitMask == PhysicsCategory.rink && bodyB.categoryBitMask == PhysicsCategory.puck {
             //Puck hit the boards
             //SoundEffectPlayer.boards.play(soundEffect: .puckHitBoards)
+            print("PUCK HIT BOARDS")
+            Haptics.shared.sendImpactHaptic(withStyle: .heavy)
+            
+            player = AVPlayer(url: Bundle.main.url(forResource: "thump", withExtension: "wav")!)
+            player.play()
         }
         
         if bodyA.categoryBitMask == PhysicsCategory.player && bodyB.categoryBitMask == PhysicsCategory.puck {
