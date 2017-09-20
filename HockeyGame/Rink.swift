@@ -375,7 +375,7 @@ public class Rink: SKScene, SKPhysicsContactDelegate, PlayerDelegate {
                     return player1.distance(fromNode: Puck.shared.node) < player2.distance(fromNode: Puck.shared.node)
                 })
             }
-            else {
+            else if Puck.shared.node.parent != nil {
                 userTeam = userTeam.sorted(by: {
                     player1, player2 in
                     return player1.distance(fromNode: self.puckCarrier!.node!) < player2.distance(fromNode: self.puckCarrier!.node!)
