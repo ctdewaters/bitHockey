@@ -547,12 +547,14 @@ public class Rink: SKScene, SKPhysicsContactDelegate, PlayerDelegate {
         
         if bodyA.categoryBitMask == PhysicsCategory.rink && bodyB.categoryBitMask == PhysicsCategory.puck {
             //Puck hit the boards
-            //SoundEffectPlayer.boards.play(soundEffect: .puckHitBoards)
-            print("PUCK HIT BOARDS")
-            Haptics.shared.sendImpactHaptic(withStyle: .heavy)
-            
-            player = AVPlayer(url: Bundle.main.url(forResource: "thump", withExtension: "wav")!)
-            player.play()
+            if contact.collisionImpulse > 5 {
+                Haptics.shared.sendImpactHaptic(withStyle: .heavy)
+                player = AVPlayer(url: Bundle.main.url(forResource: "thump", withExtension: "mp3")!)
+                player.play()
+            }
+            else {
+                Haptics.shared.sendImpactHaptic(withStyle: .light)
+            }
         }
         
         if bodyA.categoryBitMask == PhysicsCategory.player && bodyB.categoryBitMask == PhysicsCategory.puck {

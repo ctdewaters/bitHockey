@@ -16,6 +16,7 @@ class PauseMenuViewController: UIViewController {
     @IBOutlet weak var resumeButton: UIButton!
     @IBOutlet weak var quitButton: UIButton!
     @IBOutlet weak var blur: UIVisualEffectView!
+    @IBOutlet weak var messageLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()

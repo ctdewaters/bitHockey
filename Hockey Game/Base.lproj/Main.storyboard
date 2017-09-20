@@ -399,9 +399,9 @@
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paused" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRJ-rC-sU7">
-                                            <rect key="frame" x="127" y="250" width="120" height="40"/>
+                                            <rect key="frame" x="37" y="250" width="300" height="40"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="120" id="9aQ-iv-90g"/>
+                                                <constraint firstAttribute="width" constant="300" id="9aQ-iv-90g"/>
                                                 <constraint firstAttribute="height" constant="40" id="JE1-9F-F15"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="Krunch-Bold" family="Krunch" pointSize="27"/>
@@ -433,6 +433,7 @@
                     <connections>
                         <outlet property="blur" destination="Zfm-Eh-Plt" id="ct7-La-RTl"/>
                         <outlet property="homeScoreLabel" destination="VK4-bd-Hcr" id="t2H-Xh-NCb"/>
+                        <outlet property="messageLabel" destination="dRJ-rC-sU7" id="Oj3-n8-cwD"/>
                         <outlet property="quitButton" destination="EJ1-R2-yva" id="Cia-4L-DK8"/>
                         <outlet property="resumeButton" destination="h9d-1y-dbJ" id="2RI-Ku-gDo"/>
                         <outlet property="roadScoreLabel" destination="Idr-4m-wAx" id="HNX-DC-X5v"/>

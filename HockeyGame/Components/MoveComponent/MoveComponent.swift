@@ -73,11 +73,13 @@ public class MoveComponent: GKAgent2D, GKAgentDelegate {
             
             let rand = Int.random(lowerBound: 0, upperBound: Int(playerComponent.node.position.distance(fromPoint: Net.bottomNet.node.position)))
             
-            if rand == 7 {
+            if rand == 0 || rand == 7 || rand == 14 && playerComponent.node.position.y < -30 {
                 //Shoot the puck
-                playerComponent.shootPuck(atPoint: Net.bottomNet.node.position)
+                var shootPoint = Net.bottomNet.node.position
+                shootPoint.x += CGFloat(Int.random(lowerBound: -10, upperBound: 10))
+                playerComponent.shootPuck(atPoint: shootPoint)
             }
-            else if rand < 5 && rand.isEven {
+            else if rand <= 16 && rand.isEven && rand != 0 && rand != 7 && rand != 14{
                 //Pass to another player
                 playerComponent.passPuck(toPlayer: opposingTeam![Int.random(lowerBound: 0, upperBound: opposingTeam!.count - 1)])
             }

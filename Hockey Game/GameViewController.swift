@@ -30,6 +30,8 @@ class GameViewController: UIViewController, HomeViewControllerDelegate, UIGestur
         gameView.presentScene(Rink.shared)
         
         Rink.shared.animateCameraScale(toValue: 0.25, withDuration: 0.3)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.gameEnded), name: .gameDidEnd, object: nil)
     }
 
     override var shouldAutorotate: Bool {
@@ -86,6 +88,34 @@ class GameViewController: UIViewController, HomeViewControllerDelegate, UIGestur
         }
     }
     
+    //MARK: - Game over menu.
+    func presentGameOverMenu() {
+        //Add pauseVC's view.
+        pauseVC.view.frame = self.view.frame
+        //Setup pauseVC info.
+        pauseVC.homeScoreLabel.text = "\(Score.shared.userScore)"
+        pauseVC.roadScoreLabel.text = "\(Score.shared.cpuScore)"
+        pauseVC.timeRemainingLabel.text = "0:00"
+        pauseVC.blur.effect = nil
+        pauseVC.blur.contentView.alpha = 0
+        self.view.addSubview(pauseVC.view)
+        pauseVC.quitButton.isHidden = true
+        
+        pauseVC.messageLabel.text = "Game Over"
+        pauseVC.resumeButton.setTitle("Exit", for: .normal)
+        
+        pauseVC.blur.contentView.transform = CGAffineTransform(scaleX: 0.75, y: 0.75)
+        
+        pauseVC.resumeButton.addTarget(self, action: #selector(self.exitGame), for: .touchUpInside)
+        
+        //Animate in.
+        UIView.animate(withDuration: 0.3, animations: {
+            pauseVC.blur.effect = UIBlurEffect(style: .light)
+            pauseVC.blur.contentView.alpha = 1
+            pauseVC.blur.contentView.transform = .identity
+        }, completion: nil)
+    }
+    
     //MARK: - Pause menu
     func presentPauseView() {
         Haptics.shared.playPeekHaptic()
@@ -97,7 +127,12 @@ class GameViewController: UIViewController, HomeViewControllerDelegate, UIGestur
         pauseVC.timeRemainingLabel.text = Scoreboard.shared.clockView.timeLabel.text!
         pauseVC.blur.effect = nil
         pauseVC.blur.contentView.alpha = 0
+        pauseVC.messageLabel.text = "Paused"
         self.view.addSubview(pauseVC.view)
+        
+        pauseVC.quitButton.isHidden = false
+        
+        pauseVC.resumeButton.setTitle("Resume", for: .normal)
         
         pauseVC.blur.contentView.transform = CGAffineTransform(scaleX: 0.75, y: 0.75)
         
@@ -325,5 +360,28 @@ class GameViewController: UIViewController, HomeViewControllerDelegate, UIGestur
     func homeVCDidRespondToControlsButton() {
         Haptics.shared.playPeekHaptic()
         self.presentControlsView()
+    }
+    
+    @objc func gameEnded() {
+        //Play ending horn.
+        player = AVPlayer(url: Bundle.main.url(forResource: "gameEnd", withExtension: "wav")!)
+        player.play()
+
+        self.removeGameUI()
+        self.presentGameOverMenu()
+         Rink.shared.deactivate()
+        
+        if Score.shared.userScore > Score.shared.cpuScore {
+            //User won.
+            Haptics.shared.sendNotificationHaptic(withType: .success)
+        }
+        else if Score.shared.userScore < Score.shared.cpuScore {
+            //CPU won.
+            Haptics.shared.sendNotificationHaptic(withType: .warning)
+        }
+        else {
+            //Tie.
+            Haptics.shared.sendNotificationHaptic(withType: .error)
+        }
     }
 }

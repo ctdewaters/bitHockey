@@ -24,8 +24,8 @@
 		B89F57271F72ACCD0087A1F9 /* GoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89F57261F72ACCD0087A1F9 /* GoalViewController.swift */; };
 		B89F572C1F72C1A20087A1F9 /* gameEnd.wav in Resources */ = {isa = PBXBuildFile; fileRef = B89F572A1F72C05E0087A1F9 /* gameEnd.wav */; };
 		B89F572E1F72C1A20087A1F9 /* gameEnd.wav in Resources */ = {isa = PBXBuildFile; fileRef = B89F572A1F72C05E0087A1F9 /* gameEnd.wav */; };
-		B89F57301F72C2C90087A1F9 /* thump.wav in Resources */ = {isa = PBXBuildFile; fileRef = B89F572F1F72C2C80087A1F9 /* thump.wav */; };
-		B89F57311F72C2CA0087A1F9 /* thump.wav in Resources */ = {isa = PBXBuildFile; fileRef = B89F572F1F72C2C80087A1F9 /* thump.wav */; };
+		B89F57331F72C3B50087A1F9 /* thump.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B89F57321F72C3B20087A1F9 /* thump.mp3 */; };
+		B89F57341F72C3B60087A1F9 /* thump.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B89F57321F72C3B20087A1F9 /* thump.mp3 */; };
 		B8AB0B8F1E92EE8800B4C356 /* BehaviorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E0328B1E92EB91004F718E /* BehaviorType.swift */; };
 		B8AB0B901E92EE8800B4C356 /* MoveComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E0328C1E92EB91004F718E /* MoveComponent.swift */; };
 		B8AB0B911E92EE8800B4C356 /* NetComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E0328D1E92EB91004F718E /* NetComponent.swift */; };
@@ -97,7 +97,7 @@
 		B89F57241F71F6DE0087A1F9 /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
 		B89F57261F72ACCD0087A1F9 /* GoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewController.swift; sourceTree = "<group>"; };
 		B89F572A1F72C05E0087A1F9 /* gameEnd.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = gameEnd.wav; sourceTree = "<group>"; };
-		B89F572F1F72C2C80087A1F9 /* thump.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = thump.wav; sourceTree = "<group>"; };
+		B89F57321F72C3B20087A1F9 /* thump.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = thump.mp3; sourceTree = "<group>"; };
 		B8D5B90F1E7D8D6500D303E4 /* Bit Hockey (iOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bit Hockey (iOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8D5B9121E7D8D6500D303E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8D5B91A1E7D8D6500D303E4 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -229,7 +229,7 @@
 		B89F57291F72BFC10087A1F9 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				B89F572F1F72C2C80087A1F9 /* thump.wav */,
+				B89F57321F72C3B20087A1F9 /* thump.mp3 */,
 				B89F572A1F72C05E0087A1F9 /* gameEnd.wav */,
 			);
 			path = Sounds;
@@ -475,11 +475,11 @@
 				B8D5B9591E7D8E7400D303E4 /* puckHitBoards.m4a in Resources */,
 				B81A7C631EC235390018D737 /* Rubik-Regular.ttf in Resources */,
 				B8F585C91F5214C100FCF981 /* Info.plist in Resources */,
-				B89F57301F72C2C90087A1F9 /* thump.wav in Resources */,
 				B8F585CB1F52157A00FCF981 /* krunch_italic.ttf in Resources */,
 				B8D5B91E1E7D8D6500D303E4 /* Main.storyboard in Resources */,
 				B8D5B9201E7D8D6500D303E4 /* Assets.xcassets in Resources */,
 				B89F572C1F72C1A20087A1F9 /* gameEnd.wav in Resources */,
+				B89F57331F72C3B50087A1F9 /* thump.mp3 in Resources */,
 				B8F585CC1F52157A00FCF981 /* krunch_bold.ttf in Resources */,
 				B8D5B9231E7D8D6500D303E4 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -492,9 +492,9 @@
 				B89F572E1F72C1A20087A1F9 /* gameEnd.wav in Resources */,
 				B8F585CD1F52157A00FCF981 /* krunch_italic.ttf in Resources */,
 				B8F585CA1F5214C900FCF981 /* Info.plist in Resources */,
-				B89F57311F72C2CA0087A1F9 /* thump.wav in Resources */,
 				B81A7C641EC235390018D737 /* Rubik-Regular.ttf in Resources */,
 				B8AB0BA01E92F8C600B4C356 /* Assets.xcassets in Resources */,
+				B89F57341F72C3B60087A1F9 /* thump.mp3 in Resources */,
 				B8F585CE1F52157A00FCF981 /* krunch_bold.ttf in Resources */,
 				B8E032821E92EB54004F718E /* Main.storyboard in Resources */,
 			);

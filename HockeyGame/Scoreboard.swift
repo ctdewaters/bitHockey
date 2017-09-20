@@ -172,9 +172,9 @@
             
             let viewWidth = frameRect.width / 3
             
-            self.userScoreView = ScoreView(frame: CGRect(x: 0, y: 3, width: viewWidth, height: frameRect.height), isUserTeam: true)
+            self.userScoreView = ScoreView(frame: CGRect(x: 10, y: 3, width: viewWidth, height: frameRect.height), isUserTeam: true)
             self.opposingScoreView = ScoreView(frame: CGRect(x: userScoreView.frame.maxX, y: 3, width: viewWidth, height: frameRect.height), isUserTeam: false)
-            self.clockView = ClockView(frame: CGRect(x: opposingScoreView.frame.maxX, y: 3, width: viewWidth, height: frameRect.height), withTotalTime: time)
+            self.clockView = ClockView(frame: CGRect(x: opposingScoreView.frame.maxX - 5, y: 3, width: viewWidth, height: frameRect.height), withTotalTime: time)
             
             self.contentView.addSubview(userScoreView)
             self.contentView.addSubview(opposingScoreView)
@@ -293,7 +293,7 @@
         @objc private func update() {
             self.currentTime = self.currentTime - 0.01
             self.timeLabel.text = self.currentTime.string
-            if Int(self.currentTime) == 0 {
+            if self.currentTime <= 0 {
                 self.timer.invalidate()
                 self.timer = nil
                 NotificationCenter.default.post(name: .gameDidEnd, object: nil)
