@@ -9,12 +9,14 @@
 import UIKit
 import SpriteKit
 import GameplayKit
+import AVFoundation
 
 class GameViewController: UIViewController, HomeViewControllerDelegate, UIGestureRecognizerDelegate {
     @IBOutlet var gameView: GameView!
     
     var panGesture: UIPanGestureRecognizer!
     var pauseButton: UIButton!
+    var avPlayer: AVAudioPlayer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +24,6 @@ class GameViewController: UIViewController, HomeViewControllerDelegate, UIGestur
         //Setup home view.
         self.presentHomeView(animated: true)
         homeVC.delegate = self
-        
         
         //Setting the rink
         Rink.shared.size = CGSize(width: 728, height: 1024)
@@ -65,7 +66,14 @@ class GameViewController: UIViewController, HomeViewControllerDelegate, UIGestur
             UIView.animate(withDuration: 0.5, animations: {
                 homeVC.view.alpha = 1
                 homeVC.view.frame.origin.y = 0
-            }, completion: nil)
+            }, completion: {
+                completed in
+                let url = Bundle.main.url(forResource: "music", withExtension: "m4a")
+                self.avPlayer = try? AVAudioPlayer(contentsOf: url!)
+                self.avPlayer.numberOfLoops = -1
+                self.avPlayer.prepareToPlay()
+                self.avPlayer.play()
+            })
         }
     }
     
@@ -78,6 +86,9 @@ class GameViewController: UIViewController, HomeViewControllerDelegate, UIGestur
         }) { (completed) in
             if completed {
                 homeVC.view.removeFromSuperview()
+                
+                self.avPlayer.pause()
+                self.avPlayer = nil
                 completion()
             }
         }
@@ -121,6 +132,29 @@ class GameViewController: UIViewController, HomeViewControllerDelegate, UIGestur
                 completion()
             }
         }
+    }
+    
+    func presentControlsView() {
+        controlsVC.view.frame = self.view.frame
+        controlsVC.blur.effect = nil
+        controlsVC.image.transform = .identity
+        controlsVC.image.transform = CGAffineTransform(scaleX: 0.75, y: 0.75)
+        controlsVC.closeButton.alpha = 0
+        controlsVC.closeButton.addTarget(self, action: #selector(self.dismissControlsView), for: .touchUpInside)
+        self.view.addSubview(controlsVC.view)
+        UIView.animate(withDuration: 0.3, animations: {
+            controlsVC.blur.effect = UIBlurEffect(style: .light)
+            controlsVC.image.transform = .identity
+            controlsVC.closeButton.alpha = 1
+        })
+    }
+    
+    @objc func dismissControlsView() {
+        UIView.animate(withDuration: 0.3, animations: {
+            controlsVC.blur.effect = nil
+            controlsVC.image.transform = CGAffineTransform(scaleX: 0.75, y: 0.75)
+            controlsVC.closeButton.alpha = 0
+        })
     }
     
     //MARK: - Game UI
@@ -274,5 +308,9 @@ class GameViewController: UIViewController, HomeViewControllerDelegate, UIGestur
             self.addGameUI()
             Rink.shared.activate()
         }
+    }
+    
+    func homeVCDidRespondToControlsButton() {
+        self.presentControlsView()
     }
 }

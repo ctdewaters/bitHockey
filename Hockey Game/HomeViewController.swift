@@ -10,6 +10,7 @@ import UIKit
 
 protocol HomeViewControllerDelegate {
     func homeVCDidRespondToPlayButton()
+    func homeVCDidRespondToControlsButton()
 }
 
 class HomeViewController: UIViewController {
@@ -50,6 +51,7 @@ class HomeViewController: UIViewController {
         }
         else {
             //Show controls.
+            self.delegate?.homeVCDidRespondToControlsButton()
         }
     }
 }

@@ -18,7 +18,10 @@
 		B81A7C701EC79E2D0018D737 /* LoadingTouchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81A7C6E1EC79E2D0018D737 /* LoadingTouchBar.swift */; };
 		B83D0A7F1E86D1AC0036E5BD /* UserComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83D0A7E1E86D1AC0036E5BD /* UserComponent.swift */; };
 		B86E7B8D1F714F4D00C487FA /* PauseMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86E7B8C1F714F4D00C487FA /* PauseMenuViewController.swift */; };
+		B86E7B901F716C3500C487FA /* music.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B86E7B8E1F716AAD00C487FA /* music.m4a */; };
+		B86E7B911F716C3500C487FA /* music.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B86E7B8E1F716AAD00C487FA /* music.m4a */; };
 		B87F213A1F6EC35D00B956F6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87F21391F6EC35D00B956F6 /* HomeViewController.swift */; };
+		B89F57221F71F2D00087A1F9 /* ControlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89F57211F71F2D00087A1F9 /* ControlsViewController.swift */; };
 		B8AB0B8F1E92EE8800B4C356 /* BehaviorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E0328B1E92EB91004F718E /* BehaviorType.swift */; };
 		B8AB0B901E92EE8800B4C356 /* MoveComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E0328C1E92EB91004F718E /* MoveComponent.swift */; };
 		B8AB0B911E92EE8800B4C356 /* NetComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E0328D1E92EB91004F718E /* NetComponent.swift */; };
@@ -85,7 +88,9 @@
 		B81A7C6E1EC79E2D0018D737 /* LoadingTouchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingTouchBar.swift; sourceTree = "<group>"; };
 		B83D0A7E1E86D1AC0036E5BD /* UserComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserComponent.swift; sourceTree = "<group>"; };
 		B86E7B8C1F714F4D00C487FA /* PauseMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseMenuViewController.swift; sourceTree = "<group>"; };
+		B86E7B8E1F716AAD00C487FA /* music.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = music.m4a; sourceTree = "<group>"; };
 		B87F21391F6EC35D00B956F6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		B89F57211F71F2D00087A1F9 /* ControlsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsViewController.swift; sourceTree = "<group>"; };
 		B8D5B90F1E7D8D6500D303E4 /* Bit Hockey (iOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bit Hockey (iOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8D5B9121E7D8D6500D303E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8D5B91A1E7D8D6500D303E4 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -202,6 +207,25 @@
 			name = TouchBars;
 			sourceTree = "<group>";
 		};
+		B86E7B8F1F716AC300C487FA /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				B86E7B8E1F716AAD00C487FA /* music.m4a */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		B89F57231F71F2D50087A1F9 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				B87F21391F6EC35D00B956F6 /* HomeViewController.swift */,
+				B8D5B91A1E7D8D6500D303E4 /* GameViewController.swift */,
+				B86E7B8C1F714F4D00C487FA /* PauseMenuViewController.swift */,
+				B89F57211F71F2D00087A1F9 /* ControlsViewController.swift */,
+			);
+			name = Interface;
+			sourceTree = "<group>";
+		};
 		B8D5B9061E7D8D6500D303E4 = {
 			isa = PBXGroup;
 			children = (
@@ -227,9 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				B8D5B9121E7D8D6500D303E4 /* AppDelegate.swift */,
-				B87F21391F6EC35D00B956F6 /* HomeViewController.swift */,
-				B8D5B91A1E7D8D6500D303E4 /* GameViewController.swift */,
-				B86E7B8C1F714F4D00C487FA /* PauseMenuViewController.swift */,
+				B89F57231F71F2D50087A1F9 /* Interface */,
 				B83D0A7E1E86D1AC0036E5BD /* UserComponent.swift */,
 				B8D5B9571E7D8E1500D303E4 /* Controls */,
 				B8D5B91C1E7D8D6500D303E4 /* Main.storyboard */,
@@ -286,6 +308,7 @@
 			isa = PBXGroup;
 			children = (
 				B8D5B91F1E7D8D6500D303E4 /* Assets.xcassets */,
+				B86E7B8F1F716AC300C487FA /* Sounds */,
 				B81A7C581EC0F0270018D737 /* Fonts */,
 				B8E032911E92EB91004F718E /* Entities */,
 				B8E032891E92EB91004F718E /* Components */,
@@ -441,6 +464,7 @@
 			files = (
 				B8D5B9591E7D8E7400D303E4 /* puckHitBoards.m4a in Resources */,
 				B81A7C631EC235390018D737 /* Rubik-Regular.ttf in Resources */,
+				B86E7B901F716C3500C487FA /* music.m4a in Resources */,
 				B8F585C91F5214C100FCF981 /* Info.plist in Resources */,
 				B8F585CB1F52157A00FCF981 /* krunch_italic.ttf in Resources */,
 				B8D5B91E1E7D8D6500D303E4 /* Main.storyboard in Resources */,
@@ -455,6 +479,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8F585CD1F52157A00FCF981 /* krunch_italic.ttf in Resources */,
+				B86E7B911F716C3500C487FA /* music.m4a in Resources */,
 				B8F585CA1F5214C900FCF981 /* Info.plist in Resources */,
 				B81A7C641EC235390018D737 /* Rubik-Regular.ttf in Resources */,
 				B8AB0BA01E92F8C600B4C356 /* Assets.xcassets in Resources */,
@@ -565,6 +590,7 @@
 			files = (
 				B8E0329D1E92EB91004F718E /* BehaviorType.swift in Sources */,
 				B86E7B8D1F714F4D00C487FA /* PauseMenuViewController.swift in Sources */,
+				B89F57221F71F2D00087A1F9 /* ControlsViewController.swift in Sources */,
 				B83D0A7F1E86D1AC0036E5BD /* UserComponent.swift in Sources */,
 				B8DB05331E93D52D000FFFF4 /* GameOverPresentation.swift in Sources */,
 				B8E032A51E92EB91004F718E /* Puck.swift in Sources */,

@@ -60,9 +60,7 @@ class GoalPresentation: NSObject {
                 self.presentationView.addSubview(promptLabel)
                 
                 view.addSubview(self.presentationView, positioned: .below, relativeTo: Scoreboard.shared)
-                
-                self.animateScoreboard(toPoint: CGPoint(x: (view.frame.width / 2) - (Scoreboard.shared.frame.width * 0.75), y: view.frame.maxY - 80))
-                
+                            
             #elseif os(iOS)
                 let view = view as! UIView
                 
@@ -95,48 +93,12 @@ class GoalPresentation: NSObject {
         }
     }
     
-    fileprivate func animateScoreboard(toPoint point: CGPoint) {
-        #if os(OSX)
-            NSAnimationContext.runAnimationGroup({
-                context in
-                context.duration = 0.3
-                Scoreboard.shared.animator().frame.origin = point
-                Scoreboard.shared.animator().layer?.setAffineTransform(CGAffineTransform(scaleX: 1.5, y: 1.5))
-            }, completionHandler: nil)
-        #elseif os(iOS)
-            UIView.animate(withDuration: 0.3, animations: {
-                Scoreboard.shared.frame.origin = point
-                Scoreboard.shared.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
-            })
-        #endif
-    }
-        
-    fileprivate func returnScoreboard() {
-        #if os(OSX)
-            NSAnimationContext.runAnimationGroup({
-                context in
-                context.duration = 0.3
-                let superview = Scoreboard.shared.superview!
-                Scoreboard.shared.animator().frame.origin = CGPoint(x: 20, y: superview.frame.maxY - 50)
-                Scoreboard.shared.animator().layer?.setAffineTransform(CGAffineTransform(scaleX: 1, y: 1))
-            }, completionHandler: nil)
-        #elseif os(iOS)
-            UIView.animate(withDuration: 0.3, animations: {
-                let superview = Scoreboard.shared.superview!
-                Scoreboard.shared.frame.origin = CGPoint(x: 20, y: superview.frame.maxY - 50)
-                Scoreboard.shared.transform = CGAffineTransform(scaleX: 1, y: 1)
-            })
-        #endif
-    }
-    
     @objc public func dismissPresentationView() {
         if dismissTimer != nil {
            self.dismissTimer.invalidate()
         }
         
-        self.returnScoreboard()
         self.isPresented = false
-        
         self.presentationView.fadeOut(withDuration: 0.3, andCompletionBlock: {            
             NotificationCenter.default.post(name: .didReturnToPlay, object: nil)
             self.dismissTimer = nil

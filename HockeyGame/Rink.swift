@@ -430,7 +430,6 @@ public class Rink: SKScene, SKPhysicsContactDelegate, PlayerDelegate {
             }
         }
         entitiesToRemove.removeAll()
-
         
         if let puckInNet = puckInNet {
             //Goal scored
@@ -449,11 +448,15 @@ public class Rink: SKScene, SKPhysicsContactDelegate, PlayerDelegate {
                 Puck.shared.node.physicsBody = nil
                 Puck.shared.puckComponent.setPhysicsBody()
                 Puck.shared.node.position = FaceoffLocation.centerIce.coordinate
-                if Puck.shared.node.parent != self {
-                    Puck.shared.node.removeFromParent()
+                Puck.shared.node.removeFromParent()
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                    self.positionPlayers(atFaceoffLocation: .centerIce, withDuration: 3)
+                })
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
                     self.addChild(Puck.shared.node)
-                }
-                self.positionPlayers(atFaceoffLocation: .centerIce, withDuration: 3)
+                })
             })
         }
         
@@ -481,7 +484,12 @@ public class Rink: SKScene, SKPhysicsContactDelegate, PlayerDelegate {
         }
         else {
             //calculate point to move camera to
-            point = Puck.shared.position
+            if Puck.shared.node.parent != nil {
+                point = Puck.shared.position
+            }
+            else {
+                point = .zero
+            }
         }
         
         //Keeping view on the ice
