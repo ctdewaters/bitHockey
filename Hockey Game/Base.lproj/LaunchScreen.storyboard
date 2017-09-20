@@ -44,7 +44,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.076768944300518172" green="0.076768944300518172" blue="0.076768944300518172" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="wG8-BL-Oku" secondAttribute="trailing" constant="15" id="6KK-iW-clV"/>
                             <constraint firstItem="asc-pn-X35" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-1" id="A49-34-vay"/>
