@@ -87,10 +87,10 @@ public class Rink: SKScene, SKPhysicsContactDelegate, PlayerDelegate {
     
     //Returns the net the puck is in (nil if no goal scored).
     fileprivate var puckInNet: Net? {
-        if Net.topNet.frame.contains(Puck.shared.position) || (self.puckCarrier != nil && Net.topNet.frame.contains(puckCarrier!.position) && !puckCarrier!.isOnOpposingTeam) {
+        if Net.topNet.frame.contains(Puck.shared.position) || (self.puckCarrier != nil && Net.topNet.frame.contains(puckCarrier!.position)) {
             return Net.topNet
         }
-        else if Net.bottomNet.frame.contains(Puck.shared.position) || (self.puckCarrier != nil && Net.bottomNet.frame.contains(puckCarrier!.position) && puckCarrier!.isOnOpposingTeam) {
+        else if Net.bottomNet.frame.contains(Puck.shared.position) || (self.puckCarrier != nil && Net.bottomNet.frame.contains(puckCarrier!.position)) {
             return Net.bottomNet
         }
         return nil
@@ -434,30 +434,44 @@ public class Rink: SKScene, SKPhysicsContactDelegate, PlayerDelegate {
         if let puckInNet = puckInNet {
             //Goal scored
 
-            //Present the goal presentation view
-            GoalPresentation.shared.present(toView: self.view!, withCompletion: {
+            goalVC.add(toView: self.view!) {
                 //Update the score
                 if puckInNet == Net.topNet {
                     Score.shared.score(forUserTeam: true)
+                    goalVC.updateScore(forUserTeam: true)
                 }
                 else {
                     Score.shared.score(forUserTeam: false)
+                    goalVC.updateScore(forUserTeam: false)
                 }
                 
-                Puck.shared.node.removeAllActions()
-                Puck.shared.node.physicsBody = nil
-                Puck.shared.puckComponent.setPhysicsBody()
-                Puck.shared.node.position = FaceoffLocation.centerIce.coordinate
-                Puck.shared.node.removeFromParent()
+                goalVC.tapCompletion = {
+                    self.positionPlayers(atFaceoffLocation: .centerIce, withDuration: 0.05)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.75, execute: {
+                            self.addChild(Puck.shared.node)
+                            Scoreboard.shared.startTimer()
+                    })
+                }
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                    self.positionPlayers(atFaceoffLocation: .centerIce, withDuration: 3)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+                    if !goalVC.dismissing {
+                        goalVC.dismiss {}
+                        
+                        self.positionPlayers(atFaceoffLocation: .centerIce, withDuration: 0.05)
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                            self.addChild(Puck.shared.node)
+                            Scoreboard.shared.startTimer()
+                        })
+                    }
                 })
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
-                    self.addChild(Puck.shared.node)
-                })
-            })
+            }
+            Puck.shared.node.removeAllActions()
+            Puck.shared.node.physicsBody = nil
+            Puck.shared.puckComponent.setPhysicsBody()
+            Puck.shared.node.position = FaceoffLocation.centerIce.coordinate
+            Puck.shared.node.removeFromParent()
+            puckCarrier?.hasPuck = false
         }
         
         userTeam?.moveComponentSystem.update(deltaTime: deltaTime)

@@ -42,7 +42,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A Game by Collin DeWaters." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8oN-tk-mcy">
-                                <rect key="frame" x="82.333333333333314" y="146" width="212" height="21"/>
+                                <rect key="frame" x="82" y="146" width="212" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="212" id="F4k-jm-kn0"/>
                                     <constraint firstAttribute="height" constant="21" id="Nol-Ic-nYg"/>
@@ -127,7 +127,7 @@
                                             <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                                         </imageView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ofc-VG-Qi7">
-                                            <rect key="frame" x="149.33333333333334" y="732" width="77" height="30"/>
+                                            <rect key="frame" x="149" y="732" width="77" height="30"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.7268650968" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="77" id="Ac5-SH-z0b"/>
@@ -168,6 +168,123 @@
             </objects>
             <point key="canvasLocation" x="-213.59999999999999" y="717.48768472906409"/>
         </scene>
+        <!--Goal View Controller-->
+        <scene sceneID="z0p-Qa-scq">
+            <objects>
+                <viewController storyboardIdentifier="goalVC" id="gsn-EQ-jap" customClass="GoalViewController" customModule="Bit_Hockey__iOS_" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="92q-Do-d3I"/>
+                        <viewControllerLayoutGuide type="bottom" id="V7e-uZ-EFD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dZO-jO-uq2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QT2-Zm-iE1">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="VwB-XN-PgY">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bYe-LM-AlE">
+                                            <rect key="frame" x="46" y="119" width="283" height="175"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Tx-jr-fTD">
+                                                    <rect key="frame" x="164" y="14" width="100" height="70"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Krunch-Bold" family="Krunch" pointSize="60"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Away" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ok-Hi-rcX">
+                                                    <rect key="frame" x="164" y="92" width="100" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="25"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Home" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XBb-ar-K2b">
+                                                    <rect key="frame" x="19" y="92" width="100" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="25"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JjL-Lt-vVY">
+                                                    <rect key="frame" x="19" y="14" width="100" height="70"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Krunch-Bold" family="Krunch" pointSize="60"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="136-8v-MrF">
+                                                    <rect key="frame" x="92" y="130" width="100" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="25"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.7268650968" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="175" id="AKT-4c-f6p"/>
+                                                <constraint firstAttribute="width" constant="283" id="iia-XK-yN4"/>
+                                            </constraints>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goal!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="raE-Vj-9fH">
+                                            <rect key="frame" x="111" y="344" width="154" height="46"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="154.33000000000001" id="MsF-KD-HzS"/>
+                                                <constraint firstAttribute="height" constant="46" id="QkS-MN-HLr"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Krunch-Bold" family="Krunch" pointSize="55"/>
+                                            <color key="textColor" red="0.87900744819999999" green="0.2100679396" blue="0.25004023310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to Skip." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8E-1m-D6Q">
+                                            <rect key="frame" x="104" y="737" width="168" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="cfN-9j-o52"/>
+                                                <constraint firstAttribute="width" constant="168" id="sDh-Dm-3FS"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="19"/>
+                                            <color key="textColor" white="0.0" alpha="0.7268650968" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="bYe-LM-AlE" firstAttribute="centerX" secondItem="VwB-XN-PgY" secondAttribute="centerX" id="3Dh-so-U1x"/>
+                                        <constraint firstItem="E8E-1m-D6Q" firstAttribute="centerX" secondItem="VwB-XN-PgY" secondAttribute="centerX" id="42t-Wg-SiT"/>
+                                        <constraint firstItem="raE-Vj-9fH" firstAttribute="centerX" secondItem="VwB-XN-PgY" secondAttribute="centerX" id="Bnj-hW-WWv"/>
+                                        <constraint firstItem="raE-Vj-9fH" firstAttribute="top" secondItem="bYe-LM-AlE" secondAttribute="bottom" constant="50" id="RNx-VN-vnT"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="V7e-uZ-EFD" firstAttribute="top" secondItem="E8E-1m-D6Q" secondAttribute="bottom" constant="20" id="FgW-vj-dW4"/>
+                            <constraint firstItem="QT2-Zm-iE1" firstAttribute="leading" secondItem="dZO-jO-uq2" secondAttribute="leading" id="cue-QA-zaw"/>
+                            <constraint firstItem="QT2-Zm-iE1" firstAttribute="top" secondItem="dZO-jO-uq2" secondAttribute="top" id="e8L-bM-Vjw"/>
+                            <constraint firstItem="bYe-LM-AlE" firstAttribute="top" secondItem="92q-Do-d3I" secondAttribute="bottom" constant="75" id="hDq-4c-6Ev"/>
+                            <constraint firstAttribute="bottom" secondItem="QT2-Zm-iE1" secondAttribute="bottom" id="nIv-hL-00h"/>
+                            <constraint firstAttribute="trailing" secondItem="QT2-Zm-iE1" secondAttribute="trailing" id="r96-gY-k3c"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="awayScoreLabel" destination="8Tx-jr-fTD" id="Z1h-SW-QW7"/>
+                        <outlet property="blur" destination="QT2-Zm-iE1" id="rE2-tx-zur"/>
+                        <outlet property="goalLabel" destination="raE-Vj-9fH" id="vG1-FT-oe3"/>
+                        <outlet property="goalLabelTopConstraint" destination="RNx-VN-vnT" id="1z0-eQ-EEz"/>
+                        <outlet property="homeScoreLabel" destination="JjL-Lt-vVY" id="D8e-Uw-08S"/>
+                        <outlet property="scoreboardView" destination="bYe-LM-AlE" id="Zyc-YD-Icg"/>
+                        <outlet property="timeScoreLabel" destination="136-8v-MrF" id="bx3-U9-61v"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zi0-dD-xKI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="909.60000000000002" y="1081.7733990147783"/>
+        </scene>
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
@@ -207,7 +324,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qNN-PE-5Lo">
-                                            <rect key="frame" x="46.333333333333343" y="60" width="283" height="175"/>
+                                            <rect key="frame" x="46" y="60" width="283" height="175"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Idr-4m-wAx">
                                                     <rect key="frame" x="164" y="14" width="100" height="70"/>
@@ -252,7 +369,7 @@
                                             </constraints>
                                         </view>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9d-1y-dbJ">
-                                            <rect key="frame" x="89.333333333333314" y="306" width="197" height="50"/>
+                                            <rect key="frame" x="89" y="306" width="197" height="50"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.94999999999999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="50" id="7Xn-ah-cQ6"/>
@@ -267,7 +384,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EJ1-R2-yva">
-                                            <rect key="frame" x="89.333333333333314" y="375" width="197" height="50"/>
+                                            <rect key="frame" x="89" y="375" width="197" height="50"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.94999999999999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="50" id="GVf-ea-hiG"/>
@@ -282,7 +399,7 @@
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paused" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRJ-rC-sU7">
-                                            <rect key="frame" x="127.33333333333334" y="250" width="120.00000000000003" height="40"/>
+                                            <rect key="frame" x="127" y="250" width="120" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="120" id="9aQ-iv-90g"/>
                                                 <constraint firstAttribute="height" constant="40" id="JE1-9F-F15"/>
