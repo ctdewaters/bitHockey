@@ -128,6 +128,8 @@ public class Rink: SKScene, SKPhysicsContactDelegate, PlayerDelegate {
         self.resume()
         self.removeAllActions()
         
+        Score.shared.reset()
+        
         self.selectedPlayer?.removeComponent(ofType: UserComponent.self)
         
         for child in children {
@@ -138,6 +140,7 @@ public class Rink: SKScene, SKPhysicsContactDelegate, PlayerDelegate {
         }
         
         Puck.shared.node.removeFromParent()
+        Puck.shared.node.removeAllActions()
         
         for entity in self.entities {
             self.remove(entity: entity)
@@ -158,7 +161,8 @@ public class Rink: SKScene, SKPhysicsContactDelegate, PlayerDelegate {
     func activate() {
         self.resume()
         //Generating the nets, players, and puck
-        self.generateAndAddNodes(withTeamSize: .five, andHomeTeamColor: .blue)
+        self.setPhysicsWorld()
+        self.generateAndAddNodes(withTeamSize: .five, andHomeTeamColor: UIColor(red:0.90, green:0.09, blue:0.22, alpha:1.0))
     }
     
     func animateCameraScale(toValue value: CGFloat, center: Bool = false, withDuration duration: TimeInterval = 0.75) {
@@ -322,9 +326,9 @@ public class Rink: SKScene, SKPhysicsContactDelegate, PlayerDelegate {
     }
     
     fileprivate func generateAndAddPuck() {
-        Puck.shared.node.position = CGPoint(x: 0, y: 0)
+        Puck.shared.node.position = CGPoint(x: -1, y: 0)
         self.add(entity: Puck.shared)
-        
+        Puck.shared.puckComponent.setPhysicsBody()
         self.cameraNode.position = Puck.shared.position
     }
     
@@ -446,7 +450,7 @@ public class Rink: SKScene, SKPhysicsContactDelegate, PlayerDelegate {
                 }
                 
                 goalVC.tapCompletion = {
-                    self.positionPlayers(atFaceoffLocation: .centerIce, withDuration: 0.05)
+                    self.positionPlayers(atFaceoffLocation: .centerIce, withDuration: 0.3)
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.75, execute: {
                             self.addChild(Puck.shared.node)
                             Scoreboard.shared.startTimer()
@@ -457,7 +461,7 @@ public class Rink: SKScene, SKPhysicsContactDelegate, PlayerDelegate {
                     if !goalVC.dismissing {
                         goalVC.dismiss {}
                         
-                        self.positionPlayers(atFaceoffLocation: .centerIce, withDuration: 0.05)
+                        self.positionPlayers(atFaceoffLocation: .centerIce, withDuration: 0.3)
                         
                         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                             self.addChild(Puck.shared.node)

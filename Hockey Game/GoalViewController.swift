@@ -84,7 +84,7 @@ class GoalViewController: UIViewController {
                 
                 let transform = CABasicAnimation(keyPath: "transform.scale")
                 transform.fromValue = self.goalLabel.layer.value(forKeyPath: "transform.scale")
-                transform.toValue = 25
+                transform.toValue = 2.5
                 transform.duration = 0.35
                 transform.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
                 transform.autoreverses = true
@@ -98,13 +98,13 @@ class GoalViewController: UIViewController {
     
     func dismiss(withCompletion completion: @escaping ()->Void) {
         self.dismissing = true
-        self.goalLabel.layer.removeAllAnimations()
         UIView.animate(withDuration: 0.3, animations: {
             self.blur.effect = nil
             self.blur.contentView.transform = CGAffineTransform(scaleX: 0.75, y: 0.75)
             self.blur.contentView.alpha = 0
         }) { (complete) in
             if complete {
+                self.goalLabel.layer.removeAllAnimations()
                 self.view.removeFromSuperview()
                 completion()
             }

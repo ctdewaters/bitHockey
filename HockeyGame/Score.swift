@@ -30,4 +30,9 @@ public class Score: NSObject {
         super.init()
     }
     
+    func reset() {
+        self.userScore = 0
+        self.cpuScore = 0
+    }
+    
 }

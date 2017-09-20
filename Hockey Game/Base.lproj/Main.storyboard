@@ -33,7 +33,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bit Hockey" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8js-HM-kyz">
-                                <rect key="frame" x="0.0" y="94" width="375" height="57"/>
+                                <rect key="frame" x="0.0" y="84" width="375" height="57"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="57" id="ocX-Ck-L9T"/>
                                 </constraints>
@@ -42,7 +42,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A Game by Collin DeWaters." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8oN-tk-mcy">
-                                <rect key="frame" x="82" y="146" width="212" height="21"/>
+                                <rect key="frame" x="82" y="136" width="212" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="212" id="F4k-jm-kn0"/>
                                     <constraint firstAttribute="height" constant="21" id="Nol-Ic-nYg"/>
@@ -85,7 +85,7 @@
                         <constraints>
                             <constraint firstItem="8oN-tk-mcy" firstAttribute="centerX" secondItem="8js-HM-kyz" secondAttribute="centerX" id="69i-Rg-F63"/>
                             <constraint firstItem="hgd-rd-uzi" firstAttribute="centerY" secondItem="zOy-aV-tBZ" secondAttribute="centerY" id="6sL-kp-qyi"/>
-                            <constraint firstItem="8js-HM-kyz" firstAttribute="top" secondItem="3FE-h5-c23" secondAttribute="bottom" constant="50" id="KMO-pW-jKt"/>
+                            <constraint firstItem="8js-HM-kyz" firstAttribute="top" secondItem="3FE-h5-c23" secondAttribute="bottom" constant="40" id="KMO-pW-jKt"/>
                             <constraint firstItem="hgd-rd-uzi" firstAttribute="centerX" secondItem="zOy-aV-tBZ" secondAttribute="centerX" id="S6q-sP-FPy"/>
                             <constraint firstItem="8js-HM-kyz" firstAttribute="leading" secondItem="zOy-aV-tBZ" secondAttribute="leading" id="TkX-px-XM8"/>
                             <constraint firstItem="8oN-tk-mcy" firstAttribute="top" secondItem="8js-HM-kyz" secondAttribute="bottom" constant="-5" id="YMn-wO-gCf"/>
@@ -103,7 +103,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KKP-oS-KTB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-343" y="57"/>
+            <point key="canvasLocation" x="-878" y="35"/>
         </scene>
         <!--Controls View Controller-->
         <scene sceneID="TGn-1X-RCU">
