@@ -140,12 +140,14 @@ class GameViewController: UIViewController, HomeViewControllerDelegate, UIGestur
         controlsVC.image.transform = .identity
         controlsVC.image.transform = CGAffineTransform(scaleX: 0.75, y: 0.75)
         controlsVC.closeButton.alpha = 0
+        controlsVC.image.alpha = 0
         controlsVC.closeButton.addTarget(self, action: #selector(self.dismissControlsView), for: .touchUpInside)
         self.view.addSubview(controlsVC.view)
         UIView.animate(withDuration: 0.3, animations: {
             controlsVC.blur.effect = UIBlurEffect(style: .light)
             controlsVC.image.transform = .identity
             controlsVC.closeButton.alpha = 1
+            controlsVC.image.alpha = 1
         })
     }
     
@@ -155,6 +157,17 @@ class GameViewController: UIViewController, HomeViewControllerDelegate, UIGestur
             controlsVC.image.transform = CGAffineTransform(scaleX: 0.75, y: 0.75)
             controlsVC.closeButton.alpha = 0
         })
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            controlsVC.blur.effect = nil
+            controlsVC.image.transform = CGAffineTransform(scaleX: 0.75, y: 0.75)
+            controlsVC.image.alpha = 0
+            controlsVC.closeButton.alpha = 0
+        }) { (complete) in
+            if complete {
+                controlsVC.view.removeFromSuperview()
+            }
+        }
     }
     
     //MARK: - Game UI
