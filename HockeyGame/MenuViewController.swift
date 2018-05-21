@@ -21,14 +21,19 @@ class MenuViewController: NSViewController, GameViewControllerDelegate {
     override func viewDidAppear() {
         super.viewDidAppear()
         
-        self.titleLabel.removeFromSuperview()
-        self.captionLabel.removeFromSuperview()
-        self.view.addSubview(titleLabel)
-        self.view.addSubview(captionLabel)
+        //Label setup.
+        let titleFont = NSFont(name: "Krunch", size: 50)!
+        self.titleLabel.font = titleFont
+        
+        let subtitleFont = NSFont(name: "Rubik", size: 14)!
+        self.captionLabel.font = subtitleFont
+        
+        //Add the controls view.
         self.controlsView.set()
         self.controlsView.removeFromSuperview()
         self.view.addSubview(self.controlsView)
         
+        //Button setup.
         self.playButton.wantsLayer = true
         self.playButton.layer?.backgroundColor = NSColor(deviceRed:0.153, green:0.169, blue:0.208, alpha:1.000).cgColor
         self.playButton.layer?.cornerRadius = 10
@@ -37,25 +42,37 @@ class MenuViewController: NSViewController, GameViewControllerDelegate {
         self.controlsButton.layer?.backgroundColor = NSColor(deviceRed:0.153, green:0.169, blue:0.208, alpha:1.000).cgColor
         self.controlsButton.layer?.cornerRadius = 10
 
-        
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .center
         self.playButton.attributedTitle = NSAttributedString(string: "Play", attributes: [NSAttributedStringKey.foregroundColor : NSColor.white, NSAttributedStringKey.font: NSFont.systemFont(ofSize: 14, weight: .semibold), NSAttributedStringKey.paragraphStyle : paragraphStyle])
         
         self.controlsButton.attributedTitle = NSAttributedString(string: "Controls", attributes: [NSAttributedStringKey.foregroundColor : NSColor.white, NSAttributedStringKey.font: NSFont.systemFont(ofSize: 14, weight: .semibold), NSAttributedStringKey.paragraphStyle : paragraphStyle])
-                
+        
+        //Add NotificationCenter observers
+        NotificationCenter.default.addObserver(self, selector: #selector(showControls(_:)), name: .showControls, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(closeControls(_:)), name: .closeControls, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(next(_:)), name: .startGame, object: nil)
+        
+        //Touch bar setup.
         if #available(OSX 10.12.2, *) {
-            //Add NotificationCenter observers
-            NotificationCenter.default.addObserver(self, selector: #selector(showControls(_:)), name: .showControls, object: nil)
-            NotificationCenter.default.addObserver(self, selector: #selector(closeControls(_:)), name: .closeControls, object: nil)
-            NotificationCenter.default.addObserver(self, selector: #selector(next(_:)), name: .startGame, object: nil)
-            
             let touchBar = MenuTouchBar(withState: .controlsClosed) 
             windowController.update(withTouchBar: touchBar)
 
         } else {
             // Fallback on earlier versions
         }
+    }
+    
+    override func viewWillAppear() {
+        super.viewWillAppear()
+        
+        //Setup window.
+        self.view.window?.styleMask.insert(NSWindow.StyleMask.unifiedTitleAndToolbar)
+        self.view.window?.styleMask.insert(NSWindow.StyleMask.fullSizeContentView)
+        self.view.window?.styleMask.insert(NSWindow.StyleMask.titled)
+        self.view.window?.titleVisibility = .hidden
+        self.view.window?.titlebarAppearsTransparent = true
+        self.view.window?.toolbar?.isVisible = false
     }
     
     @IBAction func next(_ sender: Any) {
@@ -99,7 +116,6 @@ class MenuViewController: NSViewController, GameViewControllerDelegate {
     
     //MARK: - GameViewControllerDelegate
     func gameDidFinishLoading() {
-        print("\n\n\n\nGAME LOADED, PRESENTING NOW.\n\n\n\n\n")
         self.view.window?.contentViewController = gameVC
     }
 }

@@ -21,6 +21,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
         
+        print(NSFontManager.shared.availableFonts)
+        
+        
         windowController = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "WC")) as! WindowController
         windowController.showWindow(self)
     }

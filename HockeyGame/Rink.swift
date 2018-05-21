@@ -165,7 +165,9 @@ public class Rink: SKScene, SKPhysicsContactDelegate, PlayerDelegate {
         self.resume()
         //Generating the nets, players, and puck
         self.setPhysicsWorld()
-        self.generateAndAddNodes(withTeamSize: .five, andHomeTeamColor: UIColor(red:0.90, green:0.09, blue:0.22, alpha:1.0))
+        
+        self.generateAndAddNodes(withTeamSize: .five, andHomeTeamColor: SKColor(calibratedRed: 0.90, green: 0.09, blue: 0.22, alpha: 1)
+)
     }
     
     func animateCameraScale(toValue value: CGFloat, center: Bool = false, withDuration duration: TimeInterval = 0.75) {
@@ -440,7 +442,8 @@ public class Rink: SKScene, SKPhysicsContactDelegate, PlayerDelegate {
         
         if let puckInNet = puckInNet {
             //Goal scored
-
+            
+            #if os(iOS)
             goalVC.add(toView: self.view!) {
                 //Update the score
                 if puckInNet == Net.topNet {
@@ -477,6 +480,8 @@ public class Rink: SKScene, SKPhysicsContactDelegate, PlayerDelegate {
                     }
                 })
             }
+            #endif
+            
             Puck.shared.node.removeAllActions()
             Puck.shared.node.physicsBody = nil
             Puck.shared.puckComponent.setPhysicsBody()
@@ -548,12 +553,17 @@ public class Rink: SKScene, SKPhysicsContactDelegate, PlayerDelegate {
         if bodyA.categoryBitMask == PhysicsCategory.rink && bodyB.categoryBitMask == PhysicsCategory.puck {
             //Puck hit the boards
             if contact.collisionImpulse > 5 {
+                
+                #if os(iOS)
                 Haptics.shared.sendImpactHaptic(withStyle: .heavy)
+                #endif
                 player = AVPlayer(url: Bundle.main.url(forResource: "thump", withExtension: "mp3")!)
                 player.play()
             }
             else {
+                #if os(iOS)
                 Haptics.shared.sendImpactHaptic(withStyle: .light)
+                #endif
             }
         }
         
