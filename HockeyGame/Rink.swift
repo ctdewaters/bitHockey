@@ -166,8 +166,7 @@ public class Rink: SKScene, SKPhysicsContactDelegate, PlayerDelegate {
         //Generating the nets, players, and puck
         self.setPhysicsWorld()
         
-        self.generateAndAddNodes(withTeamSize: .five, andHomeTeamColor: SKColor(calibratedRed: 0.90, green: 0.09, blue: 0.22, alpha: 1)
-)
+        self.generateAndAddNodes(withTeamSize: .five, andHomeTeamColor: SKColor(red: 0.9, green: 0.09, blue: 0.22, alpha: 1))
     }
     
     func animateCameraScale(toValue value: CGFloat, center: Bool = false, withDuration duration: TimeInterval = 0.75) {

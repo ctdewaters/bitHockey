@@ -11,12 +11,14 @@ import SpriteKit
 import GameplayKit
 import AVFoundation
 
+///`GameViewController`: view controller that will display the `GameView` to present the user the game.
 class GameViewController: UIViewController, HomeViewControllerDelegate, UIGestureRecognizerDelegate {
     @IBOutlet var gameView: GameView!
     
     var panGesture: UIPanGestureRecognizer!
     var pauseButton: UIButton!
     
+    //MARK: - `UIViewController` overrides.
     override func viewDidLoad() {
         super.viewDidLoad()
         

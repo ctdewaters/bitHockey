@@ -222,6 +222,8 @@
 				B86E7B8C1F714F4D00C487FA /* PauseMenuViewController.swift */,
 				B89F57211F71F2D00087A1F9 /* ControlsViewController.swift */,
 				B89F57261F72ACCD0087A1F9 /* GoalViewController.swift */,
+				B8D5B91C1E7D8D6500D303E4 /* Main.storyboard */,
+				B8D5B9211E7D8D6500D303E4 /* LaunchScreen.storyboard */,
 			);
 			name = Interface;
 			sourceTree = "<group>";
@@ -264,9 +266,7 @@
 				B89F57231F71F2D50087A1F9 /* Interface */,
 				B83D0A7E1E86D1AC0036E5BD /* UserComponent.swift */,
 				B8D5B9571E7D8E1500D303E4 /* Controls */,
-				B8D5B91C1E7D8D6500D303E4 /* Main.storyboard */,
 				B8D5B95A1E7D8E7800D303E4 /* Sounds */,
-				B8D5B9211E7D8D6500D303E4 /* LaunchScreen.storyboard */,
 				B8D5B9241E7D8D6500D303E4 /* Info.plist */,
 			);
 			name = iOS;

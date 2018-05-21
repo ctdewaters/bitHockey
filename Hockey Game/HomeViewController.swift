@@ -13,6 +13,7 @@ protocol HomeViewControllerDelegate {
     func homeVCDidRespondToControlsButton()
 }
 
+///`HomeViewController`: first interface the user sees when entering the app.
 class HomeViewController: UIViewController {
     //MARK: - IBOutlets
     @IBOutlet weak var captionLabel: UILabel!
