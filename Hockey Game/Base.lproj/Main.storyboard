@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14112" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -20,10 +20,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Home View Controller-->
+        <!--Retro Home View Controller-->
         <scene sceneID="Wg4-cX-ies">
             <objects>
-                <viewController storyboardIdentifier="homeVC" id="SUt-jw-heB" customClass="HomeViewController" customModule="Bit_Hockey__iOS_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="homeVC" id="SUt-jw-heB" customClass="RetroHomeViewController" customModule="Bit_Hockey__iOS_" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3FE-h5-c23"/>
                         <viewControllerLayoutGuide type="bottom" id="EPe-2x-ORZ"/>
@@ -42,7 +42,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A Game by Collin DeWaters." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8oN-tk-mcy">
-                                <rect key="frame" x="82" y="136" width="212" height="21"/>
+                                <rect key="frame" x="81.666666666666686" y="136" width="212" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="212" id="F4k-jm-kn0"/>
                                     <constraint firstAttribute="height" constant="21" id="Nol-Ic-nYg"/>
@@ -81,10 +81,24 @@
                                     <action selector="buttonPressed:" destination="SUt-jw-heB" eventType="touchUpInside" id="JZh-PL-Tfc"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EJ7-zU-zp5">
+                                <rect key="frame" x="89" y="718" width="197" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.94999999999999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="197" id="TQk-SS-6Lg"/>
+                                    <constraint firstAttribute="height" constant="50" id="yDQ-my-Fh9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Krunch-Bold" family="Krunch" pointSize="22"/>
+                                <state key="normal" title="Switch to AR">
+                                    <color key="titleColor" red="0.6705882353" green="0.1298626363" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="8oN-tk-mcy" firstAttribute="centerX" secondItem="8js-HM-kyz" secondAttribute="centerX" id="69i-Rg-F63"/>
                             <constraint firstItem="hgd-rd-uzi" firstAttribute="centerY" secondItem="zOy-aV-tBZ" secondAttribute="centerY" id="6sL-kp-qyi"/>
+                            <constraint firstItem="EPe-2x-ORZ" firstAttribute="top" secondItem="EJ7-zU-zp5" secondAttribute="bottom" constant="10" id="Ed9-wW-cGG"/>
+                            <constraint firstItem="EJ7-zU-zp5" firstAttribute="centerX" secondItem="zOy-aV-tBZ" secondAttribute="centerX" id="Hre-Yg-nex"/>
                             <constraint firstItem="8js-HM-kyz" firstAttribute="top" secondItem="3FE-h5-c23" secondAttribute="bottom" constant="40" id="KMO-pW-jKt"/>
                             <constraint firstItem="hgd-rd-uzi" firstAttribute="centerX" secondItem="zOy-aV-tBZ" secondAttribute="centerX" id="S6q-sP-FPy"/>
                             <constraint firstItem="8js-HM-kyz" firstAttribute="leading" secondItem="zOy-aV-tBZ" secondAttribute="leading" id="TkX-px-XM8"/>
@@ -166,7 +180,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tmh-4N-IUE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-213.59999999999999" y="717.48768472906409"/>
+            <point key="canvasLocation" x="47" y="958"/>
         </scene>
         <!--Goal View Controller-->
         <scene sceneID="z0p-Qa-scq">
@@ -232,7 +246,7 @@
                                             </constraints>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goal!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="raE-Vj-9fH">
-                                            <rect key="frame" x="111" y="344" width="154" height="46"/>
+                                            <rect key="frame" x="110.33333333333333" y="344" width="154.33333333333337" height="46"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="154.33000000000001" id="MsF-KD-HzS"/>
                                                 <constraint firstAttribute="height" constant="46" id="QkS-MN-HLr"/>
@@ -242,7 +256,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to Skip." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8E-1m-D6Q">
-                                            <rect key="frame" x="104" y="737" width="168" height="21"/>
+                                            <rect key="frame" x="103.66666666666669" y="737" width="168" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="cfN-9j-o52"/>
                                                 <constraint firstAttribute="width" constant="168" id="sDh-Dm-3FS"/>
@@ -304,6 +318,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="484" y="137"/>
         </scene>
         <!--Pause Menu View Controller-->
         <scene sceneID="eRY-OD-AkK">
@@ -399,7 +414,7 @@
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paused" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRJ-rC-sU7">
-                                            <rect key="frame" x="37" y="250" width="300" height="40"/>
+                                            <rect key="frame" x="37.666666666666657" y="250" width="300" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="300" id="9aQ-iv-90g"/>
                                                 <constraint firstAttribute="height" constant="40" id="JE1-9F-F15"/>

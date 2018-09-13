@@ -14,7 +14,7 @@ protocol HomeViewControllerDelegate {
 }
 
 ///`HomeViewController`: first interface the user sees when entering the app.
-class HomeViewController: UIViewController {
+class RetroHomeViewController: UIViewController {
     //MARK: - IBOutlets
     @IBOutlet weak var captionLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!

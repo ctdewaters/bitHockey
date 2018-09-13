@@ -441,7 +441,6 @@ public class Rink: SKScene, SKPhysicsContactDelegate, PlayerDelegate {
         
         if let puckInNet = puckInNet {
             //Goal scored
-            
             #if os(iOS)
             goalVC.add(toView: self.view!) {
                 //Update the score

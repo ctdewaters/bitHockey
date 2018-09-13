@@ -69,7 +69,6 @@ public class UserComponent: GKAgent2D, GKAgentDelegate, JoystickDelegate, Switch
 
     
     //MARK: - Calculated variables
-    
     //The player entity
     fileprivate var player: Player? {
         return self.entity as? Player
