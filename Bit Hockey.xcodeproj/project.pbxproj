@@ -69,8 +69,6 @@
 		B8E032AA1E92EB91004F718E /* Rink.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E0329A1E92EB91004F718E /* Rink.swift */; };
 		B8E032AB1E92EB91004F718E /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E0329B1E92EB91004F718E /* Score.swift */; };
 		B8E032AC1E92EB91004F718E /* Scoreboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E0329C1E92EB91004F718E /* Scoreboard.swift */; };
-		B8F585C91F5214C100FCF981 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B8D5B9241E7D8D6500D303E4 /* Info.plist */; };
-		B8F585CA1F5214C900FCF981 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B8E032831E92EB54004F718E /* Info.plist */; };
 		B8F585CB1F52157A00FCF981 /* krunch_italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8F585C61F5212D900FCF981 /* krunch_italic.ttf */; };
 		B8F585CC1F52157A00FCF981 /* krunch_bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8F585C71F5212D900FCF981 /* krunch_bold.ttf */; };
 		B8F585CD1F52157A00FCF981 /* krunch_italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8F585C61F5212D900FCF981 /* krunch_italic.ttf */; };
@@ -431,7 +429,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Collin DeWaters";
 				TargetAttributes = {
 					B8D5B90E1E7D8D6500D303E4 = {
@@ -448,7 +446,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B8D5B90A1E7D8D6500D303E4 /* Build configuration list for PBXProject "Hockey Game" */;
+			buildConfigurationList = B8D5B90A1E7D8D6500D303E4 /* Build configuration list for PBXProject "Bit Hockey" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -474,7 +472,6 @@
 			files = (
 				B8D5B9591E7D8E7400D303E4 /* puckHitBoards.m4a in Resources */,
 				B81A7C631EC235390018D737 /* Rubik-Regular.ttf in Resources */,
-				B8F585C91F5214C100FCF981 /* Info.plist in Resources */,
 				B8F585CB1F52157A00FCF981 /* krunch_italic.ttf in Resources */,
 				B8D5B91E1E7D8D6500D303E4 /* Main.storyboard in Resources */,
 				B8D5B9201E7D8D6500D303E4 /* Assets.xcassets in Resources */,
@@ -491,7 +488,6 @@
 			files = (
 				B89F572E1F72C1A20087A1F9 /* gameEnd.wav in Resources */,
 				B8F585CD1F52157A00FCF981 /* krunch_italic.ttf in Resources */,
-				B8F585CA1F5214C900FCF981 /* Info.plist in Resources */,
 				B81A7C641EC235390018D737 /* Rubik-Regular.ttf in Resources */,
 				B8AB0BA01E92F8C600B4C356 /* Assets.xcassets in Resources */,
 				B89F57341F72C3B60087A1F9 /* thump.mp3 in Resources */,
@@ -702,6 +698,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -709,6 +706,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -759,6 +757,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -766,6 +765,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -870,7 +870,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B8D5B90A1E7D8D6500D303E4 /* Build configuration list for PBXProject "Hockey Game" */ = {
+		B8D5B90A1E7D8D6500D303E4 /* Build configuration list for PBXProject "Bit Hockey" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B8D5B93B1E7D8D6500D303E4 /* Debug */,
