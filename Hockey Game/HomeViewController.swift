@@ -31,6 +31,11 @@ class HomeViewController: UIViewController {
     
     ///The switch button, which will switch the current game mode.
     @IBOutlet weak var switchButton: UIButton!
+    
+    ///If true, this view controller is set for retro mode.
+    public var isInRetroMode: Bool {
+        return true
+    }
 
     //MARK: - Properties.
     ///The home vc delegate instance.
@@ -48,6 +53,15 @@ class HomeViewController: UIViewController {
         }
         else if button == self.switchButton {
             //Switch button pressed.
+            //Check if this VC is in retro mode.
+            if self.isInRetroMode {
+                //Go to AR experience.
+                self.performSegue(withIdentifier: "retroToAR", sender: self)
+            }
+            else {
+                //Go to retro mode.
+                self.performSegue(withIdentifier: "arToRetro", sender: self)
+            }
             return
         }
         //Controls button pressed.

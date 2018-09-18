@@ -11,7 +11,11 @@ import UIKit
 ///`HomeViewController`: first interface the user sees when entering the app.
 class RetroHomeViewController: HomeViewController {
     
-    //MARK: - `UIViewController` overrides.
+    //MARK: - `HomeViewController` overrides.
+    override var isInRetroMode: Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -117,6 +117,7 @@
                         <outlet property="playButton" destination="hgd-rd-uzi" id="CLT-S7-HBW"/>
                         <outlet property="switchButton" destination="EJ7-zU-zp5" id="W3s-Mi-wcT"/>
                         <outlet property="titleLabel" destination="8js-HM-kyz" id="hfg-1U-iqT"/>
+                        <segue destination="y3s-xX-8x9" kind="modal" identifier="retroToAR" id="zPN-OJ-iTj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KKP-oS-KTB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -238,6 +239,7 @@
                         <outlet property="playButton" destination="qwJ-dL-r0h" id="VZh-4v-sY1"/>
                         <outlet property="switchButton" destination="xH6-fh-nHQ" id="Lha-my-O71"/>
                         <outlet property="titleLabel" destination="dmL-Tp-eJm" id="gFo-48-ghV"/>
+                        <segue destination="SUt-jw-heB" kind="presentation" identifier="arToRetro" id="A9X-qV-5eN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Arf-Xe-VXG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -583,4 +585,7 @@
     <resources>
         <image name="iosControls" width="1242" height="2208"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="A9X-qV-5eN"/>
+    </inferredMetricsTieBreakers>
 </document>
