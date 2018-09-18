@@ -23,10 +23,6 @@ class GameViewController: UIViewController, HomeViewControllerDelegate, UIGestur
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //Setup home view.
-        self.presentHomeView(animated: true)
-        homeVC.delegate = self
-        
         //Setting the rink
         Rink.shared.size = CGSize(width: 728, height: 1024)
         Rink.shared.scaleMode = .aspectFill
@@ -35,6 +31,13 @@ class GameViewController: UIViewController, HomeViewControllerDelegate, UIGestur
         Rink.shared.animateCameraScale(toValue: 0.25, withDuration: 0.3)
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.gameEnded), name: .gameDidEnd, object: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //Setup home view.
+        self.presentHomeView(animated: false)
+        retroHomeVC.delegate = self
     }
 
     override var shouldAutorotate: Bool {
@@ -62,14 +65,14 @@ class GameViewController: UIViewController, HomeViewControllerDelegate, UIGestur
     ///Presents the home view.
     func presentHomeView(animated: Bool) {
         //Add homeVC's view.
-        homeVC.view.frame = self.view.frame
-        self.view.addSubview(homeVC.view)
+        retroHomeVC.view.frame = self.view.frame
+        self.view.addSubview(retroHomeVC.view)
         if animated {
-            homeVC.view.alpha = 0
-            homeVC.view.frame.origin.y = self.view.frame.maxY
+            retroHomeVC.view.alpha = 0
+            retroHomeVC.view.frame.origin.y = self.view.frame.maxY
             UIView.animate(withDuration: 0.5, animations: {
-                homeVC.view.alpha = 1
-                homeVC.view.frame.origin.y = 0
+                retroHomeVC.view.alpha = 1
+                retroHomeVC.view.frame.origin.y = 0
             }, completion: {
                 completed in
             })
@@ -80,11 +83,11 @@ class GameViewController: UIViewController, HomeViewControllerDelegate, UIGestur
     func dismissHomeView(completion: @escaping ()->Void) {
         Rink.shared.animateCameraScale(toValue: 0.6, withDuration: 0.3)
         UIView.animate(withDuration: 0.3, animations: {
-            homeVC.view.frame.origin.y = self.view.frame.maxY
-            homeVC.view.alpha = 0
+            retroHomeVC.view.frame.origin.y = self.view.frame.maxY
+            retroHomeVC.view.alpha = 0
         }) { (completed) in
             if completed {
-                homeVC.view.removeFromSuperview()
+                retroHomeVC.view.removeFromSuperview()
                 
                 completion()
             }

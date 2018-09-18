@@ -23,7 +23,7 @@
         <!--Retro Home View Controller-->
         <scene sceneID="Wg4-cX-ies">
             <objects>
-                <viewController storyboardIdentifier="homeVC" id="SUt-jw-heB" customClass="RetroHomeViewController" customModule="Bit_Hockey__iOS_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="retroHomeVC" id="SUt-jw-heB" customClass="RetroHomeViewController" customModule="Bit_Hockey__iOS_" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3FE-h5-c23"/>
                         <viewControllerLayoutGuide type="bottom" id="EPe-2x-ORZ"/>
@@ -117,7 +117,7 @@
                         <outlet property="playButton" destination="hgd-rd-uzi" id="CLT-S7-HBW"/>
                         <outlet property="switchButton" destination="EJ7-zU-zp5" id="W3s-Mi-wcT"/>
                         <outlet property="titleLabel" destination="8js-HM-kyz" id="hfg-1U-iqT"/>
-                        <segue destination="y3s-xX-8x9" kind="modal" identifier="retroToAR" id="zPN-OJ-iTj"/>
+                        <segue destination="y3s-xX-8x9" kind="showDetail" identifier="retroToAR" id="hck-pM-9Xl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KKP-oS-KTB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -127,7 +127,7 @@
         <!--Home View Controller-->
         <scene sceneID="v97-wC-8dm">
             <objects>
-                <viewController id="y3s-xX-8x9" customClass="ARHomeViewController" customModule="Bit_Hockey__iOS_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="arHomeVC" id="y3s-xX-8x9" customClass="ARHomeViewController" customModule="Bit_Hockey__iOS_" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pip-Si-p2S"/>
                         <viewControllerLayoutGuide type="bottom" id="4VF-p6-IG0"/>
@@ -139,107 +139,100 @@
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PzW-RZ-noe">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </arscnView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fIX-jA-Dai">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bit Hockey" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dmL-Tp-eJm">
-                                        <rect key="frame" x="52.666666666666657" y="84" width="308.66666666666674" height="57"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="57" id="BSj-6y-wqw"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Krunch-Bold" family="Krunch" pointSize="58"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AR Mode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q5n-1A-ljl">
-                                        <rect key="frame" x="101" y="149" width="212" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="212" id="IBr-u0-NCx"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="cgb-tJ-4Kk"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Krunch-BoldItalic" family="Krunch" pointSize="22"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qwJ-dL-r0h">
-                                        <rect key="frame" x="108.66666666666669" y="423" width="197" height="50"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.94999999999999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="1St-Fh-PTn"/>
-                                            <constraint firstAttribute="width" constant="197" id="igo-E6-c0X"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Krunch-Bold" family="Krunch" pointSize="25"/>
-                                        <state key="normal" title="Play">
-                                            <color key="titleColor" red="0.74182068960000003" green="0.9311934395" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="buttonPressed:" destination="y3s-xX-8x9" eventType="touchUpInside" id="xXo-fi-V7I"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zZ5-PH-pTa">
-                                        <rect key="frame" x="108.66666666666669" y="492" width="197" height="50"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.94999999999999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="2e9-oM-VL2"/>
-                                            <constraint firstAttribute="width" constant="197" id="QKu-5P-uyx"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Krunch-Bold" family="Krunch" pointSize="22"/>
-                                        <state key="normal" title="Show Controls">
-                                            <color key="titleColor" red="0.38878807430000001" green="1" blue="0.74228443209999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="buttonPressed:" destination="y3s-xX-8x9" eventType="touchUpInside" id="Xuq-vb-lwr"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xH6-fh-nHQ">
-                                        <rect key="frame" x="108.66666666666669" y="802" width="197" height="50"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.94999999999999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="cJj-bi-53X"/>
-                                            <constraint firstAttribute="width" constant="197" id="vOn-bx-R2A"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Krunch-Bold" family="Krunch" pointSize="22"/>
-                                        <state key="normal" title="Switch to AR">
-                                            <color key="titleColor" red="0.6705882353" green="0.1298626363" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="buttonPressed:" destination="y3s-xX-8x9" eventType="touchUpInside" id="et8-W9-JBK"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oHn-YZ-8Hd">
+                                <rect key="frame" x="108.66666666666669" y="492" width="197" height="50"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="qwJ-dL-r0h" firstAttribute="centerY" secondItem="fIX-jA-Dai" secondAttribute="centerY" id="9Ia-da-9fZ"/>
-                                    <constraint firstItem="qwJ-dL-r0h" firstAttribute="centerX" secondItem="fIX-jA-Dai" secondAttribute="centerX" id="9my-hy-4Sk"/>
-                                    <constraint firstItem="zZ5-PH-pTa" firstAttribute="top" secondItem="qwJ-dL-r0h" secondAttribute="bottom" constant="19" id="FDc-VK-0eO"/>
-                                    <constraint firstItem="zZ5-PH-pTa" firstAttribute="centerX" secondItem="qwJ-dL-r0h" secondAttribute="centerX" id="NVF-KM-gfG"/>
-                                    <constraint firstAttribute="bottom" secondItem="xH6-fh-nHQ" secondAttribute="bottom" constant="44" id="QZR-Gy-srS"/>
-                                    <constraint firstItem="q5n-1A-ljl" firstAttribute="top" secondItem="dmL-Tp-eJm" secondAttribute="bottom" constant="8" id="W0g-Yu-zZO"/>
-                                    <constraint firstItem="dmL-Tp-eJm" firstAttribute="centerX" secondItem="fIX-jA-Dai" secondAttribute="centerX" id="fLW-fV-MKs"/>
-                                    <constraint firstItem="xH6-fh-nHQ" firstAttribute="centerX" secondItem="fIX-jA-Dai" secondAttribute="centerX" id="o5X-Fv-Thy"/>
-                                    <constraint firstItem="q5n-1A-ljl" firstAttribute="centerX" secondItem="dmL-Tp-eJm" secondAttribute="centerX" id="qjo-Ce-Bc0"/>
-                                    <constraint firstItem="dmL-Tp-eJm" firstAttribute="top" secondItem="fIX-jA-Dai" secondAttribute="top" constant="84" id="xjX-KB-eE3"/>
+                                    <constraint firstAttribute="width" constant="197" id="Ttb-Nm-6nM"/>
+                                    <constraint firstAttribute="height" constant="50" id="qYy-w3-yXu"/>
                                 </constraints>
-                            </view>
+                                <fontDescription key="fontDescription" name="Krunch-Bold" family="Krunch" pointSize="22"/>
+                                <state key="normal" title="Show Controls">
+                                    <color key="titleColor" red="0.38878807430000001" green="1" blue="0.74228443209999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="y3s-xX-8x9" eventType="touchUpInside" id="bCw-eB-nEp"/>
+                                    <action selector="buttonPressed:" destination="SUt-jw-heB" eventType="touchUpInside" id="q9t-Rc-Qdc"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AR Mode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CN7-Ce-cUQ">
+                                <rect key="frame" x="101" y="136" width="212" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="TCH-mh-UFR"/>
+                                    <constraint firstAttribute="width" constant="212" id="Y1p-rE-D6D"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Krunch-BoldItalic" family="Krunch" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dvd-mY-fbM">
+                                <rect key="frame" x="108.66666666666669" y="802" width="197" height="50"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="197" id="PwB-gx-q9N"/>
+                                    <constraint firstAttribute="height" constant="50" id="qeQ-GH-Eeu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Krunch-Bold" family="Krunch" pointSize="22"/>
+                                <state key="normal" title="Switch to Retro">
+                                    <color key="titleColor" red="0.6705882353" green="0.1298626363" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="SUt-jw-heB" eventType="touchUpInside" id="RFg-UF-Imm"/>
+                                    <action selector="buttonPressed:" destination="y3s-xX-8x9" eventType="touchUpInside" id="vpu-6I-QKh"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bit Hockey" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ww-4y-N2Q">
+                                <rect key="frame" x="52.666666666666657" y="84" width="308.66666666666674" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="57" id="20v-4X-rhj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Krunch-Bold" family="Krunch" pointSize="58"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ERw-Yy-Wm2">
+                                <rect key="frame" x="108.66666666666669" y="423" width="197" height="50"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="197" id="1Qj-Ss-0T2"/>
+                                    <constraint firstAttribute="height" constant="50" id="fDt-nG-mgk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Krunch-Bold" family="Krunch" pointSize="25"/>
+                                <state key="normal" title="Play">
+                                    <color key="titleColor" red="0.74182068960000003" green="0.9311934395" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="SUt-jw-heB" eventType="touchUpInside" id="WfY-em-uEh"/>
+                                    <action selector="buttonPressed:" destination="y3s-xX-8x9" eventType="touchUpInside" id="w4m-vq-kVI"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="CN7-Ce-cUQ" firstAttribute="top" secondItem="1ww-4y-N2Q" secondAttribute="bottom" constant="-5" id="35E-f8-5UJ"/>
+                            <constraint firstItem="4VF-p6-IG0" firstAttribute="top" secondItem="Dvd-mY-fbM" secondAttribute="bottom" constant="10" id="3Rf-RJ-Rnk"/>
+                            <constraint firstItem="oHn-YZ-8Hd" firstAttribute="top" secondItem="ERw-Yy-Wm2" secondAttribute="bottom" constant="19" id="5d4-tY-x8c"/>
                             <constraint firstAttribute="trailing" secondItem="PzW-RZ-noe" secondAttribute="trailing" id="8F0-Gt-P2T"/>
-                            <constraint firstAttribute="bottom" secondItem="fIX-jA-Dai" secondAttribute="bottom" id="8cq-rT-3hE"/>
-                            <constraint firstAttribute="trailing" secondItem="fIX-jA-Dai" secondAttribute="trailing" id="Hzs-OC-Sxy"/>
+                            <constraint firstItem="ERw-Yy-Wm2" firstAttribute="centerY" secondItem="PzW-RZ-noe" secondAttribute="centerY" id="LBX-l0-kNc"/>
+                            <constraint firstItem="Dvd-mY-fbM" firstAttribute="centerX" secondItem="PzW-RZ-noe" secondAttribute="centerX" id="Nqi-ga-39n"/>
                             <constraint firstItem="PzW-RZ-noe" firstAttribute="top" secondItem="kbL-hY-Qoa" secondAttribute="top" id="RGb-VM-uFy"/>
+                            <constraint firstItem="ERw-Yy-Wm2" firstAttribute="centerX" secondItem="PzW-RZ-noe" secondAttribute="centerX" id="T1e-he-7Ha"/>
                             <constraint firstAttribute="bottom" secondItem="PzW-RZ-noe" secondAttribute="bottom" id="Vka-xH-wE4"/>
-                            <constraint firstItem="fIX-jA-Dai" firstAttribute="leading" secondItem="kbL-hY-Qoa" secondAttribute="leading" id="caa-SY-s6h"/>
-                            <constraint firstItem="fIX-jA-Dai" firstAttribute="top" secondItem="kbL-hY-Qoa" secondAttribute="top" id="uIJ-0C-8Ud"/>
+                            <constraint firstItem="CN7-Ce-cUQ" firstAttribute="centerX" secondItem="1ww-4y-N2Q" secondAttribute="centerX" id="Xqm-ic-BES"/>
+                            <constraint firstItem="1ww-4y-N2Q" firstAttribute="centerX" secondItem="PzW-RZ-noe" secondAttribute="centerX" id="bXH-DI-cc9"/>
+                            <constraint firstItem="1ww-4y-N2Q" firstAttribute="top" secondItem="pip-Si-p2S" secondAttribute="bottom" constant="40" id="dCu-AI-bLw"/>
+                            <constraint firstItem="oHn-YZ-8Hd" firstAttribute="centerX" secondItem="ERw-Yy-Wm2" secondAttribute="centerX" id="tcZ-tF-NOk"/>
                             <constraint firstItem="PzW-RZ-noe" firstAttribute="leading" secondItem="kbL-hY-Qoa" secondAttribute="leading" id="ur0-wY-8Z1"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="captionLabel" destination="q5n-1A-ljl" id="7nG-WV-DNE"/>
-                        <outlet property="controlsButton" destination="zZ5-PH-pTa" id="OxG-ZJ-aJJ"/>
-                        <outlet property="playButton" destination="qwJ-dL-r0h" id="VZh-4v-sY1"/>
-                        <outlet property="switchButton" destination="xH6-fh-nHQ" id="Lha-my-O71"/>
-                        <outlet property="titleLabel" destination="dmL-Tp-eJm" id="gFo-48-ghV"/>
-                        <segue destination="SUt-jw-heB" kind="presentation" identifier="arToRetro" id="A9X-qV-5eN"/>
+                        <outlet property="arSCNView" destination="PzW-RZ-noe" id="zdY-Dy-SO9"/>
+                        <outlet property="captionLabel" destination="CN7-Ce-cUQ" id="bTE-CV-lns"/>
+                        <outlet property="controlsButton" destination="oHn-YZ-8Hd" id="Rj0-vB-qI3"/>
+                        <outlet property="playButton" destination="ERw-Yy-Wm2" id="oy8-GP-DQV"/>
+                        <outlet property="switchButton" destination="Dvd-mY-fbM" id="9fE-gz-PUJ"/>
+                        <outlet property="titleLabel" destination="1ww-4y-N2Q" id="ncO-5b-SRo"/>
+                        <segue destination="BV1-FR-VrT" kind="showDetail" identifier="arToRetro" id="aky-mc-PFU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Arf-Xe-VXG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -429,7 +422,7 @@
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="Bit_Hockey__iOS_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="gameVC" id="BV1-FR-VrT" customClass="GameViewController" customModule="Bit_Hockey__iOS_" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8aa-yV-Osq"/>
                         <viewControllerLayoutGuide type="bottom" id="qHh-Mt-9TT"/>
@@ -585,7 +578,4 @@
     <resources>
         <image name="iosControls" width="1242" height="2208"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="A9X-qV-5eN"/>
-    </inferredMetricsTieBreakers>
 </document>

@@ -41,6 +41,18 @@ class HomeViewController: UIViewController {
     ///The home vc delegate instance.
     public var delegate: HomeViewControllerDelegate?
     
+    ///MARK: - `UIViewController` overrides.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        //Set corner radii for buttons.
+        for subview in self.view.subviews {
+            if subview is UIButton {
+                subview.setCornerRadius(toValue: subview.frame.height / 3)
+            }
+        }
+    }
+    
     //MARK: - IBActions.
     @IBAction func buttonPressed(_ sender: Any) {
         guard let button = sender as? UIButton else {
@@ -56,11 +68,13 @@ class HomeViewController: UIViewController {
             //Check if this VC is in retro mode.
             if self.isInRetroMode {
                 //Go to AR experience.
-                self.performSegue(withIdentifier: "retroToAR", sender: self)
+                self.performSegue(withIdentifier: "retroToAR", sender: nil)
+                AppDelegate.shared?.isInARMode = true
             }
             else {
                 //Go to retro mode.
-                self.performSegue(withIdentifier: "arToRetro", sender: self)
+                self.performSegue(withIdentifier: "arToRetro", sender: nil)
+                AppDelegate.shared?.isInARMode = false
             }
             return
         }

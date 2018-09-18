@@ -24,9 +24,6 @@ class RetroHomeViewController: HomeViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        self.playButton.setCornerRadius(toValue: self.playButton.frame.height / 3)
-        self.controlsButton.setCornerRadius(toValue: self.controlsButton.frame.height / 3)
     }
 
     override func didReceiveMemoryWarning() {

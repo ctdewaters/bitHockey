@@ -8,20 +8,45 @@
 
 import UIKit
 
+///The main storyboard.
 let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-let homeVC: RetroHomeViewController = mainStoryboard.instantiateViewController(withIdentifier: "homeVC") as! RetroHomeViewController
+
+//View controller references.
+let retroHomeVC: RetroHomeViewController = mainStoryboard.instantiateViewController(withIdentifier: "retroHomeVC") as! RetroHomeViewController
+let arHomeVC: ARHomeViewController = mainStoryboard.instantiateViewController(withIdentifier: "arHomeVC") as! ARHomeViewController
 let pauseVC: PauseMenuViewController = mainStoryboard.instantiateViewController(withIdentifier: "pauseVC") as! PauseMenuViewController
 let controlsVC: ControlsViewController = mainStoryboard.instantiateViewController(withIdentifier: "controlsVC") as! ControlsViewController
 let goalVC: GoalViewController = mainStoryboard.instantiateViewController(withIdentifier: "goalVC") as! GoalViewController
+let gameVC: GameViewController = mainStoryboard.instantiateViewController(withIdentifier: "gameVC") as! GameViewController
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    ///The shared `AppDelegate` instance.
+    static var shared: AppDelegate?
+    
+    let userDefaults = UserDefaults.standard
+    
+    ///If true, the current mode setting is retro.
+    public var isInARMode: Bool {
+        set {
+            userDefaults.set(newValue, forKey: "isInARMode")
+        }
+        get {
+            return userDefaults.bool(forKey: "isInARMode")
+        }
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        //Set the shared app delegate instance.
+        AppDelegate.shared = self
+        //Determine root view controller.
+        if self.isInARMode {
+            self.window?.rootViewController = arHomeVC
+        }
+        
         return true
     }
 
