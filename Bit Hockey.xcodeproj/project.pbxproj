@@ -19,6 +19,7 @@
 		B83D0A7F1E86D1AC0036E5BD /* UserComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83D0A7E1E86D1AC0036E5BD /* UserComponent.swift */; };
 		B8666E24214AD10800A6EFA3 /* ARResources.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = B8666E23214AD10800A6EFA3 /* ARResources.scnassets */; };
 		B86E7B8D1F714F4D00C487FA /* PauseMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86E7B8C1F714F4D00C487FA /* PauseMenuViewController.swift */; };
+		B87F0729215170FB003460E1 /* ARHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87F0728215170FB003460E1 /* ARHomeViewController.swift */; };
 		B87F213A1F6EC35D00B956F6 /* RetroHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87F21391F6EC35D00B956F6 /* RetroHomeViewController.swift */; };
 		B89F57221F71F2D00087A1F9 /* ControlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89F57211F71F2D00087A1F9 /* ControlsViewController.swift */; };
 		B89F57251F71F6DE0087A1F9 /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89F57241F71F6DE0087A1F9 /* Haptics.swift */; };
@@ -74,6 +75,7 @@
 		B8F585CC1F52157A00FCF981 /* krunch_bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8F585C71F5212D900FCF981 /* krunch_bold.ttf */; };
 		B8F585CD1F52157A00FCF981 /* krunch_italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8F585C61F5212D900FCF981 /* krunch_italic.ttf */; };
 		B8F585CE1F52157A00FCF981 /* krunch_bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8F585C71F5212D900FCF981 /* krunch_bold.ttf */; };
+		B8FF36EE21517E5A00934BBA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FF36ED21517E5A00934BBA /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +94,7 @@
 		B83D0A7E1E86D1AC0036E5BD /* UserComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserComponent.swift; sourceTree = "<group>"; };
 		B8666E23214AD10800A6EFA3 /* ARResources.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = ARResources.scnassets; sourceTree = "<group>"; };
 		B86E7B8C1F714F4D00C487FA /* PauseMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseMenuViewController.swift; sourceTree = "<group>"; };
+		B87F0728215170FB003460E1 /* ARHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARHomeViewController.swift; sourceTree = "<group>"; };
 		B87F21391F6EC35D00B956F6 /* RetroHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetroHomeViewController.swift; sourceTree = "<group>"; };
 		B89F57211F71F2D00087A1F9 /* ControlsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsViewController.swift; sourceTree = "<group>"; };
 		B89F57241F71F6DE0087A1F9 /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
@@ -132,6 +135,7 @@
 		B8E0329C1E92EB91004F718E /* Scoreboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scoreboard.swift; sourceTree = "<group>"; };
 		B8F585C61F5212D900FCF981 /* krunch_italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = krunch_italic.ttf; sourceTree = "<group>"; };
 		B8F585C71F5212D900FCF981 /* krunch_bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = krunch_bold.ttf; sourceTree = "<group>"; };
+		B8FF36ED21517E5A00934BBA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C50C92481FD596F9AFBD5E9B /* Pods-bitHockey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bitHockey.release.xcconfig"; path = "Pods/Target Support Files/Pods-bitHockey/Pods-bitHockey.release.xcconfig"; sourceTree = "<group>"; };
 		FBF416AC12B6263A73A6A57B /* Pods-bitHockey Touch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bitHockey Touch.release.xcconfig"; path = "Pods/Target Support Files/Pods-bitHockey Touch/Pods-bitHockey Touch.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -217,6 +221,7 @@
 		B8666E1E214ACC0600A6EFA3 /* AR Experience */ = {
 			isa = PBXGroup;
 			children = (
+				B87F0728215170FB003460E1 /* ARHomeViewController.swift */,
 				B8666E23214AD10800A6EFA3 /* ARResources.scnassets */,
 			);
 			path = "AR Experience";
@@ -235,6 +240,8 @@
 			isa = PBXGroup;
 			children = (
 				B87F21391F6EC35D00B956F6 /* RetroHomeViewController.swift */,
+				B89F57211F71F2D00087A1F9 /* ControlsViewController.swift */,
+				B89F57261F72ACCD0087A1F9 /* GoalViewController.swift */,
 				B8666E21214ACFCF00A6EFA3 /* In Game */,
 			);
 			path = "Retro Experience";
@@ -243,10 +250,9 @@
 		B89F57231F71F2D50087A1F9 /* Interface */ = {
 			isa = PBXGroup;
 			children = (
+				B8FF36ED21517E5A00934BBA /* HomeViewController.swift */,
 				B8666E22214ACFEC00A6EFA3 /* Retro Experience */,
 				B8666E1E214ACC0600A6EFA3 /* AR Experience */,
-				B89F57211F71F2D00087A1F9 /* ControlsViewController.swift */,
-				B89F57261F72ACCD0087A1F9 /* GoalViewController.swift */,
 				B8D5B91C1E7D8D6500D303E4 /* Main.storyboard */,
 				B8D5B9211E7D8D6500D303E4 /* LaunchScreen.storyboard */,
 			);
@@ -643,10 +649,12 @@
 				B8E032A81E92EB91004F718E /* PlayerTextures.swift in Sources */,
 				B8E032A41E92EB91004F718E /* Player.swift in Sources */,
 				B8D5B9511E7D8DF800D303E4 /* SwitchPlayerButton.swift in Sources */,
+				B8FF36EE21517E5A00934BBA /* HomeViewController.swift in Sources */,
 				B8E032AC1E92EB91004F718E /* Scoreboard.swift in Sources */,
 				B8E032AA1E92EB91004F718E /* Rink.swift in Sources */,
 				B8E032A91E92EB91004F718E /* SoundEffectPlayer.swift in Sources */,
 				B8E0329E1E92EB91004F718E /* MoveComponent.swift in Sources */,
+				B87F0729215170FB003460E1 /* ARHomeViewController.swift in Sources */,
 				B89F57251F71F6DE0087A1F9 /* Haptics.swift in Sources */,
 				B8E032AB1E92EB91004F718E /* Score.swift in Sources */,
 				B8D5B9131E7D8D6500D303E4 /* AppDelegate.swift in Sources */,
@@ -830,7 +838,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = iOSAppIcon;
 				DEVELOPMENT_TEAM = AP48SCT3J2;
 				INFOPLIST_FILE = "Hockey Game/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.CollinDeWaters.Hockey-Game";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -846,7 +854,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = iOSAppIcon;
 				DEVELOPMENT_TEAM = AP48SCT3J2;
 				INFOPLIST_FILE = "Hockey Game/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.CollinDeWaters.Hockey-Game";
 				PRODUCT_NAME = "$(TARGET_NAME)";

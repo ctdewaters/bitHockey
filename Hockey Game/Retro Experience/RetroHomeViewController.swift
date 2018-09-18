@@ -8,21 +8,10 @@
 
 import UIKit
 
-protocol HomeViewControllerDelegate {
-    func homeVCDidRespondToPlayButton()
-    func homeVCDidRespondToControlsButton()
-}
-
 ///`HomeViewController`: first interface the user sees when entering the app.
-class RetroHomeViewController: UIViewController {
-    //MARK: - IBOutlets
-    @IBOutlet weak var captionLabel: UILabel!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var playButton: UIButton!
-    @IBOutlet weak var controlsButton: UIButton!
+class RetroHomeViewController: HomeViewController {
     
-    var delegate: HomeViewControllerDelegate?
-    
+    //MARK: - `UIViewController` overrides.
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,20 +28,6 @@ class RetroHomeViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func buttonPressed(_ sender: Any) {
-        guard let button = sender as? UIButton else {
-            return
-        }
-        if button == self.playButton {
-            //Play button pressed.
-            self.delegate?.homeVCDidRespondToPlayButton()
-        }
-        else {
-            //Show controls.
-            self.delegate?.homeVCDidRespondToControlsButton()
-        }
     }
 }
 

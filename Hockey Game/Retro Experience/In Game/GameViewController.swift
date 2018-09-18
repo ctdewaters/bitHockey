@@ -92,6 +92,7 @@ class GameViewController: UIViewController, HomeViewControllerDelegate, UIGestur
     }
     
     //MARK: - Game over menu.
+    ///Presents the pause menu, with the game over message.
     func presentGameOverMenu() {
         //Add pauseVC's view.
         pauseVC.view.frame = self.view.frame
@@ -120,6 +121,7 @@ class GameViewController: UIViewController, HomeViewControllerDelegate, UIGestur
     }
     
     //MARK: - Pause menu
+    ///Presents the pause menu.
     func presentPauseView() {
         Haptics.shared.playPeekHaptic()
         //Add pauseVC's view.
@@ -150,6 +152,7 @@ class GameViewController: UIViewController, HomeViewControllerDelegate, UIGestur
         }, completion: nil)
     }
     
+    ///Dismisses the pause menu.
     func dismissPauseView(completion: @escaping ()->Void) {
         UIView.animate(withDuration: 0.3, animations: {
             pauseVC.blur.effect = nil
@@ -165,6 +168,8 @@ class GameViewController: UIViewController, HomeViewControllerDelegate, UIGestur
         }
     }
     
+    //MARK: - Controls view.
+    ///Presents the controls view.
     func presentControlsView() {
         controlsVC.view.frame = self.view.frame
         controlsVC.blur.effect = nil
@@ -182,6 +187,7 @@ class GameViewController: UIViewController, HomeViewControllerDelegate, UIGestur
         })
     }
     
+    ///Dismisses the controls view.
     @objc func dismissControlsView() {
         Haptics.shared.playPopHaptic()
         UIView.animate(withDuration: 0.3, animations: {
