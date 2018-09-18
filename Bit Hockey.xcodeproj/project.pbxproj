@@ -76,6 +76,7 @@
 		B8F585CD1F52157A00FCF981 /* krunch_italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8F585C61F5212D900FCF981 /* krunch_italic.ttf */; };
 		B8F585CE1F52157A00FCF981 /* krunch_bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8F585C71F5212D900FCF981 /* krunch_bold.ttf */; };
 		B8FF36EE21517E5A00934BBA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FF36ED21517E5A00934BBA /* HomeViewController.swift */; };
+		B8FF36F02151C20700934BBA /* ARRink.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FF36EF2151C20700934BBA /* ARRink.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -136,6 +137,7 @@
 		B8F585C61F5212D900FCF981 /* krunch_italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = krunch_italic.ttf; sourceTree = "<group>"; };
 		B8F585C71F5212D900FCF981 /* krunch_bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = krunch_bold.ttf; sourceTree = "<group>"; };
 		B8FF36ED21517E5A00934BBA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		B8FF36EF2151C20700934BBA /* ARRink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARRink.swift; sourceTree = "<group>"; };
 		C50C92481FD596F9AFBD5E9B /* Pods-bitHockey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bitHockey.release.xcconfig"; path = "Pods/Target Support Files/Pods-bitHockey/Pods-bitHockey.release.xcconfig"; sourceTree = "<group>"; };
 		FBF416AC12B6263A73A6A57B /* Pods-bitHockey Touch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bitHockey Touch.release.xcconfig"; path = "Pods/Target Support Files/Pods-bitHockey Touch/Pods-bitHockey Touch.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -222,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				B87F0728215170FB003460E1 /* ARHomeViewController.swift */,
+				B8FF36EF2151C20700934BBA /* ARRink.swift */,
 				B8666E23214AD10800A6EFA3 /* ARResources.scnassets */,
 			);
 			path = "AR Experience";
@@ -658,6 +661,7 @@
 				B89F57251F71F6DE0087A1F9 /* Haptics.swift in Sources */,
 				B8E032AB1E92EB91004F718E /* Score.swift in Sources */,
 				B8D5B9131E7D8D6500D303E4 /* AppDelegate.swift in Sources */,
+				B8FF36F02151C20700934BBA /* ARRink.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

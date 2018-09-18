@@ -36,7 +36,7 @@ class HomeViewController: UIViewController {
     public var isInRetroMode: Bool {
         return true
     }
-
+    
     //MARK: - Properties.
     ///The home vc delegate instance.
     public var delegate: HomeViewControllerDelegate?

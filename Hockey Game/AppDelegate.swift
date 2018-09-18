@@ -13,7 +13,6 @@ let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
 
 //View controller references.
 let retroHomeVC: RetroHomeViewController = mainStoryboard.instantiateViewController(withIdentifier: "retroHomeVC") as! RetroHomeViewController
-let arHomeVC: ARHomeViewController = mainStoryboard.instantiateViewController(withIdentifier: "arHomeVC") as! ARHomeViewController
 let pauseVC: PauseMenuViewController = mainStoryboard.instantiateViewController(withIdentifier: "pauseVC") as! PauseMenuViewController
 let controlsVC: ControlsViewController = mainStoryboard.instantiateViewController(withIdentifier: "controlsVC") as! ControlsViewController
 let goalVC: GoalViewController = mainStoryboard.instantiateViewController(withIdentifier: "goalVC") as! GoalViewController
@@ -44,7 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AppDelegate.shared = self
         //Determine root view controller.
         if self.isInARMode {
-            self.window?.rootViewController = arHomeVC
+            self.window?.rootViewController = ARHomeViewController.shared
         }
         
         return true
@@ -71,7 +70,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
 }
 

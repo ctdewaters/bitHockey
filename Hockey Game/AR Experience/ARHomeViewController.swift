@@ -9,7 +9,7 @@
 import UIKit
 import ARKit
 
-///`ARHomeViewController`: a `HomeViewController` subclass which will display the AR mode of the game.
+///`ARHomeViewController`: a `HomeViewController` subclass which will display the AR mode of the game. This home view controller also handles placement of the Rink in AR, using the `ARRink` class.
 class ARHomeViewController: HomeViewController, ARSCNViewDelegate {
     //MARK: - IBOutlets.
     @IBOutlet weak var arSCNView: ARSCNView!
@@ -20,6 +20,9 @@ class ARHomeViewController: HomeViewController, ARSCNViewDelegate {
     
     ///The root SCNNode, which all other nodes will be added to as children.
     var rootNode: SCNNode?
+    
+    ///The shared ARHomeViewController.
+    static var shared: ARHomeViewController = mainStoryboard.instantiateViewController(withIdentifier: "arHomeVC") as! ARHomeViewController
     
     //MARK: - `HomeViewController` Overrides.
     override var isInRetroMode: Bool {
@@ -32,6 +35,11 @@ class ARHomeViewController: HomeViewController, ARSCNViewDelegate {
         //Setup the `ARSCNView`.
         self.arSCNView.delegate = self
         self.arSCNView.showsStatistics = false
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
         //Start world tracking.
         let config = ARWorldTrackingConfiguration()
