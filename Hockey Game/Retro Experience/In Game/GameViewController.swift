@@ -246,7 +246,7 @@ class GameViewController: UIViewController, HomeViewControllerDelegate, UIGestur
         
         //Pause button.
         self.pauseButton = UIButton(frame: CGRect(x: gameView.frame.maxX + (buttonSize * 0.85) + 20, y: Scoreboard.shared.frame.origin.y, width: buttonSize * 0.85, height: 30))
-        let title = NSAttributedString(string: "PAUSE", attributes: [NSAttributedStringKey.font : UIFont(name: "Rubik", size: 15)!, NSAttributedStringKey.foregroundColor : UIColor.white])
+        let title = NSAttributedString(string: "PAUSE", attributes: [NSAttributedString.Key.font : UIFont(name: "Rubik", size: 15)!, NSAttributedString.Key.foregroundColor : UIColor.white])
         self.pauseButton.setAttributedTitle(title, for: .normal)
         self.pauseButton.clipsToBounds = true
         self.pauseButton.layer.cornerRadius = 15

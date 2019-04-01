@@ -104,6 +104,7 @@ public class MoveComponent: GKAgent2D, GKAgentDelegate {
 
 public extension CGPoint {
     init(x: Float, y: Float) {
+        self.init()
         self.x = CGFloat(x)
         self.y = CGFloat(y)
     }

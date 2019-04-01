@@ -77,7 +77,7 @@ class GoalViewController: UIViewController {
                 animation.fromValue = 1
                 animation.toValue = 0.1
                 animation.duration = 0.35
-                animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+                animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
                 animation.autoreverses = true
                 animation.repeatCount = 500
                 self.goalLabel.layer.add(animation, forKey: "blinking")
@@ -86,7 +86,7 @@ class GoalViewController: UIViewController {
                 transform.fromValue = self.goalLabel.layer.value(forKeyPath: "transform.scale")
                 transform.toValue = 2.5
                 transform.duration = 0.35
-                transform.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+                transform.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
                 transform.autoreverses = true
                 transform.repeatCount = 500
                 self.goalLabel.layer.add(transform, forKey: "transform")

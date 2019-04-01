@@ -82,7 +82,7 @@ class GoalPresentation: NSObject {
                 self.presentationView.addSubview(promptLabel)
                 
                 view.addSubview(self.presentationView)
-                view.bringSubview(toFront: Scoreboard.shared)
+                view.bringSubviewToFront(Scoreboard.shared)
             #endif
             
             self.presentationView.fadeIn(withDuration: 0.5, andCompletionBlock: completion)

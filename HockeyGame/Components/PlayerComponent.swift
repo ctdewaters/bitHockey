@@ -424,6 +424,7 @@ public enum DekeSide {
 
 fileprivate extension CGVector {
     init(withMagnitude magnitude: CGFloat, andDirectionAngle angle: CGFloat) {
+        self.init()
         var angle = angle
         angle += (CGFloat.pi / 1.9)
         if angle < 0 {
